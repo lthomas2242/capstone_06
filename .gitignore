@@ -5,12 +5,19 @@
 /tmp
 /out-tsc
 /bazel-out
+# Compiled output
+/app_ui/dist
+/app_ui/tmp
+/app_ui/out-tsc
+/app_ui/bazel-out
 
 # Node
 /node_modules
 /app_ui/node_modules
 npm-debug.log
 yarn-error.log
+/app_ui/npm-debug.log
+/app_ui/yarn-error.log
 
 # IDEs and editors
 .idea/
@@ -21,6 +28,14 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 
+/app_ui/.idea/
+/app_ui/.project
+/app_ui/.classpath
+/app_ui/.c9/
+/app_ui/*.launch
+/app_ui/.settings/
+/app_ui/*.sublime-workspace
+
 # Visual Studio Code
 .vscode/*
 !.vscode/settings.json
@@ -28,6 +43,15 @@ yarn-error.log
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+
+
+/app_ui/.vscode/*
+/app_ui/!.vscode/settings.json
+/app_ui/!.vscode/tasks.json
+/app_ui/!.vscode/launch.json
+/app_ui/!.vscode/extensions.json
+/app_ui/.history/*
+
 
 # Miscellaneous
 /.angular/cache
@@ -38,6 +62,17 @@ yarn-error.log
 testem.log
 /typings
 
+/app_ui/.angular/cache
+/app_ui/.sass-cache/
+/app_ui/connect.lock
+/app_ui/coverage
+/app_ui/libpeerconnection.log
+/app_ui/testem.log
+/app_ui/typings
+
 # System files
 .DS_Store
 Thumbs.db
+
+/app_ui/.DS_Store
+/app_ui/Thumbs.db
