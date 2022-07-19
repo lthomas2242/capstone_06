@@ -15,6 +15,7 @@ import { CustomerLayoutComponent } from './_layouts/customer-layout/customer-lay
 import { AdminLayoutComponent } from './_layouts/admin-layout/admin-layout.component';
 import { LandingPageComponent } from './_components/landing-page/landing-page.component';
 import { RegisterComponent } from './_components/register/register.component';
+import { UserService } from './_services/user.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { RegisterComponent } from './_components/register/register.component';
         component: CustomerLayoutComponent,
         children:[
           {
-            path: '',
+            path: 'home',
             component: HomeComponent
           }
         ]
@@ -69,7 +70,7 @@ import { RegisterComponent } from './_components/register/register.component';
     ])
 
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
