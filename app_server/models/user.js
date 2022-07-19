@@ -5,6 +5,7 @@ var usersSchema = new mongoose.Schema({
     last_name: { type: String },
     email: { type: String, required: true },
     password: { type: String, required: true },
+    user_role: { type: String },
     height: { type: Number },
     weight: { type: Number },
     BMI: { type: String }
