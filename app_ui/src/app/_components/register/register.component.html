@@ -19,41 +19,52 @@
                     <h3 class="mb-5 text-uppercase">User registration</h3>
                     <form (ngSubmit)="createUser(user)">
                         <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <div class="form-outline">
-                            <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                            <label class="form-label" [(ngModel)]="user.first_name">First name</label>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                <input type="text" id="form3Example1m" class="form-control form-control-lg" [(ngModel)]="user.first_name" name="first_name"/>
+                                <label class="form-label" >
+                                    First name
+                                </label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="form-outline">
-                            <input type="text" id="form3Example1n" class="form-control form-control-lg" />
-                            <label class="form-label" [(ngModel)]="user.last_name">Last name</label>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                <input type="text" id="form3Example1n" class="form-control form-control-lg"  [(ngModel)]="user.last_name" name="last_name"/>
+                                <label class="form-label">
+                                    Last name
+                                </label>
+                                </div>
                             </div>
-                        </div>
                         </div>
         
-                        <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <div class="form-outline">
-                            <input type="text" id="form3Example1m1" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example1m1">Mother's name</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="form-outline">
-                            <input type="text" id="form3Example1n1" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example1n1">Father's name</label>
-                            </div>
-                        </div>
-                        </div>
         
                         <div class="form-outline mb-4">
-                        <input type="text" class="form-control form-control-lg" />
-                        <label class="form-label" [(ngModel)]="user.email">Email</label>
+                            <input type="text" class="form-control form-control-lg" [(ngModel)]="user.email" name="email"/>
+                            <label class="form-label" >
+                                Email
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                <input type="text" class="form-control form-control-lg" [(ngModel)]="user.height" name="height"/>
+                                <label class="form-label" >
+                                    Height
+                                </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                <input type="text" class="form-control form-control-lg" [(ngModel)]="user.weight" name="weight"/>
+                                <label class="form-label" >
+                                    Weight
+                                </label>
+                                </div>
+                            </div>
                         </div>
         
-                        <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                        <!-- <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
         
                         <h6 class="mb-0 me-4">Gender: </h6>
         
@@ -75,36 +86,41 @@
                             <label class="form-check-label" for="otherGender">Other</label>
                         </div>
         
-                        </div>
+                        </div> -->
         
                         
         
-                        <div class="form-outline mb-4">
+                        <!-- <div class="form-outline mb-4">
                         <input type="text" id="form3Example9" class="form-control form-control-lg" />
                         <label class="form-label" for="form3Example9">DOB</label>
-                        </div>
+                        </div> -->
         
-                       
-                        <div class="col-md-6 mb-4">
-                            <div class="form-outline">
-                            <input type="text" id="form3Example1n" class="form-control form-control-lg" />
-                            <label class="form-label" [(ngModel)]="user.password">Password</label>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                <input type="text" id="form3Example1n" class="form-control form-control-lg" [(ngModel)]="user.password" name="password"/>
+                                <label class="form-label" >
+                                    Password
+                                </label>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-6 mb-4">
-                            <div class="form-outline">
-                            <input type="text" id="form3Example1n" class="form-control form-control-lg" />
-                            <label class="form-label" [(ngModel)]="user.c_password">Confirm Password</label>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                <input type="text" id="form3Example1n" class="form-control form-control-lg" name="c_password" />
+                                <label class="form-label" >
+                                    Confirm Password
+                                </label>
+                                </div>
                             </div>
                         </div>
         
                        
         
-                        <div class="d-flex justify-content-end pt-3">
-                        <button type="button" class="btn btn-light btn-lg">Reset all</button>
-                        <button type="button" class="btn btn-warning btn-lg ms-2">Submit form</button>
-                        <button class="btn btn-danger" (click)='onSubmit()'>Submit</button>
+                        <div class="d-flex pt-3">
+                       
+                        
+                        <button class="btn btn-danger ms-2" type="submit" >Submit</button>
                         </div>
                    </form>
     

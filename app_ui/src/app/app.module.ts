@@ -14,8 +14,9 @@ import { LoginComponent } from './_components/login/login.component';
 import { CustomerLayoutComponent } from './_layouts/customer-layout/customer-layout.component';
 import { AdminLayoutComponent } from './_layouts/admin-layout/admin-layout.component';
 import { LandingPageComponent } from './_components/landing-page/landing-page.component';
-import { RegisterComponent } from './_components/register/register.component';
 import { UserService } from './_services/user.service';
+import { RegisterComponent } from './_components/register/register.component';
+
 
 @NgModule({
   declarations: [
