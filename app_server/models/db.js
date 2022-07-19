@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const dbURI = 'mongodb+srv://vinduvenugopal:Ishika2017@cluster0.2mnc9pj.mongodb.net/?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://vinduvenugopal:Ishika2017@cluster0.2mnc9pj.mongodb.net/recipeDB?retryWrites=true&w=majority';
 mongoose.connect(dbURI);
 mongoose.connection.on('connected', () => {
     console.log(`Mongoose connected to ${dbURI}`);
