@@ -14,6 +14,7 @@ import { LoginComponent } from './_components/login/login.component';
 import { CustomerLayoutComponent } from './_layouts/customer-layout/customer-layout.component';
 import { AdminLayoutComponent } from './_layouts/admin-layout/admin-layout.component';
 import { LandingPageComponent } from './_components/landing-page/landing-page.component';
+import { RegisterComponent } from './_components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LandingPageComponent } from './_components/landing-page/landing-page.co
     LoginComponent,
     CustomerLayoutComponent,
     AdminLayoutComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,10 @@ import { LandingPageComponent } from './_components/landing-page/landing-page.co
       {
         path: 'login',
         component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
       },
       {
         path: 'cust-layout',
