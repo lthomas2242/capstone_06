@@ -1,0 +1,153 @@
+<html>
+<head>
+
+</head>
+<body class="bg-dark">
+    <div class="container ">    
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+            <div class="card card-registration my-4">
+            <div class="row g-0">
+                <div class="col-xl-6 d-none d-xl-block">
+                <img src="../../assets/img/register1.jpg"
+                    alt="Sample photo" class="img-fluid"
+                    style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                </div>
+                <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                    <h3 class=" text-uppercase">User registration</h3>
+                    <small > Join Our Family!</small>
+                    <form (ngSubmit)="createUser(user)" class="mt-5">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" >
+                                        First name
+                                    </label>
+                                    <input type="text" id="form3Example1m" class="form-control form-control-lg" [(ngModel)]="user.first_name" name="first_name"/>                           
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label">
+                                        Last name
+                                    </label>
+                                    <input type="text" id="form3Example1n" class="form-control form-control-lg"  [(ngModel)]="user.last_name" name="last_name"/>  
+                                </div>
+                            </div>
+                        </div>
+        
+        
+                        <div class="form-outline mb-4">
+                            <label class="form-label" >
+                                Email
+                            </label>
+                            <input type="text" class="form-control form-control-lg" [(ngModel)]="user.email" name="email"/>
+                            
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" >
+                                        Height
+                                    </label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                          <div class="input-group-text">CM</div>
+                                        </div>
+                                        <input type="text" class="form-control" [(ngModel)]="user.height" name="height"/>
+                                      </div>  
+                                        
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" >
+                                        Weight
+                                    </label>
+                                    <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">Kg</div>
+                                    </div>
+                                    <input type="text" class="form-control" [(ngModel)]="user.weight" name="weight"/>
+                                    </div> 
+                                
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+        
+                        <h6 class="mb-0 me-4">Gender: </h6>
+        
+                        <div class="form-check form-check-inline mb-0 me-4">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                            value="option1" />
+                            <label class="form-check-label" for="femaleGender">Female</label>
+                        </div>
+        
+                        <div class="form-check form-check-inline mb-0 me-4">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                            value="option2" />
+                            <label class="form-check-label" for="maleGender">Male</label>
+                        </div>
+        
+                        <div class="form-check form-check-inline mb-0">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+                            value="option3" />
+                            <label class="form-check-label" for="otherGender">Other</label>
+                        </div>
+        
+                        </div> -->
+        
+                        
+        
+                        <!-- <div class="form-outline mb-4">
+                        <input type="text" id="form3Example9" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example9">DOB</label>
+                        </div> -->
+        
+                        <div class="row">
+                            <div class="col-md-12 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" >
+                                        Password
+                                    </label>
+                                <input type="text" id="form3Example1n" class="form-control form-control-lg" [(ngModel)]="user.password" name="password"/>
+                                
+                                </div>
+                            </div>
+
+                            <!-- <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                <input type="text" id="form3Example1n" class="form-control form-control-lg" name="c_password" />
+                                <label class="form-label" >
+                                    Confirm Password
+                                </label>
+                                </div>
+                            </div> -->
+                        </div>
+        
+                       
+        
+                        <div class="d-flex pt-3">
+                       
+                        
+                        <button class="btn btn-danger ms-2" type="submit" >Register</button>
+                        </div>
+                   </form>
+    
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    </div>
+    
+</body>
+</html>
