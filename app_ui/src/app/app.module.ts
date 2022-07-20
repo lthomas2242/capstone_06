@@ -4,7 +4,10 @@ import { APP_BASE_HREF } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-
+import {
+  BrowserAnimationsModule,
+  NoopAnimationsModule
+} from "@angular/platform-browser/animations";
 import {MaterialModule} from './material.module';
 
 import { HomeComponent } from './_components/home/home.component';
@@ -32,6 +35,8 @@ import { UserService } from './_services/user.service';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
     RouterModule.forRoot([
       {
         path: '',

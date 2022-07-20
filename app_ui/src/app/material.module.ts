@@ -1,4 +1,6 @@
 import {NgModule} from '@angular/core';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 // import {A11yModule} from '@angular/cdk/a11y';
 // import {CdkAccordionModule} from '@angular/cdk/accordion';
 // import {ClipboardModule} from '@angular/cdk/clipboard';
@@ -35,7 +37,7 @@ import {NgModule} from '@angular/core';
 // import {MatSidenavModule} from '@angular/material/sidenav';
 // import {MatSliderModule} from '@angular/material/slider';
 // import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-// import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 // import {MatSortModule} from '@angular/material/sort';
 // import {MatTableModule} from '@angular/material/table';
 // import {MatTabsModule} from '@angular/material/tabs';
@@ -46,6 +48,7 @@ import {NgModule} from '@angular/core';
 
 @NgModule({
   exports: [
+    MatSnackBarModule
     // A11yModule,
     // CdkAccordionModule,
     // ClipboardModule,
@@ -81,7 +84,6 @@ import {NgModule} from '@angular/core';
     // MatSidenavModule,
     // MatSliderModule,
     // MatSlideToggleModule,
-    // MatSnackBarModule,
     // MatSortModule,
     // MatTableModule,
     // MatTabsModule,
@@ -94,3 +96,5 @@ import {NgModule} from '@angular/core';
   ]
 })
 export class MaterialModule {}
+
+// ng add @angular/material

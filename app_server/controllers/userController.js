@@ -9,7 +9,7 @@ const login = function(req, res) {
             password: req.body.password
         })
         .exec((err, usertData) => {
-            if (!usertData) {
+            if (usertData.length === 0) {
                 res
                     .status(404)
                     .json({
