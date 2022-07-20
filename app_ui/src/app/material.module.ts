@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+// import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 // import {A11yModule} from '@angular/cdk/a11y';
 // import {CdkAccordionModule} from '@angular/cdk/accordion';
@@ -48,7 +48,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   exports: [
-    MatSnackBarModule
+    // MatSnackBarModule
     // A11yModule,
     // CdkAccordionModule,
     // ClipboardModule,

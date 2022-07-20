@@ -42,11 +42,11 @@ import { RegisterComponent } from './_components/register/register.component';
     NoopAnimationsModule,
     RouterModule.forRoot([
       {
-        path: '',
+        path: 'landing',
         component: LandingPageComponent
       },
       {
-        path: 'login',
+        path: '',
         component: LoginComponent
       },
       {
