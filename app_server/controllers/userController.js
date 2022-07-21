@@ -29,7 +29,6 @@ const login = function(req, res) {
 };
 
 const register = function(req, res) {
-    console.log("sssss");
     User.create({
         first_name: req.body.first_name,
         last_name: req.body.last_name,

@@ -19,6 +19,7 @@ import { AdminLayoutComponent } from './_layouts/admin-layout/admin-layout.compo
 import { LandingPageComponent } from './_components/landing-page/landing-page.component';
 import { UserService } from './_services/user.service';
 import { RegisterComponent } from './_components/register/register.component';
+import { ShoppingListComponent } from './_components/shopping-list/shopping-list.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { RegisterComponent } from './_components/register/register.component';
     CustomerLayoutComponent,
     AdminLayoutComponent,
     LandingPageComponent,
-    RegisterComponent
+    RegisterComponent,
+    ShoppingListComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +62,10 @@ import { RegisterComponent } from './_components/register/register.component';
           {
             path: 'home',
             component: HomeComponent
+          },
+          {
+            path: 'shopping-list',
+            component: ShoppingListComponent
           }
         ]
       },
@@ -72,7 +78,8 @@ import { RegisterComponent } from './_components/register/register.component';
             component: HomeComponent
           }
         ]
-      },
+      }
+      
     ])
 
   ],
