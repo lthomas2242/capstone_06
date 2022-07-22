@@ -1,43 +1,157 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand" href="#page-top"><img src="../../assets/img/navbar-logo.svg" alt="..." /></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
+<div class="wrapper" id="recipes-wrapper">
+    <!---header starts-->
+    <header class="header-fixed" style="background: #ad3700;">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md">
+                <a class="navbar-brand" href="#">
+                    <h5 class="hedcls" style="color: #fff; font-size: 35px;">RecipeforYou.....!</h5>
+                </a>
+                <button class="navbar-toggler" type="button" data-target="#collapsibleNavbar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                    </svg> Menu
                 </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" routerLink="/recipe">Recipes</a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="/users">Users</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- Masthead-->
-<header class="masthead">
-    <div class="container">
-        <div class="masthead-subheading">Welcome To Our Studio!</div>
-        <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-        <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
-    </div>
-</header>
+                <div class="navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin-layout/recipe-save" style="font-size: 20px;">Recipes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="font-size: 20px;">Users</a>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-nothing">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16">
+                                    <g fill="none" fill-rule="evenodd" stroke="#868996" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="1.6" transform="translate(1 1)">
+                                        <path
+                                            d="M13 14v-1.556c0-1.718-1.455-3.11-3.25-3.11h-6.5c-1.795 0-3.25 1.392-3.25 3.11V14">
+                                        </path>
+                                        <ellipse cx="6.5" cy="3.111" rx="3.25" ry="3.111"></ellipse>
+                                    </g>
+                                </svg> 
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="resp-menu">
+                    <div class="resp-close">
+                        <button type="button" class="btn btn-nothing">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                </path>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="resp-logo">
+                        <a aria-current="page" class="active" href="/">
+                            <h5 class="hedcls" style="color: #fff; font-size: 35px;">RecipeforYou.....!</h5>
+                        </a>
+                    </div>
+                    <ul>
+                        <li class="resp-li">
+                            <a aria-current="page" class="active" href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#" style="font-size: 20px;">Recipes</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#" style="font-size: 20px;">Users</a>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-nothing">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16">
+                                    <g fill="none" fill-rule="evenodd" stroke="#868996" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="1.6" transform="translate(1 1)">
+                                        <path
+                                            d="M13 14v-1.556c0-1.718-1.455-3.11-3.25-3.11h-6.5c-1.795 0-3.25 1.392-3.25 3.11V14">
+                                        </path>
+                                        <ellipse cx="6.5" cy="3.111" rx="3.25" ry="3.111"></ellipse>
+                                    </g>
+                                </svg>
+                                Signup / Login
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="resp-logo">
+                        <h5 class="text-uppercase text-grey">Contact us:</h5>
+                        <p><a class="text-primary" href="mailto:info@recipes.com">info@recipes.com</a></p>
+                    </div>
+                </div>
 
-<router-outlet></router-outlet>
+            </nav>
+        </div>
+    </header>
+    <!---header ends-->
 
-<!-- Footer-->
-<footer class="footer py-4">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
-            <div class="col-lg-4 my-3 my-lg-0">
-                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <div class="col-lg-4 text-lg-end">
-                <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+    <router-outlet></router-outlet>
+
+    <!---footer starts-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-logo mb-3">
+                        RACIES FOR YOU
+                    </div>
+                    <div class="footer-desc">
+                        <p>Your diet is a bank account. Good food choices are good investments.</p>
+                    </div>
+                    <div class="footer-social-icons">
+                        <ul class="social-icons">
+                            <li>
+                                <a href="#" class="fb-logo">
+                                    <img src="../../assets/images/facebook.svg" class="img-fluic" alt="Facebook" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="ins-logo">
+                                    <img src="../../assets/images/instagram.svg" class="img-fluic" alt="Instagram" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="tw-logo">
+                                    <img src="../../assets/images/twitter.svg" class="img-fluic" alt="Twitter" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <h4>KNOW US</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-6">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@recipes.com">info@recipes.com</a></li>
+                        <li><a href="#">344-677-8888</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+        <br><br><br>
+        <div class="copyrights">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5">
+                        <p class="mb-0">Recipes © 2022 copyrights</p>
+                    </div>
+                    <div class="col-md-7">
+                        <!-- <ul>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Policy of use</a></li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!---footer ends-->
+</div>
