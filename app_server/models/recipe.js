@@ -23,7 +23,7 @@ var recipesSchema = new mongoose.Schema({
     approved: { type: Boolean },
     ingredients: [ingredientsSchema],
     directions: [{ type: String }],
-    nutritions: [nutritionsSchema],
+    nutritions: nutritionsSchema
 
 });
 

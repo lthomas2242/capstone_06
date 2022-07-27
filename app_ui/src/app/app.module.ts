@@ -21,6 +21,7 @@ import { UserService } from './_services/user.service';
 import { RegisterComponent } from './_components/register/register.component';
 import { ShoppingListComponent } from './_components/shopping-list/shopping-list.component';
 import { RecipeSaveComponent } from './_components/admin/recipe-save/recipe-save.component';
+import { RecipeListComponent } from './_components/admin/recipe-list/recipe-list.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { RecipeSaveComponent } from './_components/admin/recipe-save/recipe-save
     LandingPageComponent,
     RegisterComponent,
     ShoppingListComponent,
-    RecipeSaveComponent
+    RecipeSaveComponent,
+    RecipeListComponent
   ],
   imports: [
     BrowserModule,
@@ -76,8 +78,12 @@ import { RecipeSaveComponent } from './_components/admin/recipe-save/recipe-save
         component: AdminLayoutComponent,
         children:[
           {
-            path: '',
+            path: 'home',
             component: HomeComponent
+          },
+          {
+            path: 'recipe',
+            component: RecipeListComponent
           },
           {
             path: 'recipe-save',
