@@ -1,96 +1,102 @@
-<section style="margin-top: 75px;">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    ADD NEW
-  </button>
+<div class="modal-dialog modal-lg">
+    <form id="recipe-add-form" (ngSubmit)="addRecipe(recipe)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">New Recipe</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="bd-example-snippet bd-code-snippet">
+                    <div class="bd-example">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="title" [(ngModel)]="recipe.title" name="title" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="rating" class="form-label">Rating</label>
+                                <input type="text" class="form-control" id="rating" name="rating">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="preparation_time" class="form-label">Preparation Time</label>
+                                <input type="text" class="form-control" id="preparation_time" [(ngModel)]="recipe.preparation_time" name="preparation_time">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea type="text" class="form-control" id="description" [(ngModel)]="recipe.description" name="description"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="image_url" class="form-label">Image</label>
+                                <textarea type="text" class="form-control" id="image_url" [(ngModel)]="recipe.image_url" name="image_url"> </textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="approved" [(ngModel)]="recipe.approved" required name="approved">
+                                    <label class="form-check-label" for="approved"> Is approved </label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row">
+                            <div class="col-md-11">
+                                <h4><b>Ingredients</b></h4>
+                            </div>
+                            <div class="col-md-1">
+                                <i class="fa fa-plus-square fa-2xl" aria-hidden="true" (click)="addIngredient()"></i></div>
+                        </div>
 
-    <!-- Modal -->
-    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="bd-example-snippet bd-code-snippet">
-                        <div class="bd-example">
-                            <form class="row g-3">
-                                <div class="col-md-4">
-                                    <label for="validationServer01" class="form-label">First name</label>
-                                    <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="validationServer02" class="form-label">Last name</label>
-                                    <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="validationServerUsername" class="form-label">Username</label>
-                                    <div class="input-group has-validation">
-                                        <span class="input-group-text" id="inputGroupPrepend3">@</span>
-                                        <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3" required>
-                                        <div class="invalid-feedback">
-                                            Please choose a username.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="validationServer03" class="form-label">City</label>
-                                    <input type="text" class="form-control is-invalid" id="validationServer03" required>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid city.
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="validationServer04" class="form-label">State</label>
-                                    <select class="form-select is-invalid" id="validationServer04" required>
-                        <option selected disabled value="">Choose...</option>
-                        <option>...</option>
-                      </select>
-                                    <div class="invalid-feedback">
-                                        Please select a valid state.
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="validationServer05" class="form-label">Zip</label>
-                                    <input type="text" class="form-control is-invalid" id="validationServer05" required>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid zip.
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
-                                        <label class="form-check-label" for="invalidCheck3">
-                          Agree to terms and conditions
-                        </label>
-                                        <div class="invalid-feedback">
-                                            You must agree before submitting.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary" type="submit">Submit form</button>
-                                </div>
-                            </form>
+                        <div class=" row" *ngFor="let ingredient of recipe.ingredients; index as i;">
+                            <div class="col-md-6 ">
+                                <label for="ingredient_name " class="form-label ">Name</label>
+                                <input type="text " class="form-control " id="ingredient_name " [(ngModel)]="ingredient.ingredient_name " name="ingredient_name ">
+                            </div>
+                            <div class="col-md-6 ">
+                                <label for="quantity " class="form-label ">Quantity</label>
+                                <input type="text " class="form-control " id="quantity " [(ngModel)]="ingredient.quantity " name="quantity ">
+                            </div>
+                        </div>
+                        <hr/>
+                        <h4><b>Nutritions</b></h4>
+                        <div class="row ">
+                            <div class="col-md-4 ">
+                                <label for="calories " class="form-label ">Calories</label>
+                                <input type="text " class="form-control " id="calories " [(ngModel)]="recipe.nutritions.calories " name="calories ">
+                            </div>
+                            <div class="col-md-4 ">
+                                <label for="fat " class="form-label ">Fat</label>
+                                <input type="text " class="form-control " id="fat " [(ngModel)]="recipe.nutritions.fat " name="fat ">
+                            </div>
+                            <div class="col-md-4 ">
+                                <label for="carbs " class="form-label ">Carbs</label>
+                                <input type="text " class="form-control " id="carbs " [(ngModel)]="recipe.nutritions.carbs " name="carbs ">
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-4 ">
+                                <label for="protein " class="form-label "> Protein</label>
+                                <input type="text " class="form-control " id="protein " [(ngModel)]="recipe.nutritions.protein " name="protein ">
+                            </div>
+                            <div class="col-md-4 ">
+                                <label for="cholesterol " class="form-label ">Cholesterol</label>
+                                <input type="text " class="form-control " id="cholesterol " [(ngModel)]="recipe.nutritions.cholesterol " name="cholesterol ">
+                            </div>
+                            <div class="col-md-4 ">
+                                <label for="sodium " class="form-label ">Sodium</label>
+                                <input type="text " class="form-control " id="sodium " [(ngModel)]="recipe.nutritions.sodium " name="sodium ">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+
                 </div>
             </div>
+            <div class="modal-footer ">
+                <button type="button " class="btn btn-secondary " data-bs-dismiss="modal ">Close</button>
+                <button type="button " class="btn btn-primary ">Save changes</button>
+            </div>
         </div>
-    </div>
-    <div class="container">
-
-
-    </div>
-</section>
+    </form>
+</div>

@@ -26,7 +26,15 @@ export class LoginComponent implements OnInit {
     this.userService.login(user)
     .subscribe({
       next: (v) => {
-        this.router.navigate(['/cust-layout/home']);
+        console.log(v);
+        localStorage.setItem('isLoggedIn', "true");
+        localStorage.setItem('email', user.email);
+        localStorage.setItem('id', v[0]._id);
+        if(v[0].user_role === "admin"){
+          this.router.navigate(['/admin-layout/home']);
+        }else{
+          this.router.navigate(['/cust-layout/home']);
+        }
       },
       // error: (e) => this._snackBar.open(e.error.message, "close", {duration: 2000})
   });

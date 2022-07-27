@@ -22,6 +22,7 @@ import { ShoppingListComponent } from './_components/shopping-list/shopping-list
 import { RecipeSaveComponent } from './_components/admin/recipe-save/recipe-save.component';
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecipeListComponent } from './_components/admin/recipe-list/recipe-list.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LandingPageComponent,
     RegisterComponent,
     ShoppingListComponent,
-    RecipeSaveComponent
+    RecipeSaveComponent,
+    RecipeListComponent
   ],
   imports: [
     BrowserModule,
@@ -83,8 +85,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         component: AdminLayoutComponent,
         children:[
           {
-            path: '',
+            path: 'home',
             component: HomeComponent
+          },
+          {
+            path: 'recipe',
+            component: RecipeListComponent
           },
           {
             path: 'recipe-save',
