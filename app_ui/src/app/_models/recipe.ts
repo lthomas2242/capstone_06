@@ -7,8 +7,8 @@ export class Recipe {
     preparation_time!: string;
     image_url!: string;
     approved!: number;
-    ingredients!: [Ingredients];
-    directions!: [String];
+    ingredients!: Ingredients[] ;
+    directions!: String[] ;
     nutritions!: Nutritions;
 }
 

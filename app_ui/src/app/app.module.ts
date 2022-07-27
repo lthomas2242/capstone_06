@@ -23,6 +23,7 @@ import { RecipeSaveComponent } from './_components/admin/recipe-save/recipe-save
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecipeListComponent } from './_components/admin/recipe-list/recipe-list.component';
+import { RecipeService } from './_services/recipe.service';
 
 
 @NgModule({
@@ -102,7 +103,7 @@ import { RecipeListComponent } from './_components/admin/recipe-list/recipe-list
     ])
 
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/'}, UserService],
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}, UserService,RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

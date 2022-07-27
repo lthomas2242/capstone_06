@@ -19,7 +19,7 @@ var recipesSchema = new mongoose.Schema({
     meal_type: { type: String, required: true },
     description: { type: String },
     rating: { type: Number },
-    preparation_time: { type: Number },
+    preparation_time: { type: String },
     image_url: { type: String },
     approved: { type: Boolean },
     ingredients: [ingredientsSchema],
