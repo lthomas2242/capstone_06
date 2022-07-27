@@ -25,6 +25,7 @@ export class ShoppingListComponent implements OnInit {
   constructor(private ShoppingListService : ShoppingListService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    
     this.ShoppingListService
     .getList()
     .subscribe((list: ShoppingList[]) => {
@@ -52,17 +53,25 @@ export class ShoppingListComponent implements OnInit {
   }
 
   saveList():void { 
-    
+    var userId = "userID";
     //let arr = this.allItems.splice(0, 1).map(d=> d.item);
-    this.data = {
-      _id: '',
-      title: this.title,
-      user_id: "user888",
-      items: this.allItems
-    };
-    //console.log("save", this.data);
-    this.ShoppingListService.createList(this.data);
-    //this.toastr.success('List added !', 'Sucsess!');
+    let isLoggedIn = localStorage.getItem("isLoggedIn");
+  
+    if (isLoggedIn == "true") {
+      let userId = localStorage.getItem("id");
+      this.data = {
+        _id: '',
+        title: this.title,
+        user_id: userId,
+        items: this.allItems
+      };
+      //console.log("save", this.data);
+      this.ShoppingListService.createList(this.data);
+      //this.toastr.success('List added !', 'Sucsess!');
+    } else {
+      this.toastr.error('User is not loggedin !', 'Error!');
+    }
+    
   }
 
 }

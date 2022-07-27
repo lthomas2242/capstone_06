@@ -17,9 +17,8 @@ export class ShoppingListService {
   createList(list: ShoppingList) {
     console.log("service", list);
     return this.http.post<ShoppingList>(this.apiUrl+'/store', list)
-    .subscribe((list : ShoppingList)=>{
-      this.toastr.success('List added !', 'Sucsess!');
-      this.router.navigate(['/cust-layout/shopping-list']);
+    .subscribe((list : ShoppingList)=>{   
+      this.router.navigate(['/cust-layout/home']);
     })
   }
 
