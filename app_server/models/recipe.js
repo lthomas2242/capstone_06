@@ -16,6 +16,7 @@ var nutritionsSchema = new mongoose.Schema({
 
 var recipesSchema = new mongoose.Schema({
     title: { type: String, required: true },
+    meal_type: { type: String, required: true },
     description: { type: String },
     rating: { type: Number },
     preparation_time: { type: Number },

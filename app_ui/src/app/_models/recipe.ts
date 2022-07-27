@@ -1,6 +1,7 @@
 export class Recipe {
     _id!: string;
     title!: string;
+    meal_type!: string;
     description!: string;
     rating!: string;
     preparation_time!: string;
