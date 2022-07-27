@@ -17,10 +17,7 @@ export class ShoppingListComponent implements OnInit {
   public title!: String;
   public item_title: any;
   public item: any;
-  public allItems : [item] = [{
-    _id: '',
-    item_title: '',
-  }];
+  public allItems : item[] = [];
 
   public data =  new ShoppingList;
   list: ShoppingList[] | undefined;
@@ -44,23 +41,28 @@ export class ShoppingListComponent implements OnInit {
 
  
   addList() {
-    this.toastr.success('List added !', 'Sucsess!');
+    //this.toastr.success('List added !', 'Sucsess!');
     let newitem =  new item(); 
     newitem.item_title = this.item_title;
     this.allItems.push(newitem);
-    //this.item_title = '';  
+    this.item_title = '';  
+
+    //console.log("kkk", this.allItems.splice(0, 1));
+    
   }
 
   saveList():void { 
-    console.log("save ");
+    
+    //let arr = this.allItems.splice(0, 1).map(d=> d.item);
     this.data = {
       _id: '',
       title: this.title,
-      user_id: "hhjj888",
+      user_id: "user888",
       items: this.allItems
     };
-
+    //console.log("save", this.data);
     this.ShoppingListService.createList(this.data);
+    //this.toastr.success('List added !', 'Sucsess!');
   }
 
 }

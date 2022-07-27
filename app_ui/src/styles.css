@@ -2613,3 +2613,25 @@ ul.dotted {
         width: 18%;
     }
 }
+
+
+
+.gradient-custom-2 {
+   
+    background: #7e40f6;
+    background: -webkit-linear-gradient(to right, rgb(231, 129, 143), rgba(80, 139, 252, 1));
+    
+    background: linear-gradient(to right, rgb(214, 126, 126), rgb(210, 131, 132));
+    border-radius: 2em;
+}
+    
+.mask-custom {
+    /* background: -webkit-linear-gradient(to right, rgb(231, 129, 143), rgba(80, 139, 252, 1));       
+    background: linear-radient(to right, rgb(214, 126, 126), rgb(210, 131, 132)); */
+    background: #f2b150;
+    border-radius: 2em;
+    backdrop-filter: blur(25px);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+ }
