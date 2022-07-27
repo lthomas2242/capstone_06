@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ShoppingListService } from 'src/app/_services/shopping-list.service';
+import { item, ShoppingList } from 'src/app/_models/shoppingList';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-shopping-list',
@@ -10,38 +14,53 @@ export class ShoppingListComponent implements OnInit {
   // public newTask: any;
   // public items : string[] = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  // public addToList() {
-  //   if (this.newTask == '') {
-  //   }
-  //   else {
-  //       this.items.push(this.newTask);
-  //       this.newTask = '';
-  //   }
-  // }
-
-  // public deleteTask(index : number) {
-  //     this.items.splice(index, 1);
-  // }
-
   public title!: String;
   public item_title: any;
   public item: any;
-  public tasks : any[] = [];
- 
-  addList() {
-    this.tasks.push({item: this.item_title});
-    this.item_title = '';
-    this.title;
-    console.log(this.tasks);
+  public allItems : [item] = [{
+    _id: '',
+    item_title: '',
+  }];
+
+  public data =  new ShoppingList;
+  list: ShoppingList[] | undefined;
+
+  constructor(private ShoppingListService : ShoppingListService, private toastr: ToastrService) { }
+
+  ngOnInit(): void {
+    this.ShoppingListService
+    .getList()
+    .subscribe((list: ShoppingList[]) => {
+      this.list = list.map(list => {
+        return list;
+      })
+    })
   }
 
-  saveList() {
-    console.log(this.tasks);
+  showSuccess() {
+    this.toastr.success('List added !', 'Sucsess!');
+  }
+
+
+ 
+  addList() {
+    this.toastr.success('List added !', 'Sucsess!');
+    let newitem =  new item(); 
+    newitem.item_title = this.item_title;
+    this.allItems.push(newitem);
+    //this.item_title = '';  
+  }
+
+  saveList():void { 
+    console.log("save ");
+    this.data = {
+      _id: '',
+      title: this.title,
+      user_id: "hhjj888",
+      items: this.allItems
+    };
+
+    this.ShoppingListService.createList(this.data);
   }
 
 }
