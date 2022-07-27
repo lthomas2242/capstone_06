@@ -1,9 +1,23 @@
     var mongoose = require('mongoose');
     var ShoppingList = mongoose.model('ShoppingList');
 
+    const getList = function(req, res) {
+        ShoppingList.find().exec(function(err, data) {
+            if(err) {
+                res
+                .status(404)
+                .json(err);
+            return;
+            }
+            res
+            .status(200)
+            .json(data);
+        });   
+    };
 
-    const storeList = function(req, res) {
-        User.create({
+    const store = function(req, res) {
+        console.log("api", req);
+        ShoppingList.create({
             title: req.body.title,
             user_id: req.body.user_id,
             items: req.body.items    
@@ -24,5 +38,5 @@
 
 
     module.exports = {
-        storeList
+        store, getList
     }

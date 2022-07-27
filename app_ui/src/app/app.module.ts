@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {
-  BrowserAnimationsModule,
   NoopAnimationsModule
 } from "@angular/platform-browser/animations";
 import {MaterialModule} from './material.module';
@@ -21,6 +20,8 @@ import { UserService } from './_services/user.service';
 import { RegisterComponent } from './_components/register/register.component';
 import { ShoppingListComponent } from './_components/shopping-list/shopping-list.component';
 import { RecipeSaveComponent } from './_components/admin/recipe-save/recipe-save.component';
+import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecipeListComponent } from './_components/admin/recipe-list/recipe-list.component';
 
 
@@ -46,6 +47,12 @@ import { RecipeListComponent } from './_components/admin/recipe-list/recipe-list
     MaterialModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
+    ToastContainerModule,
     RouterModule.forRoot([
       {
         path: 'landing',
