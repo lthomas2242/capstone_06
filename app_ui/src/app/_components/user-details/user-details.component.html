@@ -1,24 +1,62 @@
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Password</th>
-            <th scope="col">Height</th>
-            <th scope="col">Weight</th>           
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{id}}</td>
-            <td>{{first_name}}</td>
-            <td>{{last_name}}</td>
-            <td>{{email}}</td>
-            <td>{{password}}</td>
-            <td>{{height}}</td>
-            <td>{{weight}}</td>
-        </tr>
-    </tbody>
-</table>
+
+<section >
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-12 mb-6 mb-lg-0" >
+          <div class="card mb-3" style="border-radius: .5rem;">
+            <div class="row g-0">
+              <div class="col-md-4 gradient-custom text-center text-white"
+                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;background-image:url('../../assets/images/apple.png'); ;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body p-4">
+                  <h2>Profile Information</h2>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h3>Id</h3>
+                      <h4>{{id}}</h4>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <h3>Name</h3>
+                        <h4>{{first_name}} {{last_name}}</h4>
+                      </div>
+                    <div class="col-6 mb-3">
+                      <h3>First Name</h3>
+                      <h4>{{first_name}}</h4>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <h3>Last Name</h3>
+                        <h4>{{last_name}}</h4>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <h3>Email</h3>
+                        <h4>{{email}}</h4>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <h3>Password</h3>
+                        <h4>{{password}}</h4>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <h3>Height</h3>
+                        <h4>{{height}}</h4>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <h3>Weight</h3>
+                        <h4>{{weight}}</h4>
+                      </div>
+                  </div>
+                  <button type="button" style="margin-bottom: 20px;height: 30px;font-size: small;background-color: #f26a36;
+                  border: 1px solid #f26a36;color: white;" data-bs-toggle="modal" data-bs-target="#create-list">
+                    Edit Profile
+               </button>
+                  
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
