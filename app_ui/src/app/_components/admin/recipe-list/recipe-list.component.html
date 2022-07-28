@@ -1,41 +1,70 @@
-<div>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-recipe">
-        ADD
-    </button>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Image</th>
-                <th scope="col">Title</th>
-                <th scope="col">Description</th>
-                <th scope="col">Rating</th>
-                <th scope="col">Preparation Time</th>
-                <th scope="col">Status</th>
-                <th scope="col">Ingredients</th>
-                <th scope="col">Directions</th>
-                <th scope="col">Nutritions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="container-xxl">
+    <div class="text-right">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-recipe" (click)="addNewRecipeBtn()">
+            ADD
+        </button>
+    </div>
+    <div style="overflow: auto;">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <!-- <th>Id</th> -->
+                    <th rowspan="2">Image</th>
+                    <th rowspan="2">Title</th>
+                    <th rowspan="2">Description</th>
+                    <th rowspan="2">Rating</th>
+                    <th rowspan="2">Preparation Time</th>
+                    <th rowspan="2">Status</th>
+                    <th colspan="6">Nutritions</th>
+                    <th rowspan="2">Ingredients</th>
+                    <th rowspan="2">Directions</th>
+                    <th rowspan="2" colspan="2">Actions</th>
+                </tr>
+                <tr>
+                    <th scope="col">Calories</th>
+                    <th scope="col">Fat</th>
+                    <th scope="col">Carbs</th>
+                    <th scope="col">Protein</th>
+                    <th scope="col">Cholesterol</th>
+                    <th scope="col">Sodium</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let recipe of recipes; index as i;">
+                    <!-- <td>{{recipe._id}}</td> -->
+                    <td>
+                        <img src={{recipe.image_url}} class="img-fluid img-thumbnail" alt="recipe">
+                    </td>
+                    <td>{{recipe.title}}</td>
+                    <td>{{recipe.description}}</td>
+                    <td>{{recipe.rating}}</td>
+                    <td>{{recipe.preparation_time}}</td>
+                    <td>{{recipe.approved}}</td>
+                    <td>{{recipe.nutritions.calories}}</td>
+                    <td>{{recipe.nutritions.fat}}</td>
+                    <td>{{recipe.nutritions.carbs}}</td>
+                    <td>{{recipe.nutritions.protein}}</td>
+                    <td>{{recipe.nutritions.cholesterol}}</td>
+                    <td>{{recipe.nutritions.sodium}}</td>
+                    <td>
+                        <li *ngFor="let ingredient of recipe.ingredients;">
+                            <span>{{ingredient.ingredient_name}}</span>
+                            <span>&nbsp;({{ingredient.quantity}})</span>
+                        </li>
+                    </td>
+                    <td>
+                        <li *ngFor="let direction of recipe.directions;">
+                            <span>{{direction}}</span>
+                        </li>
+                    </td>
+                    <td><button (click)="editRecipeBtn(recipe._id)"><i class="fa fa-pencil" aria-hidden="true"></i></button></td>
+                    <td><button (click)="deleteRecipe(recipe._id)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
     <div class="modal fade bd-example-modal-lg" id="add-recipe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <app-recipe-save></app-recipe-save>
+        <app-recipe-save [recipe_id]='selected_recipe_id' (newItemSavedEvent)="refreshList($event)" (closeModalEvent)="closeModal($event)"></app-recipe-save>
     </div>
 </div>

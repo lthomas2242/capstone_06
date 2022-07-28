@@ -26,10 +26,14 @@ export class LoginComponent implements OnInit {
     this.userService.login(user)
     .subscribe({
       next: (v) => {
-        console.log(v);
         localStorage.setItem('isLoggedIn', "true");
         localStorage.setItem('email', user.email);
         localStorage.setItem('id', v[0]._id);
+        localStorage.setItem('first_name', v[0].first_name);
+        localStorage.setItem('last_name', v[0].last_name);
+        localStorage.setItem('password', v[0].password);
+        localStorage.setItem('height', v[0].height);
+        localStorage.setItem('weight', v[0].weight);
         if(v[0].user_role === "admin"){
           this.router.navigate(['/admin-layout/home']);
         }else{

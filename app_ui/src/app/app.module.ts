@@ -24,6 +24,7 @@ import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecipeListComponent } from './_components/admin/recipe-list/recipe-list.component';
 import { RecipeService } from './_services/recipe.service';
+import { UserDetailsComponent } from './_components/user-details/user-details.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { RecipeService } from './_services/recipe.service';
     RegisterComponent,
     ShoppingListComponent,
     RecipeSaveComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +76,10 @@ import { RecipeService } from './_services/recipe.service';
           {
             path: 'home',
             component: HomeComponent
+          },
+          {
+            path: 'user-details',
+            component: UserDetailsComponent
           },
           {
             path: 'shopping-list',

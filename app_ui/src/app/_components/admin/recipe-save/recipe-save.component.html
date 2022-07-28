@@ -1,5 +1,5 @@
 <div class="modal-dialog modal-lg">
-    <form id="recipe-add-form" (ngSubmit)="addRecipe(recipe)">
+    <form id="recipe-add-form">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title" id="exampleModalLabel">New Recipe</h3>
@@ -15,7 +15,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="rating" class="form-label">Rating</label>
-                                <input type="text" class="form-control" id="rating" name="rating">
+                                <input type="text" class="form-control" id="rating" name="rating" [(ngModel)]="recipe.rating">
                             </div>
                         </div>
                         <div class="row">
@@ -116,8 +116,8 @@
                 </div>
             </div>
             <div class="modal-footer ">
-                <button type="button " class="btn btn-secondary " data-bs-dismiss="modal ">Close</button>
-                <button type="button " class="btn btn-primary ">Save changes</button>
+                <button type="button " class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
+                <button type="button " class="btn btn-primary" (click)="saveRecipe(recipe)">Save changes</button>
             </div>
         </div>
     </form>
