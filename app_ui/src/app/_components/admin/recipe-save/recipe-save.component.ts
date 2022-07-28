@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input, OnInit,Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Ingredients, Nutritions, Recipe } from 'src/app/_models/recipe';
 import { RecipeService } from 'src/app/_services/recipe.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-recipe-save',
@@ -10,29 +11,81 @@ import { RecipeService } from 'src/app/_services/recipe.service';
 })
 export class RecipeSaveComponent implements OnInit {
 
+  @Input() recipe_id: any;
+  @Output() newItemSavedEvent = new EventEmitter<boolean>();
+  @Output() closeModalEvent = new EventEmitter<boolean>();
+
   public recipe = new Recipe();
 
   constructor(private recipeService : RecipeService,
-    public router: Router) { }
+    public router: Router,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.recipe.ingredients =  [];
     this.recipe.nutritions = new Nutritions();
     this.recipe.directions=[];
   }
-  addRecipe(newRecipe : Recipe){
-    console.log(newRecipe);
-    this.recipeService.createRecipe(newRecipe)
-    .subscribe({
-      next: (v) => {
-        console.log(v);
-      },
-  });
+  ngOnChanges():void{
+    if(this.recipe_id != 0){
+      this.getRecipeById(this.recipe_id)
+    }
+  }
+
+  getRecipeById(recipeId : any){
+      this.recipeService.getRecipeById(recipeId)
+      .subscribe({
+        next: (v) => {
+          this.recipe = v;
+        },
+    });
+  }
+
+  saveRecipe(recipeToSave : Recipe){
+    if(recipeToSave._id && recipeToSave._id!=undefined && recipeToSave._id !="0" && this.recipe_id != 0){
+      this.recipeService.updateRecipe(recipeToSave)
+        .subscribe({
+          next: (v) => {
+            this.toastr.success("Recipe Updated Successfully", 'Success', {
+              timeOut: 3000,
+              positionClass:'toast-bottom-right' 
+            });
+            this.newItemSavedEvent.emit(true);
+          },
+          error: (e) => {
+            this.toastr.error(e.error.message, 'Error', {
+              timeOut: 3000,
+              positionClass:'toast-bottom-right' 
+            });
+          }
+      });
+    }else{
+        this.recipeService.createRecipe(recipeToSave)
+        .subscribe({
+          next: (v) => {
+            this.toastr.success("Recipe Added Successfully", 'Success', {
+              timeOut: 3000,
+              positionClass:'toast-bottom-right' 
+            });
+            this.newItemSavedEvent.emit(true);
+          },
+          error: (e) => {
+            this.toastr.error(e.error.message, 'Error', {
+              timeOut: 3000,
+              positionClass:'toast-bottom-right' 
+            });
+          }
+      });
+    }
   }
   addIngredient(){
     this.recipe.ingredients.push(new Ingredients());
   }
   addDirection(){
     this.recipe.directions.push(new String());
+  }
+
+  closeModal(){
+    this.closeModalEvent.emit(true);
   }
 }

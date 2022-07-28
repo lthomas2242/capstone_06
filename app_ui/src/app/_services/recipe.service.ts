@@ -15,7 +15,23 @@ export class RecipeService {
   constructor(private http: HttpClient, private router: Router) { }
 
 
+  getAllRecipes() : Observable<any>{
+    return this.http.get<Recipe>(this.recipeUrl);
+  }
+
+  getRecipeById(recipe_id : any)  : Observable<any> {
+    return this.http.get<Recipe>(this.recipeUrl+"/"+recipe_id);
+  }
+
   createRecipe(recipe: Recipe) : Observable<any>{
     return this.http.post<Recipe>(this.recipeUrl, recipe);
+  }
+
+  updateRecipe(recipe: Recipe) : Observable<any>{
+    return this.http.put<Recipe>(this.recipeUrl+"/"+recipe._id, recipe);
+  }
+
+  deleteRecipe(recipe_id: any) : Observable<any>{
+    return this.http.delete<Recipe>(this.recipeUrl+"/"+recipe_id);
   }
 }

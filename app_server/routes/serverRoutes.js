@@ -15,7 +15,7 @@ router.get('/list', shoppingList.getList);
 router.get('/recipe', recipeController.getAllRecipe);
 router.get('/recipe/:id', recipeController.getRecipeById);
 router.post('/recipe', recipeController.createRecipe);
-router.put('/recipe', recipeController.updateRecipe);
+router.put('/recipe/:id', recipeController.updateRecipe);
 router.delete('/recipe/:id', recipeController.deleteRecipe);
 router.post('/recipe/filters', recipeController.getRecipesByFilters);
 router.get('/recipe/ids', recipeController.getRecipeIds)
