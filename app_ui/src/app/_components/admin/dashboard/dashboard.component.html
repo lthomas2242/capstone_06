@@ -1,1 +1,117 @@
-<p>dashboard works!</p>
+<div class="container-fluid mb-5">
+    <div class="row">
+        <!-- <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-5 sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/admin-layout/recipe">
+                            <span data-feather="file" class="align-text-bottom"></span> Recipes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/admin-layout/user-list">
+                            <span data-feather="users" class="align-text-bottom"></span> Users
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav> -->
+        <main class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
+            <div class="row row-cols-1 row-cols-md-3 mt-5 mb-3 text-center">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Recipes</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class=" mb-4 card-title pricing-card-title">20<small class="text-muted fw-light"> recipes</small></h1>
+
+                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Add more</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Users</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class=" mb-4 card-title pricing-card-title">20<small class="text-muted fw-light"> users</small></h1>
+
+                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Check users</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">New Users</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class=" mb-4 card-title pricing-card-title">34<small class="text-muted fw-light"> users</small></h1>
+                            <!-- <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+                            <script>
+                                var xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+                                var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+                                new Chart("myChart", {
+                                    type: "line",
+                                    data: {
+                                        labels: xValues,
+                                        datasets: [{
+                                            fill: false,
+                                            lineTension: 0,
+                                            backgroundColor: "rgba(0,0,255,1.0)",
+                                            borderColor: "rgba(0,0,255,0.1)",
+                                            data: yValues
+                                        }]
+                                    },
+                                    options: {
+                                        legend: {
+                                            display: false
+                                        },
+                                        scales: {
+                                            yAxes: [{
+                                                ticks: {
+                                                    min: 6,
+                                                    max: 16
+                                                }
+                                            }],
+                                        }
+                                    }
+                                });
+                            </script> -->
+                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Add more</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <h2 class="display-6 text-center mt-5 mb-5">Users</h2>
+
+            <div class="table-responsive">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th style="width: 22%;">Name</th>
+                            <th style="width: 22%;">Recipes</th>
+                            <th style="width: 22%;">Users</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>26 recipes</td>
+                            <td>22 users</td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>

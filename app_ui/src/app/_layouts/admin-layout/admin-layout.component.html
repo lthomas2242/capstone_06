@@ -1,10 +1,8 @@
 <!---header starts-->
 <header class="header-fixed" style="background: #ad3700;">
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-md">
-            <a class="navbar-brand" href="#">
-                <h5 class="hedcls" style="color: #fff; font-size: 35px;">RecipeforYou.....!</h5>
-            </a>
+        <nav class="navbar navbar-expand-md" style="padding: 2px 0">
+            <a style="color: black;" routerLink="/admin-layout/dashboard"><i class="fa fa-cutlery fa-flip"style='font-size:24px'></i><img height="100px" width="100px" src="../../assets/images/logo-recipe.png" class="img-fluic" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-target="#collapsibleNavbar">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path d="M0 0h24v24H0z" fill="none"></path>
@@ -13,43 +11,11 @@
             </button>
             <div class="navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/admin-layout/dashboard" style="font-size: 20px;">Recipes</a>
+                    <li class="nav-item" style="padding: 0 15px;">
+                        <a class="nav-link" routerLink="/admin-layout/recipe" style="font-size: 20px;">Recipes</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html" style="font-size: 20px;">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="font-size: 20px;">BMI</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="font-size: 20px;">Shopping List</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html" style="font-size: 20px;">Contact Us</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#" style="font-size: 20px;">Recipes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="font-size: 20px;">BMI</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="font-size: 20px;">Shopping List</a>
-                    </li> -->
-
-                    <li>
-                        <button type="button" class="btn btn-nothing">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16">
-                                <g fill="none" fill-rule="evenodd" stroke="#868996" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.6" transform="translate(1 1)">
-                                    <path
-                                        d="M13 14v-1.556c0-1.718-1.455-3.11-3.25-3.11h-6.5c-1.795 0-3.25 1.392-3.25 3.11V14">
-                                    </path>
-                                    <ellipse cx="6.5" cy="3.111" rx="3.25" ry="3.111"></ellipse>
-                                </g>
-                            </svg>
-                        </button>
+                    <li class="nav-item" style="padding: 0 15px;">
+                        <a class="nav-link" routerLink="/admin-layout/user-list" style="font-size: 20px;">Users</a>
                     </li>
                 </ul>
             </div>
@@ -64,39 +30,8 @@
                         </svg>
                     </button>
                 </div>
-                <div class="resp-logo">
-                    <a aria-current="page" class="active" href="/">
-                        <h5 class="hedcls" style="color: #fff; font-size: 35px;">RecipeforYou.....!</h5>
-                    </a>
-                </div>
-                <ul>
-                    <li class="resp-li">
-                        <a aria-current="page" class="active" href="/">Home</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#" style="font-size: 20px;">Recipes</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#" style="font-size: 20px;">BMI</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#" style="font-size: 20px;">Shopping List</a>
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-nothing">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16">
-                                <g fill="none" fill-rule="evenodd" stroke="#868996" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.6" transform="translate(1 1)">
-                                    <path
-                                        d="M13 14v-1.556c0-1.718-1.455-3.11-3.25-3.11h-6.5c-1.795 0-3.25 1.392-3.25 3.11V14">
-                                    </path>
-                                    <ellipse cx="6.5" cy="3.111" rx="3.25" ry="3.111"></ellipse>
-                                </g>
-                            </svg>
-                            Signup / Login
-                        </button>
-                    </li>
-                </ul>
+                <a style="color: black;" routerLink="/admin-layout/home"><i class="fa fa-cutlery fa-flip"  style='font-size:24px'></i><img height="100px" width="100px" src="../../assets/images/logo-recipe.png" class="img-fluic" alt="logo" /></a>
+
                 <div class="resp-logo">
                     <h5 class="text-uppercase text-grey">Contact us:</h5>
                     <p><a class="text-primary" href="mailto:info@recipes.com">info@recipes.com</a></p>
@@ -111,26 +46,15 @@
     <router-outlet></router-outlet>
 </div>
 <!---footer starts-->
-<div class="footerbox">
+<!-- <div class="footerbox">
     <footer class="container mb-3">
         <div class="row mt-5">
             <div class="col-md-8 col-xs-12 mb-3">
                 <h5>RecipeforYou.....!</h5>
-                <!-- <ul class="nav  pb-3">
-                    <li class="nav-item"><a class="nav-link px-2 text-muted">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-                </ul> -->
                 <div class="d-flex flex-column flex-sm-row justify-content-between mt-2 mb-2">
                     <p>&copy; 2022 Company, Inc. All rights reserved.</p>
-
                 </div>
             </div>
-
-
-
             <div class="col-md-4 col-xs-12 mb-3">
                 <form>
                     <h5>Subscribe to our newsletter</h5>
@@ -142,8 +66,5 @@
                 </form>
             </div>
         </div>
-
-
     </footer>
-</div>
-<!---footer ends-->
+</div> -->

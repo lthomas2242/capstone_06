@@ -10,3 +10,9 @@ td button {
     border: none;
     background: none;
 }
+
+.btn {
+    color: #fff !important;
+    background-color: #ad3700 !important;
+    border-color: #ad3700 !important;
+}

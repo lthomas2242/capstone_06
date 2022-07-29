@@ -12,8 +12,8 @@
                             <div class="col-md-6">
                                 <label for="title" class="form-label">Title</label>
                                 <input type="text" class="form-control" id="title" #title="ngModel" [(ngModel)]="recipe.title" name="title" required>
-                                <div *ngIf="title.invalid || title.touched" class="alert">
-                                    <div *ngIf="title.errors?.['required']">
+                                <div *ngIf="title.invalid && title.touched" class="alert">
+                                    <div *ngIf="title.errors?.['required']" style="color: #ad3700;">
                                         Title is required.
                                     </div>
                                 </div>
@@ -26,7 +26,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="meal_type" class="form-label">Meal Type</label>
-                                <input type="text" class="form-control" id="meal_type" [(ngModel)]="recipe.meal_type" name="preparation_time">
+                                <input type="text" class="form-control" id="meal_type" #meal_type="ngModel" [(ngModel)]="recipe.meal_type" name="preparation_time">
+                                <div *ngIf="meal_type.invalid && meal_type.touched" class="alert">
+                                    <div *ngIf="meal_type.errors?.['required']" style="color: #ad3700;">
+                                        Meal Type is required.
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <label for="preparation_time" class="form-label">Preparation Time</label>
@@ -121,7 +126,7 @@
                 </div>
             </div>
             <div class="modal-footer ">
-                <button type="button " class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
+                <button type="button " class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button " class="btn btn-primary" (click)="saveRecipe(recipe)">Save changes</button>
             </div>
         </div>
