@@ -26,14 +26,7 @@ export class ShoppingListComponent implements OnInit {
   constructor(private ShoppingListService : ShoppingListService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    
-    this.ShoppingListService
-    .getList()
-    .subscribe((list: ShoppingList[]) => {
-      this.list = list.map(list => {
-        return list;
-      })
-    })
+    this.getShoppingList();   
 
     this.editModal = new window.bootstrap.Modal(
       document.getElementById('edit-list')
@@ -45,7 +38,16 @@ export class ShoppingListComponent implements OnInit {
   }
 
 
- 
+  getShoppingList(){
+    this.ShoppingListService
+    .getList()
+    .subscribe((list: ShoppingList[]) => {
+      this.list = list.map(list => {
+        return list;
+      })
+    })
+  }
+
   addList() {
     let newitem =  new item(); 
     newitem.item_title = this.item_title;
@@ -54,8 +56,14 @@ export class ShoppingListComponent implements OnInit {
   }
 
   deleteList(id: String) {
-    this.toastr.success('Deleted successfully !', 'Sucsess!');
-    this.ShoppingListService.deleteList(id);
+   
+    this.ShoppingListService.deleteList(id)
+    .subscribe({
+      next: (v) => {
+        this.getShoppingList();
+        this.toastr.success('Deleted successfully !', 'Sucsess!');
+      },
+  });
   }
 
   saveList():void { 
@@ -71,7 +79,12 @@ export class ShoppingListComponent implements OnInit {
         items: this.allItems
       };
 
-      this.ShoppingListService.createList(this.data);
+      this.ShoppingListService.createList(this.data)
+        .subscribe({
+          next: (v) => {
+            this.getShoppingList();
+          },
+      });
     } else {
       this.toastr.error('User is not loggedin !', 'Error!');
     }

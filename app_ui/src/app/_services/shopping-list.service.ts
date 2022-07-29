@@ -14,12 +14,8 @@ export class ShoppingListService {
 
   constructor(private http: HttpClient, private router: Router,  private toastr: ToastrService) { }
 
-  createList(list: ShoppingList) {
-    console.log("service", list);
-    return this.http.post<ShoppingList>(this.apiUrl+'/store', list)
-    .subscribe((list : ShoppingList)=>{   
-      this.router.navigate(['/cust-layout/home']);
-    })
+  createList(list: ShoppingList) : Observable<any> {
+    return this.http.post<ShoppingList>(this.apiUrl+'/store', list);
   }
 
   getList() {
@@ -27,9 +23,6 @@ export class ShoppingListService {
   }
 
   deleteList(id: String) {
-    this.http.delete(this.apiUrl+'/delete/'+id)
-        .subscribe(() => {
-          this.router.navigate(['/cust-layout/home']);
-        });
+    return this.http.delete(this.apiUrl+'/delete/'+id);
   }
 }
