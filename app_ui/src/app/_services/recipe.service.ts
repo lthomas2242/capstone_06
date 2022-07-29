@@ -34,4 +34,8 @@ export class RecipeService {
   deleteRecipe(recipe_id: any) : Observable<any>{
     return this.http.delete<Recipe>(this.recipeUrl+"/"+recipe_id);
   }
+
+  getAllRecipeIds() : Observable<any>{
+    return this.http.get<Recipe>(this.recipeUrl+"/ids");
+  }
 }

@@ -8,9 +8,8 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <!-- <th>Id</th> -->
-                    <th rowspan="2">Image</th>
-                    <th rowspan="2">Title</th>
+                    <th rowspan="2">Id</th>
+                    <th rowspan="4">Title</th>
                     <th rowspan="2">Description</th>
                     <th rowspan="2">Rating</th>
                     <th rowspan="2">Preparation Time</th>
@@ -31,25 +30,27 @@
             </thead>
             <tbody>
                 <tr *ngFor="let recipe of recipes; index as i;">
-                    <!-- <td>{{recipe._id}}</td> -->
                     <td>
-                        <img src={{recipe.image_url}} class="img-fluid img-thumbnail" alt="recipe">
+                        <img src={{recipe?.image_url}} class="img-fluid img-thumbnail" alt="recipe">
                     </td>
-                    <td>{{recipe.title}}</td>
-                    <td>{{recipe.description}}</td>
-                    <td>{{recipe.rating}}</td>
-                    <td>{{recipe.preparation_time}}</td>
-                    <td>{{recipe.approved}}</td>
-                    <td>{{recipe.nutritions.calories}}</td>
-                    <td>{{recipe.nutritions.fat}}</td>
-                    <td>{{recipe.nutritions.carbs}}</td>
-                    <td>{{recipe.nutritions.protein}}</td>
-                    <td>{{recipe.nutritions.cholesterol}}</td>
-                    <td>{{recipe.nutritions.sodium}}</td>
+                    <td>{{recipe?.title}}</td>
+                    <td>{{recipe?.description}}</td>
+                    <td>{{recipe?.rating}}</td>
+                    <td>{{recipe?.preparation_time}}</td>
+                    <td>
+                        <span *ngIf="recipe.approved; else elseBlock"> Approved </span>
+                        <ng-template #elseBlock>Pending</ng-template>
+                    </td>
+                    <td>{{recipe?.nutritions?.calories}}</td>
+                    <td>{{recipe?.nutritions?.fat}}</td>
+                    <td>{{recipe?.nutritions?.carbs}}</td>
+                    <td>{{recipe?.nutritions?.protein}}</td>
+                    <td>{{recipe?.nutritions?.cholesterol}}</td>
+                    <td>{{recipe?.nutritions?.sodium}}</td>
                     <td>
                         <li *ngFor="let ingredient of recipe.ingredients;">
-                            <span>{{ingredient.ingredient_name}}</span>
-                            <span>&nbsp;({{ingredient.quantity}})</span>
+                            <span>{{ingredient?.ingredient_name}}</span>
+                            <span>&nbsp;({{ingredient?.quantity}})</span>
                         </li>
                     </td>
                     <td>

@@ -140,13 +140,20 @@ const getRecipesByFilters = function(req, res) {
 
 /* Returns randon Recipe*/
 const getRecipeIds = function(req, res) {
-    Recipe.find({}).select('_id').exec(function(err, data) {
+    Recipe.find({}, { projection: { _id: 1 } }).toArray((err, data) => {
         if (err) {
             res.status(404).json(err);
             return;
         }
         res.status(200).json(data);
     });
+    // Recipe.find({}).project('_id').exec(function(err, data) {
+    //     if (err) {
+    //         res.status(404).json(err);
+    //         return;
+    //     }
+    //     res.status(200).json(data);
+    // });
 };
 
 

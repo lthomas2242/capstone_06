@@ -29,6 +29,8 @@ export class RecipeSaveComponent implements OnInit {
   ngOnChanges():void{
     if(this.recipe_id != 0){
       this.getRecipeById(this.recipe_id)
+    }else{
+      this.recipe = new Recipe();
     }
   }
 
@@ -37,6 +39,7 @@ export class RecipeSaveComponent implements OnInit {
       .subscribe({
         next: (v) => {
           this.recipe = v;
+          console.log(this.recipe)
         },
     });
   }
@@ -79,7 +82,7 @@ export class RecipeSaveComponent implements OnInit {
     }
   }
   addIngredient(){
-    this.recipe.ingredients.push(new Ingredients());
+    this.recipe.ingredients.push(new Ingredients);
   }
   addDirection(){
     this.recipe.directions.push(new String());

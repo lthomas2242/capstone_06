@@ -11,7 +11,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="title" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="title" [(ngModel)]="recipe.title" name="title" required>
+                                <input type="text" class="form-control" id="title" #title="ngModel" [(ngModel)]="recipe.title" name="title" required>
+                                <div *ngIf="title.invalid || title.touched" class="alert">
+                                    <div *ngIf="title.errors?.['required']">
+                                        Title is required.
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <label for="rating" class="form-label">Rating</label>
@@ -55,14 +60,14 @@
                                 <i class="fa fa-plus-square fa-2xl" aria-hidden="true" (click)="addIngredient()"></i></div>
                         </div>
 
-                        <div class=" row" *ngFor="let ingredient of recipe.ingredients; index as i;">
+                        <div class="row" *ngFor="let ingredient of recipe.ingredients; index as i;">
                             <div class="col-md-6 ">
                                 <label for="ingredient_name " class="form-label ">Name</label>
-                                <input type="text " class="form-control " id="ingredient_name " [(ngModel)]="ingredient.ingredient_name " name="ingredient_name ">
+                                <input type="text " class="form-control " id="ingredient_name " [(ngModel)]="ingredient.ingredient_name" name="ingredient_name[{{i}}]">
                             </div>
                             <div class="col-md-6 ">
                                 <label for="quantity " class="form-label ">Quantity</label>
-                                <input type="text " class="form-control " id="quantity " [(ngModel)]="ingredient.quantity " name="quantity ">
+                                <input type="text " class="form-control " id="quantity " [(ngModel)]="ingredient.quantity" name="quantity[{{i}}]">
                             </div>
                         </div>
                         <hr/>
@@ -70,29 +75,29 @@
                         <div class="row ">
                             <div class="col-md-4 ">
                                 <label for="calories " class="form-label ">Calories</label>
-                                <input type="text " class="form-control " id="calories " [(ngModel)]="recipe.nutritions.calories " name="calories ">
+                                <input type="text " class="form-control " id="calories " [ngModel]="recipe?.nutritions?.calories" (ngModelChange)="recipe.nutritions.calories=$event" name="calories ">
                             </div>
                             <div class="col-md-4 ">
                                 <label for="fat " class="form-label ">Fat</label>
-                                <input type="text " class="form-control " id="fat " [(ngModel)]="recipe.nutritions.fat " name="fat ">
+                                <input type="text " class="form-control " id="fat " [ngModel]="recipe?.nutritions?.fat" (ngModelChange)="recipe.nutritions.fat=$event" name="fat ">
                             </div>
                             <div class="col-md-4 ">
                                 <label for="carbs " class="form-label ">Carbs</label>
-                                <input type="text " class="form-control " id="carbs " [(ngModel)]="recipe.nutritions.carbs " name="carbs ">
+                                <input type="text " class="form-control " id="carbs " [ngModel]="recipe?.nutritions?.carbs" (ngModelChange)="recipe.nutritions.carbs=$event" name="carbs ">
                             </div>
                         </div>
                         <div class="row ">
                             <div class="col-md-4 ">
                                 <label for="protein " class="form-label "> Protein</label>
-                                <input type="text " class="form-control " id="protein " [(ngModel)]="recipe.nutritions.protein " name="protein ">
+                                <input type="text " class="form-control " id="protein " [ngModel]="recipe?.nutritions?.protein" (ngModelChange)="recipe.nutritions.protein=$event" name="protein ">
                             </div>
                             <div class="col-md-4 ">
                                 <label for="cholesterol " class="form-label ">Cholesterol</label>
-                                <input type="text " class="form-control " id="cholesterol " [(ngModel)]="recipe.nutritions.cholesterol " name="cholesterol ">
+                                <input type="text " class="form-control " id="cholesterol " [ngModel]="recipe?.nutritions?.cholesterol" (ngModelChange)="recipe.nutritions.cholesterol=$event" name="cholesterol ">
                             </div>
                             <div class="col-md-4 ">
                                 <label for="sodium " class="form-label ">Sodium</label>
-                                <input type="text " class="form-control " id="sodium " [(ngModel)]="recipe.nutritions.sodium " name="sodium ">
+                                <input type="text " class="form-control " id="sodium " [ngModel]="recipe?.nutritions?.sodium" (ngModelChange)="recipe.nutritions.sodium=$event" name="sodium ">
                             </div>
                         </div>
 
@@ -105,10 +110,10 @@
                                 <i class="fa fa-plus-square fa-2xl" aria-hidden="true" (click)="addDirection()"></i></div>
                         </div>
 
-                        <div class=" row" *ngFor="let direction of recipe.directions; index as i;">
+                        <div class="row" *ngFor="let direction of recipe.directions; index as i;">
                             <div class="col-md-12">
-                                <label for="step " class="form-label ">Step</label>
-                                <input type="text " class="form-control " id="step " [(ngModel)]="recipe.directions[i]" name="step ">
+                                <label for="step" class="form-label">Step</label>
+                                <input type="text" class="form-control" id="step" [(ngModel)]="recipe.directions[i]" name="step[{{i}}]">
                             </div>
                         </div>
                     </div>
