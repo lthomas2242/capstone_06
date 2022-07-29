@@ -1,329 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--Banner section starts-->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes</title>
-    <!--Bootstrap css links starts-->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <!--Bootstap css links ends-->
+<section>
+    <div class="banner-container">
+        <div id="banner-slider" class="carousel slide" data-ride="carousel">
 
-    <link rel="stylesheet" href="css/style.css">
-	<style>
-	.hedcls{
-	   color: #fff;
-       font-size: 15px;
-	}
-	</style>
-</head>
-
-<body>
-    <div class="wrapper" id="recipes-wrapper">
-        <header class="header-fixed" style="background: #ad3700;">
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-md">
-                <a class="navbar-brand" href="#">
-                    <h5 class="hedcls" style="color: #fff; font-size: 35px;">RecipeforYou.....!</h5>
-                </a>
-                <button class="navbar-toggler" type="button" data-target="#collapsibleNavbar">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
-                    </svg> Menu
-                </button>
-                <div class="navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="font-size: 20px;">Recipes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html" style="font-size: 20px;">About us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="font-size: 20px;">BMI</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="font-size: 20px;">Shopping List</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html" style="font-size: 20px;">Contact Us</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#" style="font-size: 20px;">Recipes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="font-size: 20px;">BMI</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="font-size: 20px;">Shopping List</a>
-                        </li> -->
-
-                        <li>
-                            <button type="button" class="btn btn-nothing">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16">
-                                    <g fill="none" fill-rule="evenodd" stroke="#868996" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="1.6" transform="translate(1 1)">
-                                        <path
-                                            d="M13 14v-1.556c0-1.718-1.455-3.11-3.25-3.11h-6.5c-1.795 0-3.25 1.392-3.25 3.11V14">
-                                        </path>
-                                        <ellipse cx="6.5" cy="3.111" rx="3.25" ry="3.111"></ellipse>
-                                    </g>
-                                </svg> 
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="resp-menu">
-                    <div class="resp-close">
-                        <button type="button" class="btn btn-nothing">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path
-                                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-                                </path>
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="resp-logo">
-                        <a aria-current="page" class="active" href="/">
-                            <h5 class="hedcls" style="color: #fff; font-size: 35px;">RecipeforYou.....!</h5>
-                        </a>
-                    </div>
-                    <ul>
-                        <li class="resp-li">
-                            <a aria-current="page" class="active" href="/">Home</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="#" style="font-size: 20px;">Recipes</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="#" style="font-size: 20px;">BMI</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="#" style="font-size: 20px;">Shopping List</a>
-                        </li>
-                        <li>
-                            <button type="button" class="btn btn-nothing">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16">
-                                    <g fill="none" fill-rule="evenodd" stroke="#868996" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="1.6" transform="translate(1 1)">
-                                        <path
-                                            d="M13 14v-1.556c0-1.718-1.455-3.11-3.25-3.11h-6.5c-1.795 0-3.25 1.392-3.25 3.11V14">
-                                        </path>
-                                        <ellipse cx="6.5" cy="3.111" rx="3.25" ry="3.111"></ellipse>
-                                    </g>
-                                </svg>
-                                Signup / Login
-                            </button>
-                        </li>
-                    </ul>
-                    <div class="resp-logo">
-                        <h5 class="text-uppercase text-grey">Contact us:</h5>
-                        <p><a class="text-primary" href="mailto:info@recipes.com">info@recipes.com</a></p>
-                    </div>
-                </div>
-
-            </nav>
-        </div>
-    </header>
-  <!--Banner section starts-->
-
-    <section>
-        <div class="banner-container">
-            <div id="banner-slider" class="carousel slide" data-ride="carousel">
-
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="banner-slider-image-2" style="background: url(images/about-banner.png) no-repeat;">
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="banner-content-block">
-                <div class="container">
-                    <div class="d-table">
-                        <div class="banner-content-info">
-                            <div class="banner-content">
-                                <h1 style="padding-top: 40px;">Reach us for our recipes and be a member </h1>
-                            </div>
-                        </div>
-
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="banner-slider-image-2" style="background: url(../../../assets/images/about-banner.png) no-repeat;">
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!--Banner section Ends-->
-
-    
-    <!--Who are we section Ends-->
-    <section class="xs_section">
-        <div class="container mt-5">
-            
-            <div class="row">
-                <div class="col-md-6 col-xs-12">
-                    <h2 class="text-uppercase mt-5">Get in Touch with us</h2>
-                    <hr>
-                    <div class="row contact_row">
-                        <div class="col-xs-3">
-                            <img class="icon-contact" src="images/icons/call.svg" >
+        <div class="banner-content-block">
+            <div class="container">
+                <div class="d-table">
+                    <div class="banner-content-info">
+                        <div class="banner-content">
+                            <h1 style="padding-top: 40px;">Reach us for our recipes and be a member </h1>
                         </div>
-                        <div class="col-xs-9">
-                            <h3 class="contact_text">+91 987654321</h3>
-                        </div>
-                    </div>
-                    <div class="row contact_row">
-                        <div class="col-xs-3">
-                            <img class="icon-contact" src="images/icons/message.svg" >
-                        </div>
-                        <div class="col-xs-9">
-                            <h3 class="contact_text">info@Recipes.Com</h3>
-                        </div>
-                    </div>
-                    <div class="row contact_row">
-                        <div class="col-xs-3">
-                            <img class="icon-contact" src="images/icons/location.svg" >
-                        </div>
-                        <div class="col-xs-9">
-                            <h3 class="contact_text">Canada</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xs-12">
-                    <form action="#">
-                        <div class="form-group">
-                          <label for="name">Name</label>
-                          <input type="text" class="form-control" id="name">
-                        </div>
-                        <div class="form-group">
-                          <label for="Email">Email:</label>
-                          <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="Phone">Phone:</label>
-                            <input type="tel" class="form-control" id="phone">
-                          </div>
-                          <div class="form-group">
-                            <label for="message">Message:</label>
-                            <textarea class="form-control" id="message" ></textarea>
-                          </div>
-                        <button type="submit" class="btn btn-default btn-contact">Submit</button>
-                      </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <br>
-    <br>
-    <br>
-    <section>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41306718.491304874!2d-130.17627876085862!3d50.809636822009345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b0d03d337cc6ad9%3A0x9968b72aa2438fa5!2sCanada!5e0!3m2!1sen!2sin!4v1658861486328!5m2!1sen!2sin" width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
-    <br>
-    <br>
-    <br>
-    <!-- <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="footer-logo mb-3">
-                        RACIES FOR YOU
-                    </div>
-                    <div class="footer-desc">
-                        <p>Your diet is a bank account. Good food choices are good investments.</p>
-                    </div>
-                    <div class="footer-social-icons">
-                        <ul class="social-icons">
-                            <li>
-                                <a href="#" class="fb-logo">
-                                    <img src="../../assets/images/facebook.svg" class="img-fluic" alt="Facebook" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="ins-logo">
-                                    <img src="../../assets/images/instagram.svg" class="img-fluic" alt="Instagram" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="tw-logo">
-                                    <img src="../../assets/images/twitter.svg" class="img-fluic" alt="Twitter" />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-2 col-6">
-                    <h4>KNOW US</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">About us</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2 col-6">
-                    <h4>Contact Us</h4>
-                    <ul class="footer-links">
-                        <li><a href="mailto:info@recipes.com">info@recipes.com</a></li>
-                        <li><a href="#">344-677-8888</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <br><br><br>
-        <div class="copyrights">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-5">
-                        <p class="mb-0">Recipes © 2022 copyrights</p>
-                    </div>
-                    <div class="col-md-7">
-                        
                     </div>
                 </div>
             </div>
         </div>
-
-    </footer> -->
-
-    <div class="footerbox">
-        <footer class="container mb-3">
-            <div class="row mt-5">
-                <div class="col-md-8 col-xs-12 mb-3">
-                    <h5>RecipeforYou.....!</h5>
-                    <ul class="nav  pb-3">
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-                      </ul>
-                      <div class="d-flex flex-column flex-sm-row justify-content-between mt-2 mb-2">
-                        <p>&copy; 2022 Company, Inc. All rights reserved.</p>
-                        
-                    </div>
-                </div>
-
-                
-
-                <div class="col-md-4 col-xs-12 mb-3">
-                    <form>
-                        <h5>Subscribe to our newsletter</h5>
-                        <p>Monthly digest of what's new and exciting from us.</p>
-                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                            <button class="btn btn-primary" type="button">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            
-        </footer>
     </div>
-    </div>
-    
- </body>
+</section>
+<section class="xs_section">
+    <div class="container mt-5">
 
-</html>
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <h2 class="text-uppercase mt-5">Get in Touch with us</h2>
+                <hr>
+                <div class="row contact_row">
+                    <div class="col-xs-3">
+                        <img class="icon-contact" src="../../../assets/images/icons/call.svg">
+                    </div>
+                    <div class="col-xs-9">
+                        <h3 class="contact_text">+91 987654321</h3>
+                    </div>
+                </div>
+                <div class="row contact_row">
+                    <div class="col-xs-3">
+                        <img class="icon-contact" src="../../../assets/images/icons/message.svg">
+                    </div>
+                    <div class="col-xs-9">
+                        <h3 class="contact_text">info@Recipes.Com</h3>
+                    </div>
+                </div>
+                <div class="row contact_row">
+                    <div class="col-xs-3">
+                        <img class="icon-contact" src="../../../assets/images/icons/location.svg">
+                    </div>
+                    <div class="col-xs-9">
+                        <h3 class="contact_text">Canada</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email:</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="Phone">Phone:</label>
+                        <input type="tel" class="form-control" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea class="form-control" id="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default btn-contact">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<br>

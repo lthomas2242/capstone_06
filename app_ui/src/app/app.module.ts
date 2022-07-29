@@ -99,6 +99,14 @@ import { DashboardComponent } from './_components/admin/dashboard/dashboard.comp
           {
             path: 'random-recipe',
             component: RandomRecipeComponent
+          },
+          {
+            path: 'about',
+            component: AboutUsComponent
+          },
+          {
+            path: 'contact',
+            component: ContactUsComponent
           }
         ]
       },
@@ -107,8 +115,8 @@ import { DashboardComponent } from './_components/admin/dashboard/dashboard.comp
         component: AdminLayoutComponent,
         children:[
           {
-            path: 'home',
-            component: HomeComponent
+            path: 'dashboard',
+            component: DashboardComponent
           },
           {
             path: 'recipe',
