@@ -25,4 +25,11 @@ export class ShoppingListService {
   getList() {
     return this.http.get<ShoppingList[]>(this.apiUrl);  
   }
+
+  deleteList(id: String) {
+    this.http.delete(this.apiUrl+'/delete/'+id)
+        .subscribe(() => {
+          this.router.navigate(['/cust-layout/home']);
+        });
+  }
 }
