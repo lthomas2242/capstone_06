@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <!--Bootstrap css links starts-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!--Bootstap css links ends-->
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hedcls {
+            color: #fff;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper" id="recipes-wrapper">
+        <header class="header-fixed" style="background: #ad3700;">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="#">
+                        <h5 class="hedcls" style="color: #fff; font-size: 35px;">RecipeforYou.....!</h5>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-target="#collapsibleNavbar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                        </svg> Menu
+                    </button>
+                    <div class="navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" style="font-size: 20px;">Recipes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html" style="font-size: 20px;">About us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" style="font-size: 20px;">BMI</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" style="font-size: 20px;">Shopping List</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html" style="font-size: 20px;">Contact Us</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="#" style="font-size: 20px;">Recipes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" style="font-size: 20px;">BMI</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" style="font-size: 20px;">Shopping List</a>
+                            </li> -->
+
+                            <li>
+                                <button type="button" class="btn btn-nothing">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16">
+                                        <g fill="none" fill-rule="evenodd" stroke="#868996" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="1.6" transform="translate(1 1)">
+                                            <path
+                                                d="M13 14v-1.556c0-1.718-1.455-3.11-3.25-3.11h-6.5c-1.795 0-3.25 1.392-3.25 3.11V14">
+                                            </path>
+                                            <ellipse cx="6.5" cy="3.111" rx="3.25" ry="3.111"></ellipse>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="resp-menu">
+                        <div class="resp-close">
+                            <button type="button" class="btn btn-nothing">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                    </path>
+                                    <path d="M0 0h24v24H0z" fill="none"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="resp-logo">
+                            <a aria-current="page" class="active" href="/">
+                                <h5 class="hedcls" style="color: #fff; font-size: 35px;">RecipeforYou.....!</h5>
+                            </a>
+                        </div>
+                        <ul>
+                            <li class="resp-li">
+                                <a aria-current="page" class="active" href="/">Home</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#" style="font-size: 20px;">Recipes</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#" style="font-size: 20px;">BMI</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#" style="font-size: 20px;">Shopping List</a>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-nothing">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16">
+                                        <g fill="none" fill-rule="evenodd" stroke="#868996" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="1.6" transform="translate(1 1)">
+                                            <path
+                                                d="M13 14v-1.556c0-1.718-1.455-3.11-3.25-3.11h-6.5c-1.795 0-3.25 1.392-3.25 3.11V14">
+                                            </path>
+                                            <ellipse cx="6.5" cy="3.111" rx="3.25" ry="3.111"></ellipse>
+                                        </g>
+                                    </svg>
+                                    Signup / Login
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="resp-logo">
+                            <h5 class="text-uppercase text-grey">Contact us:</h5>
+                            <p><a class="text-primary" href="mailto:info@recipes.com">info@recipes.com</a></p>
+                        </div>
+                    </div>
+
+                </nav>
+            </div>
+        </header>
+        <!--Banner section starts-->
+
+        <section>
+            <div class="banner-container">
+                <div id="banner-slider" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="banner-slider-image" style="background: url(images/banner1.jpg) no-repeat;">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="banner-content-block">
+                    <div class="container">
+                        <div class="d-table">
+                            <div class="banner-content-info">
+                                <div class="banner-content">
+                                    <h1>Your diet is a bank account. Good food choices are good investments.</h1>
+                                    <!-- <h3 class="text-white font-weight-normal">
+                                            Signup for free
+                                            <img src="../../assets/images/banner-icon.png" alt="">
+                                        </h3> -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Banner section Ends-->
+
+        <section>
+            <div class="container">
+
+                <!--Why choose us section starts-->
+                <div class="why-choose-section">
+                    <h3 class="text-uppercase mt-5">Why Choose Us?</h3>
+                    <p class="text-text fw-sbold">Let's try new healthy recipe's</p>
+                    <div class="why-choose">
+                        <div class="row">
+                            <div class="col-md-12 mb-12 mb-md-0">
+                                <p class="shape-name">
+                                    This app helps health-conscious foodaholic to stay up to date on food trends,
+                                    reminds, better dietary practices.This app also assists to search for gluten-free,
+                                    vegan, and organic options when looking for healthy cooking items.Calorie count
+                                    matters!!
+                                    So we are here helping you to track your daily calorie count and turn you into a
+                                    more conscious eater.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Why choose us section Ends-->
+                <!---Hand Picked Categories Starts-->
+                <div class="hand-picked-product-section">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 class="text-uppercase">Recipe's hand picked</h3>
+                        </div>
+                        <div class="col-md-6 text-right d-none d-md-block">
+                            <div class="btn-group">
+                                <!-- <button id="btnGroupDrop1" type="button" aria-haspopup="true" aria-expanded="false"
+                                        data-toggle="dropdown"
+                                        class="btn-border fs-10 fw-bold dropdown-toggle btn btn-secondary">
+                                        View All
+                                    </button> -->
+                                <div tabindex="-1" role="menu" aria-hidden="false"
+                                    class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
+                                    <button type="button" tabindex="0" role="menuitem" class="dropdown-item">
+                                        View All
+                                    </button>
+                                    <button type="button" tabindex="0" role="menuitem"
+                                        class="dropdown-item">Veg</button>
+                                    <button type="button" tabindex="0" role="menuitem" class="dropdown-item">Non
+                                        Veg</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-slider-block">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="#">
+                                    <div class="product-card">
+                                        <div class="product-image"
+                                            style="background-image: url('images/product/product1.jpg');">
+                                            <button class="fav btn btn-nothing"><img src="images/favourite.png"
+                                                    alt="Fav"></button>
+                                        </div>
+                                        <div class="product-body">
+                                            <h6 class="mb-1">Barbeque Delight</h6>
+                                            <p class="text-text mb-2 fs-13">
+                                                <span class="unhover-span">
+                                                    <!--
+                                                        <span class="text-primary fw-sbold">Price : </span> $35.99
+                                            </span>
+                                            -->
+                                                </span>
+                                            </p>
+                                            <p class="mb-0 unhover-span">
+                                                <span class="float-right">
+                                                    <img class="ml-1" src="images/veg.svg" alt="Veg">
+                                                    <img class="ml-1" src="images/non-veg.svg" alt="Non Veg">
+                                                </span>
+                                                <span class="rating orange">
+                                                    <img class="mr-1 mt--3px" src="images/star.svg" alt="Veg">
+                                                    3.1
+                                                </span>
+                                                <!-- <span>213 Ratings</span> -->
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#">
+                                    <div class="product-card">
+                                        <div class="product-image"
+                                            style="background-image: url('images/product/product1.jpg');">
+                                            <button class="fav btn btn-nothing"><img src="images/favourite.png"
+                                                    alt="Fav"></button>
+                                        </div>
+                                        <div class="product-body">
+                                            <h6 class="mb-1">Barbeque Delight</h6>
+                                            <p class="text-text mb-2 fs-13">
+                                                <span class="unhover-span">
+                                                    <!--
+                                                        <span class="text-primary fw-sbold">Price : </span> $35.99
+                                            </span>
+                                            -->
+                                                </span>
+                                            </p>
+                                            <p class="mb-0 unhover-span">
+                                                <span class="float-right">
+                                                    <img class="ml-1" src="images/veg.svg" alt="Veg">
+                                                    <img class="ml-1" src="images/non-veg.svg" alt="Non Veg">
+                                                </span>
+                                                <span class="rating orange">
+                                                    <img class="mr-1 mt--3px" src="images/star.svg" alt="Veg">
+                                                    3.1
+                                                </span>
+                                                <!-- <span>213 Ratings</span> -->
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#">
+                                    <div class="product-card">
+                                        <div class="product-image"
+                                            style="background-image: url('images/product/product2.jpg');">
+                                            <button class="fav btn btn-nothing"><img src="images/favourite.png"
+                                                    alt="Fav"></button>
+                                        </div>
+                                        <div class="product-body">
+                                            <h6 class="mb-1">Barbeque Delight</h6>
+                                            <p class="text-text mb-2 fs-13">
+                                                <span class="unhover-span">
+                                                    <!--
+                                                        <span class="text-primary fw-sbold">Price : </span> $35.99
+                                            </span>
+                                            -->
+                                                </span>
+                                            </p>
+                                            <p class="mb-0 unhover-span">
+                                                <span class="float-right">
+                                                    <img class="ml-1" src="images/veg.svg" alt="Veg">
+                                                    <img class="ml-1" src="images/non-veg.svg" alt="Non Veg">
+                                                </span>
+                                                <span class="rating orange">
+                                                    <img class="mr-1 mt--3px" src="images/star.svg" alt="Veg">
+                                                    3.1
+                                                </span>
+                                                <!-- <span>213 Ratings</span> -->
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#">
+                                    <div class="product-card">
+                                        <div class="product-image"
+                                            style="background-image: url('images/product/product3.jpg');">
+                                            <button class="fav btn btn-nothing"><img src="images/favourite.png"
+                                                    alt="Fav"></button>
+                                        </div>
+                                        <div class="product-body">
+                                            <h6 class="mb-1">Barbeque Delight</h6>
+                                            <p class="text-text mb-2 fs-13">
+                                                <span class="unhover-span">
+                                                </span>
+                                            </p>
+                                            <p class="mb-0 unhover-span">
+                                                <span class="float-right">
+                                                    <img class="ml-1" src="images/veg.svg" alt="Veg">
+                                                    <img class="ml-1" src="images/non-veg.svg" alt="Non Veg">
+                                                </span>
+                                                <span class="rating orange">
+                                                    <img class="mr-1 mt--3px" src="images/star.svg" alt="Veg">
+                                                    3.1
+                                                </span>
+                                                <!-- <span>213 Ratings</span> -->
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!---Hand Picked Categories Ends-->
+                <hr class="mb-5 mt-0">
+                <!--Trending Packages Starts-->
+                <hr>
+                <div class="events-package-section">
+                    <h3 class="text-uppercase">Gallery</h3>
+                    <div class="row px-2">
+                        <div class="col-md-4 col-lg-3 col-sm-6 px-2">
+                            <div class="package" style="background-image: url(&quot;images/food1.jpg&quot;);">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 col-sm-6 px-2">
+                            <div class="package" style="background-image: url(&quot;images/food2.jpg&quot;);">
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 col-sm-6 px-2">
+                            <div class="package" style="background-image: url(&quot;images/food3.jpg&quot;);">
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 col-sm-6 px-2">
+                            <div class="package" style="background-image: url(&quot;images/food4.jpg&quot;);">
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 col-sm-6 px-2">
+                            <div class="package" style="background-image: url(&quot;images/food5.jpg&quot;);">
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 col-sm-6 px-2">
+                            <div class="package" style="background-image: url(&quot;images/food6.jpg&quot;);">
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 col-sm-6 px-2">
+                            <div class="package" style="background-image: url(&quot; images/food7.jpg&quot;);">
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 col-sm-6 px-2">
+                            <div class="package" style="background-image: url(&quot; images/food8.jpg&quot;);">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!---Event Package Ends-->
+            </div>
+            <br><br><br>
+        </section>
+        <!-- <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-logo mb-3">
+                        RACIES FOR YOU
+                    </div>
+                    <div class="footer-desc">
+                        <p>Your diet is a bank account. Good food choices are good investments.</p>
+                    </div>
+                    <div class="footer-social-icons">
+                        <ul class="social-icons">
+                            <li>
+                                <a href="#" class="fb-logo">
+                                    <img src="../../assets/images/facebook.svg" class="img-fluic" alt="Facebook" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="ins-logo">
+                                    <img src="../../assets/images/instagram.svg" class="img-fluic" alt="Instagram" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="tw-logo">
+                                    <img src="../../assets/images/twitter.svg" class="img-fluic" alt="Twitter" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <h4>KNOW US</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-6">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@recipes.com">info@recipes.com</a></li>
+                        <li><a href="#">344-677-8888</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="copyrights">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5">
+                        <p class="mb-0">Recipes © 2022 copyrights</p>
+                    </div>
+                    <div class="col-md-7">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer> -->
+
+        <div class="footerbox">
+            <footer class="container mb-3">
+                <div class="row mt-5">
+                    <div class="col-md-8 col-xs-12 mb-3">
+                        <h5>RecipeforYou.....!</h5>
+                        <ul class="nav  pb-3">
+                            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+                          </ul>
+                          <div class="d-flex flex-column flex-sm-row justify-content-between mt-2 mb-2">
+                            <p>&copy; 2022 Company, Inc. All rights reserved.</p>
+                            
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="col-md-4 col-xs-12 mb-3">
+                        <form>
+                            <h5>Subscribe to our newsletter</h5>
+                            <p>Monthly digest of what's new and exciting from us.</p>
+                            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                                <button class="btn btn-primary" type="button">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                
+            </footer>
+        </div>
+
+</body>
+
+</html>

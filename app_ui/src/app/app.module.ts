@@ -26,6 +26,8 @@ import { RecipeListComponent } from './_components/admin/recipe-list/recipe-list
 import { RecipeService } from './_services/recipe.service';
 import { UserDetailsComponent } from './_components/user-details/user-details.component';
 import { RecipeApproveComponent } from './_components/admin/recipe-approve/recipe-approve.component';
+import { AboutUsComponent } from './_components/about-us/about-us.component';
+import { ContactUsComponent } from './_components/contact-us/contact-us.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { RecipeApproveComponent } from './_components/admin/recipe-approve/recip
     RecipeSaveComponent,
     RecipeListComponent,
     UserDetailsComponent,
-    RecipeApproveComponent
+    RecipeApproveComponent,
+    AboutUsComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
