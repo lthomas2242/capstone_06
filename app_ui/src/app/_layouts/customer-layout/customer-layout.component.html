@@ -2,15 +2,16 @@
 <header class="header-fixed" style="background: #ad3700;">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-md">
-            <a class="navbar-brand" href="#">
+            <!-- <a class="navbar-brand" href="#">
                 <h5 class="hedcls" style="color: #fff; font-size: 35px;">RecipeforYou.....!</h5>
-            </a>
+            </a> -->
             <button class="navbar-toggler" type="button" data-target="#collapsibleNavbar">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0z" fill="none"></path>
                         <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
                     </svg> Menu
                 </button>
+                <a><i class="fa fa-cutlery fa-flip" style='font-size:24px'></i><img height="100px" width="100px" src="../../assets/images/logo-recipe.png" class="img-fluic" alt="logo" /></a>
             <div class="navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -22,6 +23,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/cust-layout/shopping-list" style="font-size: 20px;">Shopping List</a>
                     </li>
+                    <li class="nav-item"><a class="nav-link" routerLink="./user-details" style="font-size: 20px;">My Account</a></li>
 
                     <li>
                         <button type="button" class="btn btn-nothing" (click)="logout()">

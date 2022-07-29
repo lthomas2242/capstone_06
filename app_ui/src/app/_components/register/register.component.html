@@ -18,14 +18,23 @@
                 <div class="card-body p-md-5 text-black">
                     <h3 class=" text-uppercase">User registration</h3>
                     <small > Join Our Family!</small>
-                    <form (ngSubmit)="createUser(user)" class="mt-5">
+                    <form [formGroup]="userForm" (ngSubmit)="createUser()" class="mt-5">
                         <div class="row">
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label" >
                                         First name
                                     </label>
-                                    <input type="text" id="form3Example1m" class="form-control form-control-lg" [(ngModel)]="user.first_name" name="first_name"/>                           
+                                    <input type="text" id="first_name" formControlName="first_name" class="form-control form-control-lg" name="first_name" required/>                           
+                                
+                                    <!-- <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)"
+                                        class="alert alert-danger"> -->
+
+                                    <div class="text-danger" *ngIf="submitted && userForm.controls['first_name'].errors?.['required']">
+                                        first name is required.                                        
+                                    </div>                                    
+                                    <!-- </div> -->
+                                
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4">
@@ -33,7 +42,10 @@
                                     <label class="form-label">
                                         Last name
                                     </label>
-                                    <input type="text" id="form3Example1n" class="form-control form-control-lg"  [(ngModel)]="user.last_name" name="last_name"/>  
+                                    <input type="text" id="last_name" formControlName="last_name" class="form-control form-control-lg"   name="last_name"/>  
+                                    <div class="text-danger" *ngIf="submitted && userForm.controls['last_name'].errors?.['required']">
+                                        Last name is required.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -43,8 +55,10 @@
                             <label class="form-label" >
                                 Email
                             </label>
-                            <input type="text" class="form-control form-control-lg" [(ngModel)]="user.email" name="email"/>
-                            
+                            <input type="text" class="form-control form-control-lg" id="email" name="email" formControlName="email"/>
+                            <div class="text-danger" *ngIf="submitted && userForm.controls['email'].errors?.['required']">
+                                Email is required.
+                            </div>
                         </div>
 
                         <div class="row">
@@ -57,8 +71,11 @@
                                         <div class="input-group-prepend">
                                           <div class="input-group-text">CM</div>
                                         </div>
-                                        <input type="text" class="form-control" [(ngModel)]="user.height" name="height"/>
-                                      </div>  
+                                        <input type="text" class="form-control" id="height" name="height" formControlName="height"/>                                   
+                                    </div> 
+                                    <div class="text-danger" *ngIf="submitted && userForm.controls['height'].errors?.['required']">
+                                        Height is required.
+                                    </div> 
                                         
                                 </div>
                             </div>
@@ -71,8 +88,12 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Kg</div>
                                     </div>
-                                    <input type="text" class="form-control" [(ngModel)]="user.weight" name="weight"/>
-                                    </div> 
+                                    <input type="text" class="form-control" id="weight" name="weight" formControlName="weight"/>
+                                </div>
+                                <div class="text-danger" *ngIf="submitted && userForm.controls['weight'].errors?.['required']">
+                                    Weight is required.
+                                </div>    
+                             
                                 
                                 </div>
                             </div>
@@ -115,19 +136,29 @@
                                     <label class="form-label" >
                                         Password
                                     </label>
-                                <input type="password" id="form3Example1n" class="form-control form-control-lg" [(ngModel)]="user.password" name="password"/>
-                                
+                                <input type="password" class="form-control form-control-lg" id="password" name="password" formControlName="password"/>
+                                <div class="text-danger" *ngIf="submitted && userForm.controls['password'].errors?.['required']">
+                                    Password is required.
+                                </div> 
                                 </div>
                             </div>
 
-                            <!-- <div class="col-md-6 mb-4">
+                            <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                <input type="text" id="form3Example1n" class="form-control form-control-lg" name="c_password" />
-                                <label class="form-label" >
-                                    Confirm Password
-                                </label>
+                                    <label class="form-label" >
+                                        Confirm Password
+                                    </label>
+                                <input type="text" id="c_password" class="form-control form-control-lg" name="c_password" formControlName="c_password" />
+                                <div class="text-danger" *ngIf="submitted && userForm.controls['c_password'].errors?.['required']">
+                                    Password is required.
                                 </div>
-                            </div> -->
+                                    {{ userForm.controls['c_password'].errors?.['ConfirmValidator'] }}
+                                <div class="text-danger" *ngIf="submitted && userForm.controls['c_password'].errors?.['matchPassword']">
+                                    Passwords must match
+                                </div>
+                                
+                                </div>
+                            </div>
                         </div>
         
                        

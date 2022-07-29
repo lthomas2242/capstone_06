@@ -25,7 +25,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecipeListComponent } from './_components/admin/recipe-list/recipe-list.component';
 import { RecipeService } from './_services/recipe.service';
 import { RandomRecipeComponent } from './_components/random-recipe/random-recipe.component';
-
+import { UserDetailsComponent } from './_components/user-details/user-details.component';
+import { UserListComponent } from './_components/admin/user-list/user-list.component';
+import { RecipeApproveComponent } from './_components/admin/recipe-approve/recipe-approve.component';
+import { AboutUsComponent } from './_components/about-us/about-us.component';
+import { ContactUsComponent } from './_components/contact-us/contact-us.component';
+import { DashboardComponent } from './_components/admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,13 @@ import { RandomRecipeComponent } from './_components/random-recipe/random-recipe
     ShoppingListComponent,
     RecipeSaveComponent,
     RecipeListComponent,
-    RandomRecipeComponent
+    RandomRecipeComponent,
+    UserDetailsComponent,
+    UserListComponent,
+    RecipeApproveComponent,
+    AboutUsComponent,
+    ContactUsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -78,6 +89,10 @@ import { RandomRecipeComponent } from './_components/random-recipe/random-recipe
             component: HomeComponent
           },
           {
+            path: 'user-details',
+            component: UserDetailsComponent
+          },
+          {
             path: 'shopping-list',
             component: ShoppingListComponent
           },
@@ -102,6 +117,10 @@ import { RandomRecipeComponent } from './_components/random-recipe/random-recipe
           {
             path: 'recipe-save',
             component: RecipeSaveComponent
+          },
+          {
+            path: 'user-list',
+            component: UserListComponent
           }
         ]
       }
