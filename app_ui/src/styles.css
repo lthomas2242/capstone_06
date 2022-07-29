@@ -226,9 +226,14 @@ a:focus {
 button {
     background-color: #343a40 !important;
     border: 1px solid #343a40 !important;
-    color: #ffffff;
+    color: #ffffff !important;
     text-transform: uppercase;
-    color: #fff;
+}
+
+.modal-header button {
+    background-color: unset !important;
+    color: unset !important;
+    border: unset !important;
 }
 
 .btn.btn-nothing.btn-secondary:hover {
