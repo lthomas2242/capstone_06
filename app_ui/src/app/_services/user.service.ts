@@ -38,4 +38,8 @@ export class UserService {
   private handleError(error: any) {
     console.log('error');
   }
+
+  getAllUsersCount() : Observable<any>{
+    return this.http.get<User>(this.userUrl+"/count/all");
+  }
 }

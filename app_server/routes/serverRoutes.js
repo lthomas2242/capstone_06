@@ -13,6 +13,7 @@ router.get('/list', shoppingList.getList);
 router.delete('/list/delete/:id', shoppingList.deleteList);
 router.get('/user', userController.getUsers);
 router.delete('/user/:id', userController.deleteUser);
+router.get('/user/count/all', userController.getAllUsersCount);
 
 //recipe
 router.get('/recipe', recipeController.getAllRecipe);
@@ -21,6 +22,8 @@ router.post('/recipe', recipeController.createRecipe);
 router.put('/recipe/:id', recipeController.updateRecipe);
 router.delete('/recipe/:id', recipeController.deleteRecipe);
 router.post('/recipe/filters', recipeController.getRecipesByFilters);
-router.get('/recipe/ids', recipeController.getRecipeIds)
+router.get('/recipe/ids', recipeController.getRecipeIds);
+router.get('/recipe/count/all', recipeController.getAllRecipesCount);
+router.get('/recipe/count/approved', recipeController.getApprovedRecipesCount);
 
 module.exports = router;

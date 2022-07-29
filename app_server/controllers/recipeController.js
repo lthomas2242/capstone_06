@@ -138,7 +138,7 @@ const getRecipesByFilters = function(req, res) {
         });
 };
 
-/* Returns randon Recipe*/
+/* Returns random Recipe*/
 const getRecipeIds = function(req, res) {
     Recipe.find({}, { projection: { _id: 1 } }).toArray((err, data) => {
         if (err) {
@@ -147,13 +147,29 @@ const getRecipeIds = function(req, res) {
         }
         res.status(200).json(data);
     });
-    // Recipe.find({}).project('_id').exec(function(err, data) {
-    //     if (err) {
-    //         res.status(404).json(err);
-    //         return;
-    //     }
-    //     res.status(200).json(data);
-    // });
+};
+
+/* Count of all Recipes*/
+const getAllRecipesCount = function(req, res) {
+    Recipe.count({}).exec(function(err, data) {
+        if (err) {
+            res.status(404).json(err);
+            return;
+        }
+        res.status(200).json(data);
+    });
+};
+
+
+/* Count of approved Recipes*/
+const getApprovedRecipesCount = function(req, res) {
+    Recipe.count({ approved: true }).exec(function(err, data) {
+        if (err) {
+            res.status(404).json(err);
+            return;
+        }
+        res.status(200).json(data);
+    });
 };
 
 
@@ -165,5 +181,7 @@ module.exports = {
     updateRecipe,
     deleteRecipe,
     getRecipesByFilters,
-    getRecipeIds
+    getRecipeIds,
+    getAllRecipesCount,
+    getApprovedRecipesCount
 }
