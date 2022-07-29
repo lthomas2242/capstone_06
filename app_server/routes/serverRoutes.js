@@ -10,6 +10,8 @@ router.post('/user/login', userController.login);
 router.post('/user/register', userController.register);
 router.post('/list/store', shoppingList.store);
 router.get('/list', shoppingList.getList);
+router.get('/user', userController.getUsers);
+router.delete('/user/:id', userController.deleteUser);
 
 //recipe
 router.get('/recipe', recipeController.getAllRecipe);

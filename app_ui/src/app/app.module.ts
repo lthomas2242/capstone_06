@@ -25,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecipeListComponent } from './_components/admin/recipe-list/recipe-list.component';
 import { RecipeService } from './_services/recipe.service';
 import { UserDetailsComponent } from './_components/user-details/user-details.component';
+import { UserListComponent } from './_components/admin/user-list/user-list.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { UserDetailsComponent } from './_components/user-details/user-details.co
     ShoppingListComponent,
     RecipeSaveComponent,
     RecipeListComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -102,6 +104,10 @@ import { UserDetailsComponent } from './_components/user-details/user-details.co
           {
             path: 'recipe-save',
             component: RecipeSaveComponent
+          },
+          {
+            path: 'user-list',
+            component: UserListComponent
           }
         ]
       }

@@ -1,7 +1,43 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
-
+const getUsers = function (req,res) {
+    User.find().exec(function (err, data) {
+        if (err) {
+          res
+          .status(404)
+          .json(err);
+          return;
+        }
+        res
+        .status(200)
+        .json(data);
+      });
+};
+const deleteUser = function (req,res) {
+    const userid = req.params.id;
+  if (userid) {
+    User
+    .findByIdAndRemove(userid)
+    .exec((err, data) => {
+      if (err) {
+        res
+        .status(404)
+        .json(err);
+        return;
+      }
+      res
+      .status(204)
+      .json(null);
+      //alert("The user is deleted");
+    });
+  } else {
+    res
+    .status(404)
+    .json({ message: "No userid" });
+    return;
+  }
+};
 /* user login by email and password */
 const login = function(req, res) {
     User.find({
@@ -27,6 +63,7 @@ const login = function(req, res) {
                 .json(usertData);
         });
 };
+
 
 const register = function(req, res) {
     User.create({
@@ -54,9 +91,10 @@ const register = function(req, res) {
     });
 };
 
-
 /*Exporting modules */
 module.exports = {
     login,
-    register
+    register,
+    getUsers,
+    deleteUser
 }
