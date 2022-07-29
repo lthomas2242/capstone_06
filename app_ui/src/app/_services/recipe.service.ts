@@ -38,4 +38,12 @@ export class RecipeService {
   getAllRecipeIds() : Observable<any>{
     return this.http.get<Recipe>(this.recipeUrl+"/ids");
   }
+
+  getAllRecipesCount() : Observable<any>{
+    return this.http.get<Recipe>(this.recipeUrl+"/count/all");
+  }
+
+  getApprovedRecipesCount() : Observable<any>{
+    return this.http.get<Recipe>(this.recipeUrl+"/count/approved");
+  }
 }
