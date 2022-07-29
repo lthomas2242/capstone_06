@@ -223,9 +223,10 @@ a:focus {
     font-size: 14px;
 }
 
-.btn.btn-primary {
-    background-color: #f26a36;
-    border: 1px solid #f26a36;
+button {
+    background-color: #343a40 !important;
+    border: 1px solid #343a40 !important;
+    color: #ffffff;
     text-transform: uppercase;
     color: #fff;
 }
@@ -355,7 +356,9 @@ header .navbar ul li a {
 }
 
 header.header-fixed .btn.btn-nothing {
-    color: #fff;
+    color: #fff !important;
+    background-color: unset !important;
+    border: unset !important;
 }
 
 header.header-fixed .btn.btn-nothing svg g {
