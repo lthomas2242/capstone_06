@@ -25,7 +25,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecipeListComponent } from './_components/admin/recipe-list/recipe-list.component';
 import { RecipeService } from './_services/recipe.service';
 import { UserDetailsComponent } from './_components/user-details/user-details.component';
+<<<<<<< HEAD
 import { UserListComponent } from './_components/admin/user-list/user-list.component';
+=======
+import { RecipeApproveComponent } from './_components/admin/recipe-approve/recipe-approve.component';
+import { AboutUsComponent } from './_components/about-us/about-us.component';
+import { ContactUsComponent } from './_components/contact-us/contact-us.component';
+import { DashboardComponent } from './_components/admin/dashboard/dashboard.component';
+>>>>>>> 2a848294df38e283d619cf5182c12c55567e6019
 
 
 @NgModule({
@@ -42,7 +49,14 @@ import { UserListComponent } from './_components/admin/user-list/user-list.compo
     RecipeSaveComponent,
     RecipeListComponent,
     UserDetailsComponent,
+<<<<<<< HEAD
     UserListComponent
+=======
+    RecipeApproveComponent,
+    AboutUsComponent,
+    ContactUsComponent,
+    DashboardComponent
+>>>>>>> 2a848294df38e283d619cf5182c12c55567e6019
   ],
   imports: [
     BrowserModule,
