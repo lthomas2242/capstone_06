@@ -11,9 +11,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ShoppingListComponent implements OnInit {
 
-  // public newTask: any;
-  // public items : string[] = [];
-
   public title!: String;
   public item_title: any;
   public item: any;
@@ -42,19 +39,19 @@ export class ShoppingListComponent implements OnInit {
 
  
   addList() {
-    //this.toastr.success('List added !', 'Sucsess!');
     let newitem =  new item(); 
     newitem.item_title = this.item_title;
     this.allItems.push(newitem);
-    this.item_title = '';  
+    this.item_title = '';     
+  }
 
-    //console.log("kkk", this.allItems.splice(0, 1));
-    
+  deleteList(id: String) {
+    this.toastr.success('Deleted successfully !', 'Sucsess!');
+    this.ShoppingListService.deleteList(id);
   }
 
   saveList():void { 
-    var userId = "userID";
-    //let arr = this.allItems.splice(0, 1).map(d=> d.item);
+    // var userId = "userID";
     let isLoggedIn = localStorage.getItem("isLoggedIn");
   
     if (isLoggedIn == "true") {
@@ -65,9 +62,8 @@ export class ShoppingListComponent implements OnInit {
         user_id: userId,
         items: this.allItems
       };
-      //console.log("save", this.data);
+
       this.ShoppingListService.createList(this.data);
-      //this.toastr.success('List added !', 'Sucsess!');
     } else {
       this.toastr.error('User is not loggedin !', 'Error!');
     }

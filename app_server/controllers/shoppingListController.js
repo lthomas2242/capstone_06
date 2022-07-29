@@ -36,7 +36,30 @@
         });
     };
 
+    const deleteList = function(req, res) {
+        const id = req.params.id;
+        if (id) {
+            ShoppingList
+                .findByIdAndRemove(id)
+                .exec((err, fooddata) => {
+                    if (err) {
+                        res
+                        .status(404)
+                        .json(err);
+                    return;
+                    } 
+                    res
+                    .status(204)
+                    .json(null);
+                });
+        } else {
+            res
+            .status(404)
+            .json({"message": "No id"});
+        }
+    };
+
 
     module.exports = {
-        store, getList
+        store, getList, deleteList
     }
