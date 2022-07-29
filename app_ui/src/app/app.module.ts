@@ -28,6 +28,7 @@ import { UserDetailsComponent } from './_components/user-details/user-details.co
 import { RecipeApproveComponent } from './_components/admin/recipe-approve/recipe-approve.component';
 import { AboutUsComponent } from './_components/about-us/about-us.component';
 import { ContactUsComponent } from './_components/contact-us/contact-us.component';
+import { DashboardComponent } from './_components/admin/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { ContactUsComponent } from './_components/contact-us/contact-us.componen
     UserDetailsComponent,
     RecipeApproveComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
