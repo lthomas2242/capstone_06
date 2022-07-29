@@ -18,43 +18,43 @@ body {
 }
 
 h1 {
-    font-size: 36px;
-    line-height: 42px;
+    font-size: 40px;
+    line-height: 50px;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 36px;
     line-height: 30px;
     font-weight: 700;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 32px;
     line-height: 22px;
     font-weight: 700;
 }
 
 h4 {
-    font-size: 16px;
+    font-size: 28px;
     line-height: 20px;
     font-weight: 500;
 }
 
 h5 {
-    font-size: 14px;
+    font-size: 24px;
     line-height: 18px;
     font-weight: 500;
 }
 
 h6 {
-    font-size: 14px;
+    font-size: 20px;
     line-height: 18px;
     font-weight: 400;
 }
 
 p {
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 18px;
+    line-height: 24px;
     font-weight: 400;
     color: #868996;
 }
@@ -408,6 +408,13 @@ header.no-shadow .navbar {
     background-repeat: no-repeat;
 }
 
+.carousel-item>.banner-slider-image-2 {
+    height: 300px;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+}
+
 .banner-content-block {
     position: absolute;
     left: 0;
@@ -621,8 +628,6 @@ header.no-shadow .navbar {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     -o-border-radius: 4px;
-    font-size: 17px;
-    font-family: inherit;
 }
 
 .shape-name {
@@ -687,11 +692,6 @@ header.no-shadow .navbar {
 
 
 /**********footer***********/
-
-footer {
-    padding: 50px 0 40px;
-    background-color: #f7f6fb;
-}
 
 footer .footer-desc {
     max-width: 220px;
@@ -2614,24 +2614,115 @@ ul.dotted {
     }
 }
 
-
-
-.gradient-custom-2 {
-   
-    background: #7e40f6;
-    background: -webkit-linear-gradient(to right, rgb(231, 129, 143), rgba(80, 139, 252, 1));
-    
-    background: linear-gradient(to right, rgb(214, 126, 126), rgb(210, 131, 132));
-    border-radius: 2em;
+.ul_about {
+    line-height: 2.5;
+    font-size: 17px;
+    font-weight: 600;
+    color: #343434;
 }
-    
-.mask-custom {
-    /* background: -webkit-linear-gradient(to right, rgb(231, 129, 143), rgba(80, 139, 252, 1));       
-    background: linear-radient(to right, rgb(214, 126, 126), rgb(210, 131, 132)); */
-    background: #f2b150;
-    border-radius: 2em;
-    backdrop-filter: blur(25px);
-    border: 2px solid rgba(255, 255, 255, 0.05);
-    background-clip: padding-box;
-    box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
- }
+
+.ul_about span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.img_about {
+    width: 250px;
+    display: block;
+    margin: auto;
+}
+
+.aboutwe_banner {
+    background: #fff4e4;
+    padding: 20px 0px;
+}
+
+.contact_row {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact_text {
+    padding: 20px;
+    font-size: 20px;
+}
+
+.btn-contact {
+    background: #ad3700;
+    color: white;
+    padding: 10px 30px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width:991px) {
+    .xs_section {
+        padding: 10px;
+    }
+}
+
+
+/* <-----Footer css start ----> */
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.footerbox {
+    background: antiquewhite;
+    padding: 20px 0px;
+    border-top: 3px solid #ad3700;
+}
+
+
+/* <-----Footer css end ----> */
+
+label {
+    font-size: 18px !important;
+}

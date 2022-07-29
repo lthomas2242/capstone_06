@@ -11,6 +11,8 @@ router.post('/user/register', userController.register);
 router.post('/list/store', shoppingList.store);
 router.get('/list', shoppingList.getList);
 router.delete('/list/delete/:id', shoppingList.deleteList);
+router.get('/user', userController.getUsers);
+router.delete('/user/:id', userController.deleteUser);
 
 //recipe
 router.get('/recipe', recipeController.getAllRecipe);

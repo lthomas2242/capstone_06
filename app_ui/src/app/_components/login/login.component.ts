@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('height', v[0].height);
         localStorage.setItem('weight', v[0].weight);
         if(v[0].user_role === "admin"){
-          this.router.navigate(['/admin-layout/home']);
+          this.router.navigate(['/admin-layout/dashboard']);
         }else{
           this.router.navigate(['/cust-layout/home']);
         }
