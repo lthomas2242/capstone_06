@@ -1,7 +1,8 @@
 /*****FOnts**********/
 
 body {
-    font-family: "proxima-nova" !important;
+    /* font-family: "proxima-nova" !important; */
+    font-family: "Segoe UI", Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     font-size: 14px;
     letter-spacing: 0;
     font-weight: 400;
@@ -18,36 +19,36 @@ body {
 }
 
 h1 {
-    font-size: 40px;
+    /* font-size: 40px; */
     line-height: 50px;
 }
 
 h2 {
-    font-size: 36px;
+    /* font-size: 36px; */
     line-height: 30px;
     font-weight: 700;
 }
 
 h3 {
-    font-size: 32px;
+    /* font-size: 32px; */
     line-height: 22px;
     font-weight: 700;
 }
 
 h4 {
-    font-size: 28px;
+    /* font-size: 28px; */
     line-height: 20px;
     font-weight: 500;
 }
 
 h5 {
-    font-size: 24px;
+    /* font-size: 24px; */
     line-height: 18px;
     font-weight: 500;
 }
 
 h6 {
-    font-size: 20px;
+    /* font-size: 20px; */
     line-height: 18px;
     font-weight: 400;
 }
@@ -2470,7 +2471,7 @@ ul.dotted {
     }
     .blog-banner h1.fs-36 {
         max-width: 100%;
-        font-size: 26px !important;
+        /* font-size: 26px !important; */
     }
     .login .modal-content .login-left,
     .login .modal-content .login-right {
@@ -2494,7 +2495,7 @@ ul.dotted {
         display: none;
     }
     h1 {
-        font-size: 26px;
+        /* font-size: 26px; */
         line-height: 32px;
     }
     .banner-content-info .banner-content {
@@ -2715,9 +2716,8 @@ ul.dotted {
 }
 
 .footerbox {
-    background: antiquewhite;
+    background: #eaeaea;
     padding: 20px 0px;
-    border-top: 3px solid #ad3700;
 }
 
 
@@ -2726,3 +2726,13 @@ ul.dotted {
 label {
     font-size: 18px !important;
 }
+
+.user-profile h4{
+    font-weight: bold;
+}
+
+.nav-link {
+    color: rgba(255,255,255,.55) !important;
+}
+
+

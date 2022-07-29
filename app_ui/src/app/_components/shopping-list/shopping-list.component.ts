@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ShoppingListService } from 'src/app/_services/shopping-list.service';
 import { item, ShoppingList } from 'src/app/_models/shoppingList';
 import { ToastrService } from 'ngx-toastr';
+declare var window: any;
 
 @Component({
   selector: 'app-shopping-list',
@@ -19,6 +20,9 @@ export class ShoppingListComponent implements OnInit {
   public data =  new ShoppingList;
   list: ShoppingList[] | undefined;
 
+  editModal:any;
+  selected_list_id = 0;
+
   constructor(private ShoppingListService : ShoppingListService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
@@ -30,6 +34,10 @@ export class ShoppingListComponent implements OnInit {
         return list;
       })
     })
+
+    this.editModal = new window.bootstrap.Modal(
+      document.getElementById('edit-list')
+    );
   }
 
   showSuccess() {
@@ -68,6 +76,11 @@ export class ShoppingListComponent implements OnInit {
       this.toastr.error('User is not loggedin !', 'Error!');
     }
     
+  }
+
+  editListBtn(listId : any){
+    this.selected_list_id= listId;
+    this.editModal.show();
   }
 
 }
