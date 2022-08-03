@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ShoppingListService } from 'src/app/_services/shopping-list.service';
 import { item, ShoppingList } from 'src/app/_models/shoppingList';
 import { ToastrService } from 'ngx-toastr';
+import { FormGroup, FormBuilder } from '@angular/forms';
 declare var window: any;
 
 @Component({
@@ -16,14 +17,15 @@ export class ShoppingListComponent implements OnInit {
   public item_title: any;
   public item: any;
   public allItems : item[] = [];
-
   public data =  new ShoppingList;
   list: ShoppingList[] | undefined;
 
+  editForm!: FormGroup;
   editModal:any;
-  selected_list_id = 0;
+  selectedList: any;
 
-  constructor(private ShoppingListService : ShoppingListService, private toastr: ToastrService) { }
+  constructor(private ShoppingListService : ShoppingListService, private toastr: ToastrService, 
+    private fb: FormBuilder) { }
 
   ngOnInit(): void {
     
@@ -36,7 +38,7 @@ export class ShoppingListComponent implements OnInit {
     })
 
     this.editModal = new window.bootstrap.Modal(
-      document.getElementById('edit-list')
+      document.getElementById('create-list')
     );
   }
 
@@ -70,7 +72,7 @@ export class ShoppingListComponent implements OnInit {
         user_id: userId,
         items: this.allItems
       };
-
+      console.log(this.data )
       this.ShoppingListService.createList(this.data);
     } else {
       this.toastr.error('User is not loggedin !', 'Error!');
@@ -78,8 +80,13 @@ export class ShoppingListComponent implements OnInit {
     
   }
 
-  editListBtn(listId : any){
-    this.selected_list_id= listId;
+  get editFormData() {
+    return this.editForm.controls;
+  }
+
+  editListBtn(selectedItem:ShoppingList, listId : any){
+    this.title = selectedItem.title[0];
+    this.allItems = selectedItem.items;
     this.editModal.show();
   }
 

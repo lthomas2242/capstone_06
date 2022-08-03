@@ -32,4 +32,9 @@ export class ShoppingListService {
           this.router.navigate(['/cust-layout/home']);
         });
   }
+
+  getListById(listId: string) {
+    console.log("service list", this.apiUrl+'/single/'+listId);
+    return this.http.get<ShoppingList>(this.apiUrl+'/single/'+listId);
+  }
 }

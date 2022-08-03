@@ -34,7 +34,7 @@
 <div class="container-fluid" style="margin-top:60px;">
 
     <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-12 col-xl-10">
+        <div class="col-md-8 col-xl-8">
   
           <div class="card shopping-card">
             <div class="card-body p-4 text-white">
@@ -82,13 +82,18 @@
               {{ lt.title}}
             </div>
 
-            <!-- <span (click)="editListBtn(lt._id)">
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-            </span> -->
+            <div class="d-flex align-items-center">
+                <span (click)="editListBtn(lt, lt._id)">
+                    <i class="fa fa-pencil text-primary" aria-hidden="true"></i>
+                  </span>
+      
+                  <span title="Remove item" (click)="deleteList(lt._id)" style="margin-left: 30px;">
+                    <i class="fas fa-times text-primary"></i>
+                  </span>
+            </div>
 
-            <span title="Remove item" (click)="deleteList(lt._id)">
-              <i class="fas fa-times text-primary"></i>
-            </span>
+
+            
           </li>
           
         </ul>
@@ -110,69 +115,6 @@
 
 
 
-<div id="edit-list" class="modal fade" role="dialog">
-<div class="modal-dialog">
-    <div class="modal-content">
-    <div class="modal-header">
-        <h3 class="modal-title">Create a List</h3>
-        <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
-        
-    </div>
-    <form #listForm="ngForm" (ngSubmit)="saveList()">
-    <div class="modal-body">
-       
-        <!-- enter title of the list -->
-        <div class="row">                    
-            <div class="col-xs-12 col-md-10">
-                <label for="title" class="control-label"> List Title</label>
-                <input type="text" class="form-control" placeholder="Title" [(ngModel)]="title" 
-                #titleControl="ngModel" name="title" required/>
-                <span class="help-block" *ngIf="titleControl?.invalid && titleControl.touched" class="text-danger">
-                    Title Required
-                </span>    
-            </div>
-
-                         
-            </div> 
-
-        <div class="row mt-3">
-            <div class="col-xs-10 col-md-10">
-                <div class="input-group">                            
-                    <input type="text" class="form-control" placeholder="enter grocery items" [(ngModel)]="item_title" name="item_title"/>
-                    <div class="input-group-btn">
-                        <button class="btn btn-primary" type="button" (click)="addList()">
-                            <span> <i class="fa fa-plus"></i></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>       
-        <br/>
-    
-        <div class="row">
-            <div class="col-md-10">
-                <ul class="list-group">
-                    <li *ngFor="let item of allItems" class="list-group-item">
-                        <span> {{ item.item_title }} </span>
-                    </li>
-                </ul>
-            </div>        
-        </div>
-
-        
-    </div>
-    <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-default" (click)="saveList()">Submit</button> -->
-        <button type="submit" class="btn btn-default" [disabled]="listForm.invalid" data-bs-dismiss="modal">Submit</button>
-        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-    </div>
-
-</form>
-
-    </div>
-
-</div>
-</div>
 <!-- edit modal ends -->
 
 

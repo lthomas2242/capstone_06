@@ -60,6 +60,32 @@
     };
 
 
+    const getListById = function(req, res) {
+        var id = req.params.id;
+        console.log("id", id);
+
+        if (id) {
+            ShoppingList
+                .findById(id)
+                .exec(function(err, data){
+                    if (err){
+                        res 
+                            .status(404)
+                            .json(err)
+                    return;
+                    }
+                    res 
+                        .status(200)
+                        .json(data)
+                }) 
+        } else{
+            res
+                .status(404)
+                .json({"message": "No list id"})
+        }
+    };
+
+
     module.exports = {
-        store, getList, deleteList
+        store, getList, deleteList, getListById
     }
