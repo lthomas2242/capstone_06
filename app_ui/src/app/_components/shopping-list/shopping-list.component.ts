@@ -57,7 +57,16 @@ export class ShoppingListComponent implements OnInit {
   }
 
 
- 
+  getShoppingList(){
+    this.ShoppingListService
+    .getList()
+    .subscribe((list: ShoppingList[]) => {
+      this.list = list.map(list => {
+        return list;
+      })
+    })
+  }
+
   addList() {
     let newitem =  new item(); 
     newitem.item_title = this.item_title;
@@ -76,6 +85,7 @@ export class ShoppingListComponent implements OnInit {
             });
           }
         });
+  
   }
 
   saveList():void { 
@@ -100,6 +110,7 @@ export class ShoppingListComponent implements OnInit {
             });
           }
         });
+    
     } else {
       this.toastr.error('User is not loggedin !', 'Error!');
     }

@@ -3,12 +3,18 @@ table {
 }
 
 i {
-    color: #ad3700;
+    color: #ad3700 !important;
+    background-color: none !important;
 }
 
 td button {
-    border: none;
-    background: none;
+    border: none !important;
+    background-color: none !important;
+}
+
+button {
+    border: none !important;
+    background-color: none !important;
 }
 
 .btn {
