@@ -13,6 +13,14 @@ export class UserListComponent implements OnInit {
   public users: User[] = [];
   constructor(private UserService: UserService) {}
   ngOnInit(): void {
+    this.getAllUsers();
+  }
+  deleteUser(userId:string){
+    this.UserService.DeleteUser(userId);  
+    this.getAllUsers();
+  }
+
+  getAllUsers(){
     this.UserService
     .getUsers()
     .subscribe((books: User[]) => {
@@ -21,8 +29,4 @@ export class UserListComponent implements OnInit {
       })
     })
   }
-  deleteUser(userId:string){
-    this.UserService.DeleteUser(userId);  
-  }
-
 }
