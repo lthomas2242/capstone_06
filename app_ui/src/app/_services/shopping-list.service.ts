@@ -15,11 +15,12 @@ export class ShoppingListService {
   constructor(private http: HttpClient, private router: Router,  private toastr: ToastrService) { }
 
   createList(list: ShoppingList) {
-    console.log("service", list);
     return this.http.post<ShoppingList>(this.apiUrl+'/store', list)
-    // .subscribe((list : ShoppingList)=>{   
-    //   this.router.navigate(['/cust-layout/home']);
-    // })
+  }
+
+  updateList(list: ShoppingList) {
+    console.log("sserv", list._id);
+    return this.http.put<ShoppingList>(this.apiUrl+'/'+list._id, list)
   }
 
   getList() {

@@ -12,6 +12,7 @@ router.post('/list/store', shoppingList.store);
 router.get('/list', shoppingList.getList);
 router.delete('/list/delete/:id', shoppingList.deleteList);
 router.get('/list/single/:id', shoppingList.getListById);
+router.put('/list/:id', shoppingList.updateList);
 
 router.get('/user', userController.getUsers);
 router.delete('/user/:id', userController.deleteUser);
