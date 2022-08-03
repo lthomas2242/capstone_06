@@ -7,5 +7,6 @@ export class User {
     user_role!: string;
     height!: number;
     weight!:string;
+    gender!:string;
     BMI!: string;
 }
