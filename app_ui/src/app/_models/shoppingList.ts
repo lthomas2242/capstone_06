@@ -9,5 +9,5 @@ export class ShoppingList {
     _id!: String;
     title!: String;
     user_id!: any;
-    items: item[] | undefined;
+    items!: item[];
 }

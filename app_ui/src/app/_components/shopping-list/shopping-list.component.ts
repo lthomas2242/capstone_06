@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ShoppingListService } from 'src/app/_services/shopping-list.service';
 import { item, ShoppingList } from 'src/app/_models/shoppingList';
 import { ToastrService } from 'ngx-toastr';
+import { FormGroup, FormBuilder } from '@angular/forms';
 declare var window: any;
 
 @Component({
@@ -16,21 +17,39 @@ export class ShoppingListComponent implements OnInit {
   public item_title: any;
   public item: any;
   public allItems : item[] = [];
-
   public data =  new ShoppingList;
   list: ShoppingList[] | undefined;
 
+  editForm!: FormGroup;
   editModal:any;
-  selected_list_id = 0;
+  selectedList: any;
 
-  constructor(private ShoppingListService : ShoppingListService, private toastr: ToastrService) { }
+  constructor(private ShoppingListService : ShoppingListService, private toastr: ToastrService, 
+    private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.getShoppingList();   
-
+    
+    // this.ShoppingListService
+    // .getList()
+    // .subscribe((list: ShoppingList[]) => {
+    //   this.list = list.map(list => {
+    //     return list;
+    //   })
+    // })
+    this.getList();
     this.editModal = new window.bootstrap.Modal(
-      document.getElementById('edit-list')
+      document.getElementById('create-list')
     );
+  }
+
+  getList() {
+    this.ShoppingListService
+    .getList()
+    .subscribe({
+      next: (v) => {
+        this.list = v;
+      },
+    })
   }
 
   showSuccess() {
@@ -56,18 +75,20 @@ export class ShoppingListComponent implements OnInit {
   }
 
   deleteList(id: String) {
-   
     this.ShoppingListService.deleteList(id)
-    .subscribe({
-      next: (v) => {
-        this.getShoppingList();
-        this.toastr.success('Deleted successfully !', 'Sucsess!');
-      },
-  });
+        .subscribe({
+          next: (v) => {
+            this.getList();
+            this.toastr.success("List Deleted Successfully", 'Success', {
+              timeOut: 3000,
+              positionClass:'toast-top-right' 
+            });
+          }
+        });
+  
   }
 
   saveList():void { 
-    // var userId = "userID";
     let isLoggedIn = localStorage.getItem("isLoggedIn");
   
     if (isLoggedIn == "true") {
@@ -79,20 +100,30 @@ export class ShoppingListComponent implements OnInit {
         items: this.allItems
       };
 
-      this.ShoppingListService.createList(this.data)
+      this.ShoppingListService.createList(this.data) 
         .subscribe({
           next: (v) => {
-            this.getShoppingList();
-          },
-      });
+            this.getList();
+            this.toastr.success("List Added Successfully", 'Success', {
+              timeOut: 3000,
+              positionClass:'toast-top-right' 
+            });
+          }
+        });
+    
     } else {
       this.toastr.error('User is not loggedin !', 'Error!');
     }
     
   }
 
-  editListBtn(listId : any){
-    this.selected_list_id= listId;
+  get editFormData() {
+    return this.editForm.controls;
+  }
+
+  editListBtn(selectedItem:ShoppingList, listId : any){
+    this.title = selectedItem.title[0];
+    this.allItems = selectedItem.items;
     this.editModal.show();
   }
 
