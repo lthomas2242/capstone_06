@@ -29,17 +29,27 @@ export class ShoppingListComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.ShoppingListService
-    .getList()
-    .subscribe((list: ShoppingList[]) => {
-      this.list = list.map(list => {
-        return list;
-      })
-    })
-
+    // this.ShoppingListService
+    // .getList()
+    // .subscribe((list: ShoppingList[]) => {
+    //   this.list = list.map(list => {
+    //     return list;
+    //   })
+    // })
+    this.getList();
     this.editModal = new window.bootstrap.Modal(
       document.getElementById('create-list')
     );
+  }
+
+  getList() {
+    this.ShoppingListService
+    .getList()
+    .subscribe({
+      next: (v) => {
+        this.list = v;
+      },
+    })
   }
 
   showSuccess() {
@@ -56,12 +66,19 @@ export class ShoppingListComponent implements OnInit {
   }
 
   deleteList(id: String) {
-    this.toastr.success('Deleted successfully !', 'Sucsess!');
-    this.ShoppingListService.deleteList(id);
+    this.ShoppingListService.deleteList(id)
+        .subscribe({
+          next: (v) => {
+            this.getList();
+            this.toastr.success("List Deleted Successfully", 'Success', {
+              timeOut: 3000,
+              positionClass:'toast-top-right' 
+            });
+          }
+        });
   }
 
   saveList():void { 
-    // var userId = "userID";
     let isLoggedIn = localStorage.getItem("isLoggedIn");
   
     if (isLoggedIn == "true") {
@@ -72,8 +89,17 @@ export class ShoppingListComponent implements OnInit {
         user_id: userId,
         items: this.allItems
       };
-      console.log(this.data )
-      this.ShoppingListService.createList(this.data);
+
+      this.ShoppingListService.createList(this.data) 
+        .subscribe({
+          next: (v) => {
+            this.getList();
+            this.toastr.success("List Added Successfully", 'Success', {
+              timeOut: 3000,
+              positionClass:'toast-top-right' 
+            });
+          }
+        });
     } else {
       this.toastr.error('User is not loggedin !', 'Error!');
     }

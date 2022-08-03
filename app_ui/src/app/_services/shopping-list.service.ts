@@ -17,9 +17,9 @@ export class ShoppingListService {
   createList(list: ShoppingList) {
     console.log("service", list);
     return this.http.post<ShoppingList>(this.apiUrl+'/store', list)
-    .subscribe((list : ShoppingList)=>{   
-      this.router.navigate(['/cust-layout/home']);
-    })
+    // .subscribe((list : ShoppingList)=>{   
+    //   this.router.navigate(['/cust-layout/home']);
+    // })
   }
 
   getList() {
@@ -27,10 +27,10 @@ export class ShoppingListService {
   }
 
   deleteList(id: String) {
-    this.http.delete(this.apiUrl+'/delete/'+id)
-        .subscribe(() => {
-          this.router.navigate(['/cust-layout/home']);
-        });
+    return this.http.delete(this.apiUrl+'/delete/'+id);
+        // .subscribe(() => {
+        //   this.router.navigate(['/cust-layout/home']);
+        // });
   }
 
   getListById(listId: string) {
