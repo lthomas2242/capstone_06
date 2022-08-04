@@ -39,6 +39,9 @@ export class RecipeSaveComponent implements OnInit {
       .subscribe({
         next: (v) => {
           this.recipe = v;
+          if(!this.recipe.nutritions || this.recipe.nutritions == undefined || this.recipe.nutritions == null){
+            this.recipe.nutritions = new Nutritions();
+          }
           console.log(this.recipe)
         },
     });

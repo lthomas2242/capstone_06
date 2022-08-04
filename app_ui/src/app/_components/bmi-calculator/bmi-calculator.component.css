@@ -18,3 +18,11 @@
     float: none;
     margin-bottom: 10px;
 }
+
+.instructions {
+    padding-top: 40px;
+}
+
+.bmi-result {
+    background: #fff4e4;
+}

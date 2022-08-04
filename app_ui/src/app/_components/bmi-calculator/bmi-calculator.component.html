@@ -84,7 +84,12 @@
                     <h3 class="col-md-8">BMI = {{bmiData.bmi_value}} kg/m2 </h3>
                     <h3 class="col-md-4 text-{{bmiData.bmi_status}} ">{{bmiData.bmi_category}}</h3>
                 </div>
-                <h4>Instructions</h4>
+                <div class="instructions">
+                    <h4>Instructions</h4>
+                    <li>
+                        <h4 *ngIf="bmiData.age >2 && bmiData.age<20">Healthy BMI range: 18.5 kg/m2 - 25 kg/m2</h4>
+                    </li>
+                </div>
             </div>
         </div>
     </div>
