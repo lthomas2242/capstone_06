@@ -26,3 +26,8 @@
 .bmi-result {
     background: #fff4e4;
 }
+
+.instruction-result {
+    padding-left: 30px;
+    padding-top: 20px;
+}
