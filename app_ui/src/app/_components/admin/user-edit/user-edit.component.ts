@@ -20,6 +20,7 @@ import { switchMap } from 'rxjs';
       user_role: '',
       height: 0,
       weight: '',
+      gender:'',
       BMI: ''
     }; 
     constructor(private UserService: UserService,
@@ -48,6 +49,7 @@ import { switchMap } from 'rxjs';
          user_role:user.user_role,
          height: user.height,
          weight: user.weight,
+         gender:user.gender,
          BMI:user.BMI,
        }; 
      });
