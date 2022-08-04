@@ -20,6 +20,7 @@
                     <td>{{user.height}}</td>
                     <td>{{user.weight}}</td>
                     <td><button class="btn" (click)="deleteUser(user._id)">Delete</button></td>
+                    <a class="title-edit" href="/admin-layout/user-edit/{{user._id}}">Edit</a>
                 </tr>
             </tbody>
         </table>

@@ -14,8 +14,10 @@ router.delete('/list/delete/:id', shoppingList.deleteList);
 router.get('/list/single/:id', shoppingList.getListById);
 
 router.get('/user', userController.getUsers);
+router.put('/user/:id', userController.editUser);
 router.delete('/user/:id', userController.deleteUser);
 router.get('/user/count/all', userController.getAllUsersCount);
+router.get('/user/:id', userController.getSingleUser);
 
 //recipe
 router.get('/recipe', recipeController.getAllRecipe);

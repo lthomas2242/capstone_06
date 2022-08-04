@@ -16,7 +16,9 @@ export class UserService {
   getUsers() {
     return this.http.get<User[]>(this.userUrl);
   }
-
+  getSingleUser(userId: string) : Observable<any> {
+    return this.http.get(this.userUrl + '/' + userId);
+  }
   //user login
   login(user:User): Observable<any>{
     return this.http.post<any>(this.userUrl+'/login', user);
@@ -28,6 +30,15 @@ export class UserService {
       this.router.navigate(['/']);
     })
   }
+  editUser(user: User): Promise<void | User> {
+    console.log('Selected User', user);
+    return this.http
+      .put(this.userUrl + '/' + user._id, user)
+      .toPromise()
+      .then((response) => response as User)
+      .catch(this.handleError);
+  }
+  
   DeleteUser(userId: string): Promise<void | User> {
     return this.http
       .delete(this.userUrl + '/' + userId)

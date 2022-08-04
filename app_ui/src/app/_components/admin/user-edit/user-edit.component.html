@@ -1,0 +1,18 @@
+
+  <form (ngSubmit)="updateNewUser(user)"> 
+    <div class="form-group">
+      <p class="detailheading">USER DETAILS</p>
+        <label class="label-heading" for="first_name">First Name</label>
+        <input class="form-control" [(ngModel)]="user.first_name" id="first_name" type="text" name="first_name" placeholder="First Name"/>
+        <label class="label-heading" for="last_name">Last Name</label>
+        <input class="form-control" [(ngModel)]="user.last_name" id="last_name" type="text" name="last_name" placeholder="Last Name"/>
+        <label class="label-heading" for="email">Email</label>
+        <input class="form-control" [(ngModel)]="user.email" id="email" type="text" name="email" placeholder="email"/>
+        <label class="label-heading" for="height">Height</label>
+        <input class="form-control" [(ngModel)]="user.height" id="height" type="text" name="height" placeholder="Height"/>
+        <label class="label-heading" for="weight">Weight</label>
+        <input class="form-control" [(ngModel)]="user.weight" id="weight" type="text" name="weight" placeholder="Weight"/>
+      <button class="btn btn-primary form-submit" type="submit" value="submit">Save</button>
+    </div>
+  </form>
+
