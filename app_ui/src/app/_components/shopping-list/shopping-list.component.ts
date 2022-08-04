@@ -14,6 +14,7 @@ declare var window: any;
 export class ShoppingListComponent implements OnInit {
 
   public title!: String;
+  public listId!: String;
   public item_title: any;
   public item: any;
   public allItems : item[] = [];
@@ -28,14 +29,6 @@ export class ShoppingListComponent implements OnInit {
     private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    
-    // this.ShoppingListService
-    // .getList()
-    // .subscribe((list: ShoppingList[]) => {
-    //   this.list = list.map(list => {
-    //     return list;
-    //   })
-    // })
     this.getList();
     this.editModal = new window.bootstrap.Modal(
       document.getElementById('create-list')
@@ -90,26 +83,47 @@ export class ShoppingListComponent implements OnInit {
 
   saveList():void { 
     let isLoggedIn = localStorage.getItem("isLoggedIn");
-  
+    console.log("list", this.listId );
+
     if (isLoggedIn == "true") {
       let userId = localStorage.getItem("id");
-      this.data = {
-        _id: '',
-        title: this.title,
-        user_id: userId,
-        items: this.allItems
-      };
+      if(!this.listId && this.listId ==undefined){
+        this.data = {
+          _id: '',
+          title: this.title,
+          user_id: userId,
+          items: this.allItems
+        };
 
-      this.ShoppingListService.createList(this.data) 
-        .subscribe({
-          next: (v) => {
-            this.getList();
-            this.toastr.success("List Added Successfully", 'Success', {
-              timeOut: 3000,
-              positionClass:'toast-top-right' 
-            });
-          }
-        });
+        this.ShoppingListService.createList(this.data) 
+          .subscribe({
+            next: (v) => {
+              this.getList();
+              this.toastr.success("List Added Successfully", 'Success', {
+                timeOut: 3000,
+                positionClass:'toast-top-right' 
+              });
+            }
+          });
+      } else {
+        this.data = {
+          _id: this.listId,
+          title: this.title,
+          user_id: userId,
+          items: this.allItems
+        };
+
+        this.ShoppingListService.updateList(this.data) 
+          .subscribe({
+            next: (v) => {
+              this.getList();
+              this.toastr.success("List updated Successfully", 'Success', {
+                timeOut: 3000,
+                positionClass:'toast-top-right' 
+              });
+            }
+          });
+      }
     
     } else {
       this.toastr.error('User is not loggedin !', 'Error!');
@@ -122,9 +136,14 @@ export class ShoppingListComponent implements OnInit {
   }
 
   editListBtn(selectedItem:ShoppingList, listId : any){
+    this.listId = selectedItem._id;
     this.title = selectedItem.title[0];
     this.allItems = selectedItem.items;
     this.editModal.show();
+  }
+
+  removeList(i: any) {
+    this.allItems.splice(i, 1);
   }
 
 }
