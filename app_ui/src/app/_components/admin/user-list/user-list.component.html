@@ -9,6 +9,7 @@
                     <th scope="col">User Role</th>
                     <th scope="col">Height</th>
                     <th scope="col">Weight</th>
+                    <th scope="col">Gender</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +20,7 @@
                     <td>{{user.user_role}}</td>
                     <td>{{user.height}}</td>
                     <td>{{user.weight}}</td>
+                    <td>{{user.gender}}</td>
                     <td><button class="btn" (click)="deleteUser(user._id)">Delete</button></td>
                     <a class="title-edit" href="/admin-layout/user-edit/{{user._id}}">Edit</a>
                 </tr>

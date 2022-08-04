@@ -8,6 +8,7 @@ var usersSchema = new mongoose.Schema({
     user_role: { type: String },
     height: { type: Number },
     weight: { type: Number },
+    gender: { type: String },
     BMI: { type: String }
 });
 

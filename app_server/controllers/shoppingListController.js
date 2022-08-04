@@ -62,8 +62,7 @@
 
     const getListById = function(req, res) {
         var id = req.params.id;
-        console.log("id", id);
-
+    
         if (id) {
             ShoppingList
                 .findById(id)
@@ -85,7 +84,50 @@
         }
     };
 
+    const updateList = function(req, res) {
+        console.log('items',  req.body.items)
+        if (!req.params.id){
+            res 
+                .status(404)
+                .json({"message":"Not found, listid is required"})
+            return
+        }
+        ShoppingList
+            .findById(req.params.id)
+            .exec(function(err, data){
+                if (!data){
+                    res
+                        .status(404)
+                        .json({"message":"listid not found"})
+                return;
+                }
+                else if (err){
+                    res 
+                        .status(400)
+                        .json(err)
+                    return;    
+                }
+                data.title = req.body.title;
+                data.user_id = req.body.user_id;
+                data.items = req.body.items;
+                
+                data.save((err, data) =>{
+                    if (err){
+                        res
+                            .status(404)
+                            .json(err)
+                    }
+                    else{
+                        res 
+                            .status(200)
+                            .json(data)
+                    }
+                })
+    
+            })
+    }
+
 
     module.exports = {
-        store, getList, deleteList, getListById
+        store, getList, deleteList, getListById, updateList
     }

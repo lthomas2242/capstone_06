@@ -140,6 +140,7 @@ const register = function(req, res) {
         user_role: "user",
         height: req.body.height,
         weight: req.body.weight,
+        gender: req.body.gender,
         BMI: "",
 
     }, (err, data) => {
