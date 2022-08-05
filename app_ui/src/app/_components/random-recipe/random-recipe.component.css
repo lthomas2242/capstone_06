@@ -3,3 +3,13 @@
     background-color: #ad3700 !important;
     border-color: #ad3700 !important;
 }
+
+.banner-content {
+    text-align: center;
+    color: #78051a;
+    width: 100%;
+}
+
+.banner-container {
+    padding-bottom: 60px;
+}
