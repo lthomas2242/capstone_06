@@ -1,4 +1,4 @@
-<div class="random-recipe" style="margin-top:100px;">
+<!-- <div class="random-recipe" style="margin-top:100px;">
     <div _ngcontent-aqo-c42="" data-aos="fade-right" class="card mb-5 aos-init aos-animate">
         <div _ngcontent-aqo-c42="" class="row gx-0">
             <div _ngcontent-aqo-c42="" class="col-md-6"><img _ngcontent-aqo-c42="" src="{{randomRecipe.image_url}}" alt="..." class="img-fluid"></div>
@@ -9,4 +9,31 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+<section>
+    <div class="banner-container">
+        <div id="banner-slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="banner-slider-image" style="background: url({{randomRecipe.image_url}}) no-repeat;">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="banner-content-block">
+            <div class="container">
+                <div class="d-table">
+                    <div class="banner-content-info">
+                        <div class="banner-content">
+                            <h1>{{randomRecipe.title}}</h1>
+                            <p>{{randomRecipe.meal_type}}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

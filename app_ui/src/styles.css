@@ -2,7 +2,7 @@
 
 body {
     /* font-family: "proxima-nova" !important; */
-    font-family: "Segoe UI", Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 14px;
     letter-spacing: 0;
     font-weight: 400;
@@ -336,7 +336,7 @@ header .navbar ul li:last-child {
 
 header.header-fixed .navbar ul li a {
     font-size: 15px;
-    color: #fff;
+    /* color: #fff; */
     padding: 0;
 }
 
@@ -2735,21 +2735,40 @@ label {
     font-size: 18px !important;
 }
 
-.user-profile h4{
+.user-profile h4 {
     font-weight: bold;
 }
 
 .nav-link {
-    color: rgba(255,255,255,.55) !important;
+    color: rgba(255, 255, 255, .55) !important;
 }
 
 .shopping-card {
-    margin-bottom: 60px;  background: #e2ddd8;
+    margin-bottom: 60px;
+    background: #e2ddd8;
     border-radius: 2em;
     backdrop-filter: blur(25px);
     border: 2px solid rgba(255, 255, 255, 0.05);
     background-clip: padding-box;
     box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
-} 
+}
 
+.sidebar .nav-link {
+    font-size: 20px;
+    padding: 10px 15px;
+}
 
+.headerdropdown {
+    position: absolute !important;
+    right: 0 !important;
+    left: unset !important;
+    margin-top: 22px !important;
+}
+
+.droptext {
+    font-size: 18px;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}
