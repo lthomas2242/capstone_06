@@ -19,7 +19,6 @@ export class ShoppingListService {
   }
 
   updateList(list: ShoppingList) {
-    console.log("sserv", list._id);
     return this.http.put<ShoppingList>(this.apiUrl+'/'+list._id, list)
   }
 
@@ -29,9 +28,6 @@ export class ShoppingListService {
 
   deleteList(id: String) {
     return this.http.delete(this.apiUrl+'/delete/'+id);
-        // .subscribe(() => {
-        //   this.router.navigate(['/cust-layout/home']);
-        // });
   }
 
   getListById(listId: string) {

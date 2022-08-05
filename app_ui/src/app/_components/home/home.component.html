@@ -78,7 +78,7 @@
             <div class="product-slider-block">
                 <div class="row">
                     <div class="col-md-3" *ngFor="let recipe of recipes | slice:0:4">
-                        <a href="#">
+                        <a routerLink="/cust-layout/recipe/{{recipe?._id}}">
                             <div class="product-card">
                                 <div class="product-image" style="background-image: url({{recipe?.image_url}});">
                                     <button class="fav btn btn-nothing"><img src="../../assets/images/favourite.png"
