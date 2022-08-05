@@ -48,7 +48,7 @@ export class RecipeDetailsComponent implements OnInit {
 
     
     // console.log("recipeee", this.recipeData);
-    // 62e1fe0689437614aec1b8f3
+    // 62eb7b02882875f10c531db6
   }
 
 }

@@ -1,28 +1,115 @@
+<style>
+hr {
+    background: #000000;
+}
+.progress-bar{
+    list-style:none;
+    /*color:#fff;*/
+    margin-top:30px;
+    font-size:16px;
+    counter-reset:container 0;
+}
+.progress-bar li{
+       position:relative;
+       margin-left:40px;
+       margin-top:50px;
+       counter-increment:container 1;
+      color:#ffffff;
+}
+.progress-bar li::before{
+    content:counter(container);
+    line-height:25px;
+    text-align:center;
+    position:absolute;
+    height:30px;
+    width:30px;
+    border:1px solid #78051a;
+    border-radius:50%;
+    left:-40px;
+    /* top:-5px; */
+    z-index:10;
+    background-color:#78051a;
+    color: #ffffff;
+     
+}
+
+
+.progress-bar li::after{
+    content: '';
+    position: absolute;
+    height: 90px;
+    width: 2px;
+    background-color: #d2d9df;
+    z-index: 1;
+    left: -27px;
+    top: -70px;
+}
+
+
+.progress-bar li.active::after{
+    background-color: #fff;
+
+}
+
+.progress-bar li:first-child:after{
+  display:none;  
+}
+
+/*.progress-bar li:last-child:after{*/
+/*  display:none;  */
+/*}*/
+.progress-bar li.active::before{
+    color:#fff;
+      border:1px solid #fff;
+}
+.progress-bar li.active{
+    color:#fff;
+}
+.d-none{
+   display:none;   
+}
+
+.progress-bar {
+    text-align: left;
+}
+</style>
+
+
 <div class="container list-display" style="margin-top: 160px;">
     <div class="row">
-        <div class="col-md-10">
-            <div class="card detail-card bg-light" style="margin-bottom: 40px; padding: 40px">
+        <div class="col-md-12">
+            <div class="card detail-card " style="margin-bottom: 40px; padding: 40px">
                 <div class="row no-gutters">
                     <!-- <div class="col-auto"> -->
                     <div class="col-md-4">
-                        <img class="img-fluid" src=""  style="width: 300px; height: 250px" />
+                        <img class="img-fluid" src="{{recipeData?.image_url}}"  style="width: 300px; height: 250px" />
                     </div>
                     <div class="col-md-8">
                         <div class="card-block px-4">
                             <h3 class="card-title mt-0 font-weight-bold text-uppercase">
                                 {{recipeData.title}}  
                             </h3>
-                            <p class="card-text">By 
-                                <b> author  </b>
-                            </p>
-                            <hr />
-                            <h4 class="price-list mt-0"><b> 50</b></h4>
-                            <p class="h6"> <b>Published On: </b> date </p>
-                                                                                   
-                            
-                                <a href="#" class="btn btn-danger buy-btn"> Add to cart</a>
+                            <span class="rating orange">
+                                <img class="mr-1 mt--3px" src="../../assets/images/star.svg" alt="Veg">
+                                {{recipeData?.rating}}
+                            </span>
 
-                           
+                            <div class="row no-gutters mt-3">
+                                <p class="p-0">
+                                    <span class="text-dark" class="h5" style="color: #000000;"> Preparation Time:  </span>
+                                    {{ recipeData.preparation_time }} 
+                                </p>                          
+                                <p class="p-0"> 
+                                    <span class="text-dark" class="h5" style="color: #000000;"> Nutrition Facts: </span>
+                                    <strong> Calories: </strong> {{ recipeData.nutritions.calories }} &nbsp;
+                                    <strong> Fat: </strong> {{ recipeData.nutritions.fat }} &nbsp;
+                                    <strong> Carbs: </strong> {{ recipeData.nutritions.carbs }}  &nbsp;
+                                    <strong> protein: </strong> {{ recipeData.nutritions.protein }}            
+                                </p>
+                            </div>
+                            <hr/>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#view-list"> View Ingredients</button>                           
+                                                      
                             <div>
                                                         
                             </div>
@@ -30,12 +117,79 @@
                     </div>
                 </div>
 
-                <div class="row no-gutters mt-5">
-                    <h4> About </h4>
-                    <p> abouttt </p>
-                </div>
+                <!-- <div class="row no-gutters mt-5">
+                    <h4> Nutrition Facts </h4>
+                    <p> 
+                        <strong> Calories: </strong> {{ recipeData.nutritions.calories }} 
+                        <strong> Fat: </strong> {{ recipeData.nutritions.fat }} 
+                        <strong> Carbs: </strong> {{ recipeData.nutritions.carbs }} 
+                        <strong> protein: </strong> {{ recipeData.nutritions.protein }} 
+
+                    </p>
+                </div> -->
+
+
+                  <div class="row mt-5">
+                    <div class="col-md-12">
+                        <h5 style="margin-bottom: -15px !important;"> Directions:</h5>
+                        <ul class="progress-bar mt-0" style="background: none; white-space: pre-line;">
+                            
+                            <li *ngFor="let data of recipeData.directions" style="color: #868996;">
+                                {{ data }}
+                            </li>
+                           
+                        </ul>
+                    </div>
+
+                  </div>
                 
             </div>
     </div>
 </div>
 </div>
+
+
+
+
+<div id="view-list" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Ingredients List</h3>
+            <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+            
+        </div>
+        
+        <div class="modal-body ml-3 mr-3 mb-3">
+           
+            <div class="row justify-content-center align-items-center">                    
+                <div class="col-xs-12 col-md-12">
+                   <ul>
+                        <li *ngFor="let ingredient of recipeData.ingredients" style="color: #868996;">
+                            
+                            <p class="p-0" style="font-size: 16px;">
+                                <span class="text-dark" class="h5" style="color: #000000;"> 
+                                    {{ ingredient.ingredient_name }}
+                                </span>
+                                {{ ingredient.quantity }}
+                            </p> 
+                        </li>
+                   </ul>
+                       
+                </div>         
+                </div> 
+    
+      
+            <br/>     
+        </div>
+        <div class="modal-footer">
+            
+            <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+        </div>
+    
+  
+    
+        </div>
+    
+    </div>
+    </div>
