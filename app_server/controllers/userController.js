@@ -65,6 +65,7 @@ const editUser = function (req,res) {
         data.user_role= req.body.user_role,
         data.height= req.body.height,
         data.weight= req.body.weight,
+        data.gender= req.body.gender,
         data.BMI= req.body.BMI,
         data.save((err, data) => {
           if (err) {

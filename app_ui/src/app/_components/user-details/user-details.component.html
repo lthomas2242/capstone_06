@@ -4,7 +4,7 @@
             <div class="col col-lg-12 mb-6 mb-lg-0">
                 <div class="card mb-3" style="border-radius: .5rem;">
                     <div class="row g-0">
-                        <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;background-image:url('../../assets/images/apple.png'); ;">
+                        <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;background-image:url('../../assets/images/apple.png');">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body p-4">
@@ -33,7 +33,7 @@
                                     </div>
                                     <div class="col-6 mb-3">
                                         <label>Gender:</label>
-                                        <p></p>
+                                        <p>{{gender}}</p>
                                     </div>
                                     <div class="col-6 mb-3">
                                         <label>Height: </label>
@@ -43,6 +43,9 @@
                                         <label>Weight: </label>
                                         <p>{{weight}} Kg</p>
                                     </div>
+                                    <div class="col-6 mb-3">
+                                    <a class="btn" href="/admin-layout/user-edit/{{id}}">Edit User Details</a>
+                                </div>
                                 </div>
                                 <!-- <button type="button" style="margin-bottom: 20px;height: 30px;font-size: small;background-color: #f26a36;
                   border: 1px solid #f26a36;color: white;" data-bs-toggle="modal" data-bs-target="#create-list">

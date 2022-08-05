@@ -23,8 +23,8 @@ export class UserListComponent implements OnInit {
   getAllUsers(){
     this.UserService
     .getUsers()
-    .subscribe((books: User[]) => {
-      this.users = books.map(user => {
+    .subscribe((users: User[]) => {
+      this.users = users.map(user => {
         return user;
       })
     })

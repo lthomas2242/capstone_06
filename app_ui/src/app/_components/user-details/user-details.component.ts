@@ -18,4 +18,5 @@ export class UserDetailsComponent implements OnInit {
   password =  localStorage.getItem('password');
   height =  localStorage.getItem('height');
   weight =  localStorage.getItem('weight');
+  gender =  localStorage.getItem('gender');
 }

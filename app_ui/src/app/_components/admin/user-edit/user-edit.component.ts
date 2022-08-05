@@ -3,6 +3,7 @@ import { User } from 'src/app/_models/user';
 import { UserService } from 'src/app/_services/user.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { switchMap } from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-edit',
@@ -24,6 +25,7 @@ import { switchMap } from 'rxjs';
       BMI: ''
     }; 
     constructor(private UserService: UserService,
+      private router: Router,
       private route: ActivatedRoute) {
      } 
     ngOnInit(): void { 
@@ -36,7 +38,17 @@ import { switchMap } from 'rxjs';
     } 
     public updateNewUser(user: User): void{ 
       this.UserService.editUser(user);
-    } 
+      
+      // var input:string = user.user_role;
+      // console.log(input);
+        
+      //   if(input=="user") {
+      //     this.router.navigate(['/cust-layout/user-details']);
+      //   }
+      //     else if(input=="admin") {
+      //     this.router.navigate(['/admin-layout/user-list']);
+      //   }
+        }  
 
     public getSingleUser(user_id : string){
       this.UserService.getSingleUser(user_id).subscribe((user: User) => {
