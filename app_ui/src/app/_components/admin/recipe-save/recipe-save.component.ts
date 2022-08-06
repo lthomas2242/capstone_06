@@ -94,4 +94,8 @@ export class RecipeSaveComponent implements OnInit {
   closeModal(){
     this.closeModalEvent.emit(true);
   }
+
+  getCategories(){
+    
+  }
 }

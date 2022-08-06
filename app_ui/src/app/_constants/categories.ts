@@ -1,6 +1,6 @@
 export enum Categories {
-    breakfast, 
-    lunch, 
-    dinner, 
-    juice
+    breakfast = 1, 
+    lunch = 2, 
+    dinner = 3, 
+    juice = 4
   }

@@ -1,4 +1,4 @@
 export enum MealTypes {
-    vegitarian, 
-    non_veg
+    vegitarian = 1, 
+    non_veg = 2
   }
