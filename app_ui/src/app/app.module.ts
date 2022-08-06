@@ -34,6 +34,8 @@ import { DashboardComponent } from './_components/admin/dashboard/dashboard.comp
 import { BMICalculatorComponent } from './_components/bmi-calculator/bmi-calculator.component';
 import { UserEditComponent } from './_components/admin/user-edit/user-edit.component';
 import { RecipeDetailsComponent } from './_components/recipe-details/recipe-details.component';
+import { AddRecipeComponent } from './_components/add-recipe/add-recipe.component';
+import { MyRecipeComponent } from './_components/my-recipe/my-recipe.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,7 @@ import { RecipeDetailsComponent } from './_components/recipe-details/recipe-deta
     DashboardComponent,
     BMICalculatorComponent,
     UserEditComponent,  
-    RecipeDetailsComponent
+    RecipeDetailsComponent, AddRecipeComponent, MyRecipeComponent
   ],
   imports: [
     BrowserModule,
@@ -121,6 +123,10 @@ import { RecipeDetailsComponent } from './_components/recipe-details/recipe-deta
           {
             path: 'recipe/:recipeid',
             component: RecipeDetailsComponent
+          },
+          {
+            path: 'recipe-add',
+            component: AddRecipeComponent
           }
         ]
       },
