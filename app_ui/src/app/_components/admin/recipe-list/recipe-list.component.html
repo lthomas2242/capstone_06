@@ -15,8 +15,8 @@
                     <th rowspan="2">Preparation Time</th>
                     <th rowspan="2">Status</th>
                     <th colspan="6">Nutritions</th>
-                    <th rowspan="2">Ingredients</th>
-                    <th rowspan="2">Directions</th>
+                    <!-- <th rowspan="2">Ingredients</th>
+                    <th rowspan="2">Directions</th> -->
                     <th rowspan="2" colspan="2">Actions</th>
                 </tr>
                 <tr>
@@ -31,7 +31,7 @@
             <tbody>
                 <tr *ngFor="let recipe of recipes; index as i;">
                     <td>
-                        <img src={{recipe?.image_url}} class="img-fluid img-thumbnail" alt="recipe">
+                        <img src={{recipe?.image_url}} class="img-fluid img-thumbnail" alt="recipe" width="50">
                     </td>
                     <td>{{recipe?.title}}</td>
                     <td>{{recipe?.description}}</td>
@@ -47,7 +47,7 @@
                     <td>{{recipe?.nutritions?.protein}}</td>
                     <td>{{recipe?.nutritions?.cholesterol}}</td>
                     <td>{{recipe?.nutritions?.sodium}}</td>
-                    <td>
+                    <!-- <td>
                         <li *ngFor="let ingredient of recipe.ingredients;">
                             <span>{{ingredient?.ingredient_name}}</span>
                             <span>&nbsp;({{ingredient?.quantity}})</span>
@@ -57,7 +57,7 @@
                         <li *ngFor="let direction of recipe.directions;">
                             <span>{{direction}}</span>
                         </li>
-                    </td>
+                    </td> -->
                     <td><button (click)="editRecipeBtn(recipe._id)"><i class="fa fa-pencil" aria-hidden="true"></i></button></td>
                     <td><button (click)="deleteRecipe(recipe._id)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
                 </tr>
