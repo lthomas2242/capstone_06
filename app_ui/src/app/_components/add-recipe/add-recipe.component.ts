@@ -48,7 +48,7 @@ export class AddRecipeComponent implements OnInit {
       if (isLoggedIn == "true") {
        
         recipeToSave.user_id = localStorage.getItem("id");
-        recipeToSave.approved = 0;
+        recipeToSave.approved = true;
         console.log("dt", recipeToSave);
         this.recipeService.createRecipe(recipeToSave)
         .subscribe({

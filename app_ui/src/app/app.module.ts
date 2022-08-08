@@ -35,10 +35,9 @@ import { BMICalculatorComponent } from './_components/bmi-calculator/bmi-calcula
 import { UserEditComponent } from './_components/admin/user-edit/user-edit.component';
 import { RecipeDetailsComponent } from './_components/recipe-details/recipe-details.component';
 import { RecipeDataComponent } from './_components/recipe-data/recipe-data.component';
-import { RecipeListCriteriaComponent } from './_components/recipe-data/recipe-list-criteria/recipe-list-criteria.component';
-import { RecipeListResultComponent } from './_components/recipe-data/recipe-list-result/recipe-list-result.component';
 import { AddRecipeComponent } from './_components/add-recipe/add-recipe.component';
 import { MyRecipeComponent } from './_components/my-recipe/my-recipe.component';
+import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-data-list.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -61,8 +60,8 @@ import { MyRecipeComponent } from './_components/my-recipe/my-recipe.component';
     DashboardComponent,
     BMICalculatorComponent,
     UserEditComponent,  
-    RecipeDetailsComponent, RecipeDataComponent, RecipeListCriteriaComponent, RecipeListResultComponent,
-    RecipeDetailsComponent, AddRecipeComponent, MyRecipeComponent
+    RecipeDetailsComponent, RecipeDataComponent,
+    RecipeDetailsComponent, AddRecipeComponent, MyRecipeComponent, RecipeDataListComponent
   ],
   imports: [
     BrowserModule,

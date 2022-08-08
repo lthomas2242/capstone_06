@@ -3,12 +3,13 @@ export class Recipe {
     user_id!: string | null;
     title!: string;
     meal_type!: string;
-    category!: number;
+    category!: string;
     description!: string;
     rating!: string;
     preparation_time!: string;
     image_url!: string;
-    approved!: number;
+    approved!: boolean;
+    video_url!: string;
     ingredients!: Ingredients[] ;
     directions!: String[] ;
     nutritions!: Nutritions;

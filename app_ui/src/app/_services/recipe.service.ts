@@ -46,4 +46,8 @@ export class RecipeService {
   getApprovedRecipesCount() : Observable<any>{
     return this.http.get<Recipe>(this.recipeUrl+"/count/approved");
   }
+
+  getRecipesByFilters() : Observable<any>{
+    return this.http.get<Recipe>(this.recipeUrl+"/filters");
+  }
 }
