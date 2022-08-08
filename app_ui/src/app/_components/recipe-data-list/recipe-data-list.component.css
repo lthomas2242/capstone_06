@@ -1,0 +1,9 @@
+.cardinner {
+    display: flex;
+    align-items: center;
+}
+
+.subhead {
+    color: #b5b5b5;
+    font-size: 14px;
+}
