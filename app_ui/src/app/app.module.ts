@@ -127,6 +127,10 @@ import { MyRecipeComponent } from './_components/my-recipe/my-recipe.component';
           {
             path: 'recipe-add',
             component: AddRecipeComponent
+          },
+          {
+            path: 'my-recipes',
+            component: MyRecipeComponent
           }
         ]
       },
