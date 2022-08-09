@@ -43,6 +43,7 @@ const createRecipe = function(req, res) {
     Recipe.create({
         title: req.body.title,
         meal_type: req.body.meal_type,
+        category: req.body.category,
         description: req.body.description,
         rating: req.body.rating,
         preparation_time: req.body.preparation_time,
@@ -85,6 +86,7 @@ const updateRecipe = function(req, res) {
 
             data.title = req.body.title,
                 data.meal_type = req.body.meal_type,
+                data.category = req.body.category,
                 data.description = req.body.description,
                 data.rating = req.body.rating,
                 data.preparation_time = req.body.preparation_time,

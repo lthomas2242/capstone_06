@@ -22,3 +22,8 @@ button {
     background-color: #ad3700 !important;
     border-color: #ad3700 !important;
 }
+
+#recipe_title a {
+    text-decoration: none;
+    color: black;
+}
