@@ -142,6 +142,10 @@ import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-d
           {
             path: 'recipe-add',
             component: AddRecipeComponent
+          },
+          {
+            path: 'my-recipes',
+            component: MyRecipeComponent
           }
         ]
       },

@@ -1,10 +1,10 @@
 <div *ngFor="let recipe of recipes; index as i;">
     <div class="card mb-5 shadow">
         <div class="row g-0">
-            <div class="col-md-3 col-xs-12">
-                <img src="{{recipe?.image_url}}" class="img-fluid rounded-start" alt="food" width="180" height="180" routerLink="/cust-layout/recipe/{{recipe?._id}}">
+            <div class="col-md-4 col-xs-12" style="max-height: 20rem;">
+                <img src="{{recipe?.image_url}}" class="img-fluid rounded-start" alt="food" routerLink="/cust-layout/recipe/{{recipe?._id}}">
             </div>
-            <div class="col-md-9 col-xs-12 cardinner">
+            <div class="col-md-8 col-xs-12 cardinner" style="max-height: 20rem;">
                 <div class="card-body">
                     <div class="row">
                         <h4 class="card-title col-md-10 col-xs-12"><a routerLink="/cust-layout/recipe/{{recipe?._id}}" style="color: black;">{{recipe?.title | titlecase }}</a></h4>

@@ -174,6 +174,35 @@ const getApprovedRecipesCount = function(req, res) {
     });
 };
 
+const recipeByUser = function(req, res) {
+    console.log("apii");
+    let isLoggedIn = localStorage.getItem("isLoggedIn");
+    let userid = localStorage.getItem("id");
+console.log("dd",userid);
+    if (userid) {
+        Recipe.where("user_id", userid)
+            .exec((err, data) => {
+                if (!data) {
+                    res.status(404)
+                        .json({
+                            "message": "userid not found",
+                        });
+                    return;
+                } else if (err) {
+                    res.status(404).json(err);
+                    return;
+                }
+                res.status(200).json(data);
+            });
+
+    } else {
+        res.status(404)
+            .json({
+                "message": "No userid in request"
+            });
+    }
+}
+
 
 /*Exporting modules */
 module.exports = {
@@ -185,5 +214,6 @@ module.exports = {
     getRecipesByFilters,
     getRecipeIds,
     getAllRecipesCount,
-    getApprovedRecipesCount
+    getApprovedRecipesCount,
+    recipeByUser
 }

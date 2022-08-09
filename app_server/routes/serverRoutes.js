@@ -30,5 +30,6 @@ router.post('/recipe/filters', recipeController.getRecipesByFilters);
 router.get('/recipe/ids', recipeController.getRecipeIds);
 router.get('/recipe/count/all', recipeController.getAllRecipesCount);
 router.get('/recipe/count/approved', recipeController.getApprovedRecipesCount);
+router.get('/recipe/users', recipeController.recipeByUser);
 
 module.exports = router;

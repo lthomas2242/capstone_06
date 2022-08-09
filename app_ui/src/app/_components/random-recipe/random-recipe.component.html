@@ -1,17 +1,32 @@
-<!-- <div class="random-recipe" style="margin-top:100px;">
-    <div _ngcontent-aqo-c42="" data-aos="fade-right" class="card mb-5 aos-init aos-animate">
-        <div _ngcontent-aqo-c42="" class="row gx-0">
-            <div _ngcontent-aqo-c42="" class="col-md-6"><img _ngcontent-aqo-c42="" src="{{randomRecipe.image_url}}" alt="..." class="img-fluid"></div>
-            <div _ngcontent-aqo-c42="" class="col-md-6">
-                <div _ngcontent-aqo-c42="" class="card-body d-flex align-items-center justify-content-center h-100 flex-column">
-                    <h3 _ngcontent-aqo-c42="" class="card-title fw-bold text-uppercase mb-2">{{randomRecipe.title}}</h3>
-                    <p _ngcontent-aqo-c42="" class="card-text fw-light mb-4">{{randomRecipe.meal_type}}</p><a _ngcontent-aqo-c42="" class="btn btn-outline-dark fw-500">View More</a></div>
+<div class="random-recipe">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" *ngFor="let recipe of allRecipes">
+            <div class="carousel-item" [class.active]="randomRecipe._id === recipe._id">
+                <div class="card" style="height: 20rem;">
+                    <div class="row">
+                        <div class="col-md-6" style="max-height: 20rem;"><img src="{{randomRecipe.image_url}}" alt="..." class="img-fluid"></div>
+                        <div class="col-md-6" style="max-height: 20rem;">
+                            <div class="card-body d-flex align-items-center justify-content-center h-100 flex-column">
+                                <h3 class="card-title fw-bold text-uppercase mb-2">{{randomRecipe.title}}</h3>
+                                <p class="card-text fw-light mb-4">{{randomRecipe.category}}</p>
+                                <a class="btn btn-outline-dark fw-500" routerLink="/cust-layout/recipe/{{randomRecipe?._id}}">View More</a></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" (click)="getRandomRecipe()">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" (click)="getRandomRecipe()">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-</div> -->
+</div>
 
-<section>
+<!-- <section>
     <div class="banner-container">
         <div id="banner-slider" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -36,4 +51,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
