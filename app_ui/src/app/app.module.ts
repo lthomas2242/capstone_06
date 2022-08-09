@@ -35,8 +35,10 @@ import { BMICalculatorComponent } from './_components/bmi-calculator/bmi-calcula
 import { UserEditComponent } from './_components/admin/user-edit/user-edit.component';
 import { RecipeDetailsComponent } from './_components/recipe-details/recipe-details.component';
 import { CustomerUsereditComponent } from './_components/customer-useredit/customer-useredit.component';
-
-
+import { RecipeDataComponent } from './_components/recipe-data/recipe-data.component';
+import { AddRecipeComponent } from './_components/add-recipe/add-recipe.component';
+import { MyRecipeComponent } from './_components/my-recipe/my-recipe.component';
+import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-data-list.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -60,7 +62,11 @@ import { CustomerUsereditComponent } from './_components/customer-useredit/custo
     BMICalculatorComponent,
     UserEditComponent,  
     RecipeDetailsComponent,
-    CustomerUsereditComponent
+    CustomerUsereditComponent,
+    RecipeDataComponent,
+    AddRecipeComponent,
+     MyRecipeComponent, 
+     RecipeDataListComponent
   ],
   imports: [
     BrowserModule,
@@ -128,6 +134,14 @@ import { CustomerUsereditComponent } from './_components/customer-useredit/custo
           {
             path: 'customer-useredit/:id',
             component: CustomerUsereditComponent
+          },{
+
+             path: 'recipe-list',
+            component: RecipeDataComponent
+          },
+          {
+            path: 'recipe-add',
+            component: AddRecipeComponent
           }
         ]
       },
