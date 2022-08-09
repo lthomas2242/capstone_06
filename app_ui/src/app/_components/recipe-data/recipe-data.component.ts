@@ -31,7 +31,13 @@ export class RecipeDataComponent implements OnInit {
 
   onChangeCategory(event : any,index:number){
     this.categories[index].checked = !  this.categories[index].checked;
-    this.filter.category = this.categories;
+    this.filter.category = this.categories.filter((r:any)=>r.checked);
+    this.searchForRecipes();
+  }
+
+  onChangeCalory(event : any,index:number){
+    this.caloriesRange[index].checked = !  this.caloriesRange[index].checked;
+    this.filter.calories = this.caloriesRange.filter((r:any)=>r.checked);
     this.searchForRecipes();
   }
 
@@ -47,34 +53,33 @@ export class RecipeDataComponent implements OnInit {
   });
   }
   searchForRecipes(){
-    console.log(this.filter);
-    
+    console.log(this.filter)
     if(this.filter != undefined && this.filter != null){
+      this.recipes = this.allRecipes;
       //check title
       if( this.filter.title != null && this.filter.title != ""){
         this.recipes = this.recipes.filter(r=>r.title.includes(this.filter.title)); 
-        console.log(this.recipes)
-      }else{
-        this.recipes = this.allRecipes;
       }
       //check meal type
       if( this.filter.meal_type != undefined && this.filter.meal_type != ""){
         this.recipes = this.recipes.filter(r=>r.meal_type==this.filter.meal_type); 
-        console.log(this.recipes)
-      }else{
-        this.recipes = this.allRecipes;
       }
       //check category
       if( this.filter.category != undefined && this.filter.category != null && this.filter.category.length > 0){
-        this.recipes = this.recipes.filter(r=> this.filter.category.includes(r.category)); 
-        console.log(this.recipes)
-      }else{
-        this.recipes = this.allRecipes;
+        let selectedCategories = this.filter.category.map((c:any)=>c.key);
+        this.recipes = this.recipes.filter(r=> selectedCategories.includes(r.category)); 
       }
-
-
       //check calory
+      if( this.filter.calories != undefined && this.filter.calories != null && this.filter.calories.length > 0){
+        this.recipes = this.recipes.filter((r) => {
+          return  this.filter.calories.some((c:any) => {
+            return r.nutritions.calories > c.start && r.nutritions.calories < c.end;
+          });
+        });
+      }
     }  
+    console.log(this.recipes);
+    this.recipes =[...this.recipes] ;
   }
 
   getCategories(){
@@ -103,32 +108,46 @@ export class RecipeDataComponent implements OnInit {
 
   getCaloriesRange(){
     this.caloriesRange.push({
+      id : 1,
       start : 0,
-      end : 100
+      end : 100,
+      checked : false
     },
     {
+      id : 2,
       start : 100,
-      end : 200
+      end : 200,
+      checked : false
     },
     {
+      id : 3,
       start : 200,
-      end : 300
+      end : 300,
+      checked : false
     },
     {
+      id : 4,
       start : 300,
-      end : 400
+      end : 400,
+      checked : false
     },
     {
+      id : 5,
       start : 400,
-      end : 500
+      end : 500,
+      checked : false
     },
     {
+      id : 6,
       start : 500,
-      end : 600
+      end : 600,
+      checked : false
     },
     {
+      id : 7,
       start : 600,
-      end : 700
+      end : 700,
+      checked : false
     })
   }
 }
