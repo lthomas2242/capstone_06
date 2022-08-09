@@ -2,9 +2,6 @@
 <header class="header-fixed" style="background: #78051a;">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-md" style="padding: 2px 0">
-            <!-- <a class="navbar-brand" routerLink="/car">
-                <h5 class="hedcls" style="color: #fff; font-size: 35px;">RecipeforYou.....!</h5>
-            </a> -->
             <button class="navbar-toggler" type="button" data-target="#collapsibleNavbar">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path d="M0 0h24v24H0z" fill="none"></path>
@@ -38,32 +35,25 @@
                     <li class="nav-item" style="padding: 0 15px;">
                         <a class="nav-link" routerLink="/cust-layout/contact" style="font-size: 20px;">Contact Us</a>
                     </li>
-                    <li>
-                        <div class="navbar-nav">
-                            <div class="nav-item text-nowrap">
-                                <div class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle droptext" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span data-feather="user" class="align-text-bottom"></span>
-                                        <button type="button" class="btn btn-nothing">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16">
-                                                <g fill="none" fill-rule="evenodd" stroke="#868996" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="1.6" transform="translate(1 1)">
-                                                    <path
-                                                        d="M13 14v-1.556c0-1.718-1.455-3.11-3.25-3.11h-6.5c-1.795 0-3.25 1.392-3.25 3.11V14">
-                                                    </path>
-                                                    <ellipse cx="6.5" cy="3.111" rx="3.25" ry="3.111"></ellipse>
-                                                </g>
-                                            </svg>
-                                        </button>
-                                    </a>
-                                    <ul class="dropdown-menu headerdropdown">
-                                        <li style=" float: left;"><a class="dropdown-item" routerLink="/cust-layout/user-details">Profile</a></li>
-                                        <li style=" float: left;"><a class="dropdown-item" (click)="logout()">Sign out</a></li>
-                                        <li></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <button type="button" class="btn btn-nothing">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16">
+                                    <g fill="none" fill-rule="evenodd" stroke="#868996" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="1.6" transform="translate(1 1)">
+                                        <path
+                                            d="M13 14v-1.556c0-1.718-1.455-3.11-3.25-3.11h-6.5c-1.795 0-3.25 1.392-3.25 3.11V14">
+                                        </path>
+                                        <ellipse cx="6.5" cy="3.111" rx="3.25" ry="3.111"></ellipse>
+                                    </g>
+                                </svg>
+                            </button>
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li style=" float: left;"><a class="dropdown-item" routerLink="/cust-layout/user-details">Profile</a></li>
+                            <li style=" float: left;"><a class="dropdown-item" (click)="logout()">Sign out</a></li>
+                            <li></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
