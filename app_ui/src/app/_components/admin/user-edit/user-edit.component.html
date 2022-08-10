@@ -1,6 +1,4 @@
-
-  
-    <!-- <div class="container-xxl">
+<!-- <div class="container-xxl">
       <div style="overflow: auto;">
       <p class="detailheading">USER DETAILS</p>
         <label for="first_name">First Name</label>
@@ -16,100 +14,110 @@
       <button class="btn" style="background-color: #ad3700;" type="submit" value="submit">Save Details</button>
     </div>
     </div> -->
- 
-  <form (ngSubmit)="updateNewUser(user)" onsubmit="window.location.href='/admin-layout/user-list';"> 
-    <!-- <form (ngSubmit)="updateNewUser(user)"> -->
+
+<!-- <form (ngSubmit)="updateNewUser(user)" [formGroup]="userForm" onsubmit="window.location.href='/admin-layout/user-list';">  -->
+
   <section>
-    <div class="container user-profile py-5 h-100" style="margin-top: 70px;">
+    <form (ngSubmit)="updateNewUser(user)">
+      <div class="container user-profile py-5 h-100" style="margin-top: 70px;">
         <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col col-lg-12 mb-6 mb-lg-0">
-                <div class="card mb-3" style="border-radius: .5rem;">
-                    <div class="row g-0">
-                        <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;background-image:url('../../assets/images/user-edit-image.jpg');">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body p-4">
-                                <h3>Profile Information</h3>
-                                <hr class="mt-0 mb-4">
-                                <div class="row pt-1">
-                                    <!-- <div class="col-6 mb-3">
-                      <h5>Id</h5>
-                      <h4>{{id}}</h4>
-                    </div> -->
-                                    <!-- <div class="col-6 mb-3">
-                        <h4>Name: </h4>
-                        <h3>{{first_name}} {{last_name}}</h3>
-                      </div> -->
-                                    <div class="col-6 mb-3">
-                                      <label for="first_name">First Name</label>
-                                      <input class="form-control" [(ngModel)]="user.first_name" id="first_name" type="text" name="first_name" placeholder="First Name" #first_name="ngModel" required/>
-                                      <div *ngIf="first_name.invalid && first_name.touched"
-                                      class="text-danger">
-                                    <div *ngIf="first_name.errors?.['required']">
-                                      First Name is required.
-                                    </div>
-                                    </div>
-                                    </div>
-                                    <div class="col-6 mb-3">
-                                      <label class="label-heading" for="last_name">Last Name</label>
-                                      <input class="form-control" [(ngModel)]="user.last_name" id="last_name" type="text" name="last_name" placeholder="Last Name" #last_name="ngModel" required/>
-                                      <div *ngIf="last_name.invalid && last_name.touched"
-                                      class="text-danger">
-                                    <div *ngIf="last_name.errors?.['required']">
-                                      Last Name is required.
-                                    </div>
-                                    </div>
-                                    </div>
-                                    <div class="col-6 mb-3">
-                                      <label class="label-heading" for="email">Email</label>
-                                      <input class="form-control" [(ngModel)]="user.email" id="email" type="text" name="email" placeholder="email" #email="ngModel" required/>
-                                      <div *ngIf="email.invalid && email.touched"
-                                      class="text-danger">
-                                    <div *ngIf="email.errors?.['required']">
-                                      Email is required.
-                                    </div>
-                                    </div>
-                                    </div>
-                                    <div class="col-6 mb-3">
-                                      <label class="label-heading" for="height">Height</label>
-                                      <input class="form-control" [(ngModel)]="user.height" id="height" type="text" name="height" placeholder="Height" #height="ngModel" required/>
-                                      <div *ngIf="height.invalid && height.touched"
-                                      class="text-danger">
-                                    <div *ngIf="height.errors?.['required']">
-                                      Height is required.
-                                    </div>
-                                    </div>
-                                    </div>
-                                    <div class="col-6 mb-3">
-                                      <label class="label-heading" for="weight">Weight</label>
-                                      <input class="form-control" [(ngModel)]="user.weight" id="weight" type="text" name="weight" placeholder="Weight" #weight="ngModel" required/><br>
-                                      <div *ngIf="weight.invalid && weight.touched"
-                                      class="text-danger">
-                                    <div *ngIf="weight.errors?.['required']">
-                                      Weight is required.
-                                    </div>
-                                    </div>
-                                    </div>
-                                    <div class="col-6 mb-3">
-                                      <label class="label-heading" for="weight">Gender: Male/Female/Other</label>
-                                      <input class="form-control" [(ngModel)]="user.gender" id="gender" type="text" name="gender" placeholder="Gender"/><br>
-                                    </div>
-                                    <div>
-                                      <button class="btn" style="background-color: #ad3700;" type="submit" value="submit">Save Details</button>
-                                    </div>
-                                </div>
-                                <!-- <button type="button" style="margin-bottom: 20px;height: 30px;font-size: small;background-color: #f26a36;
-                  border: 1px solid #f26a36;color: white;" data-bs-toggle="modal" data-bs-target="#create-list">
-                    Edit Profile
-               </button> -->
-
-
-                            </div>
-                        </div>
-                    </div>
+          <div class="col col-lg-12 mb-6 mb-lg-0">
+            <div class="card mb-3" style="border-radius: .5rem;">
+              <div class="row g-0">
+                <div class="col-md-4 gradient-custom text-center text-white"
+                  style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;background-image:url('../../assets/images/user-edit-image.jpg');">
                 </div>
+                <div class="col-md-8">
+                  <div class="card-body p-4">
+                    <h3>Profile Information</h3>
+                    <hr class="mt-0 mb-4">
+                    <div class="row pt-1">
+                      <!-- <div class="col-6 mb-3">
+                            <h5>Id</h5>
+                            <h4>{{id}}</h4>
+                          </div> -->
+                      <!-- <div class="col-6 mb-3">
+                              <h4>Name: </h4>
+                              <h3>{{first_name}} {{last_name}}</h3>
+                            </div> -->
+                      <div class="col-6 mb-3">
+                        <label for="first_name">First Name</label>
+                        <input class="form-control form-control-lg" 
+                          [(ngModel)]="user.first_name" id="first_name" type="text" name="first_name"
+                          placeholder="First Name" #first_name="ngModel" required />
+                        <div *ngIf="first_name.invalid && first_name.touched" class="text-danger">
+                          <div *ngIf="first_name.errors?.['required']">
+                            First Name is required.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <label class="label-heading" for="last_name">Last Name</label>
+                        <input class="form-control" id="last_name"
+                          [(ngModel)]="user.last_name" type="text" name="last_name" placeholder="Last Name"
+                          #last_name="ngModel" />
+                        <div *ngIf="last_name.invalid && last_name.touched" class="text-danger">
+                          <div *ngIf="last_name.errors?.['required']">
+                            Last Name is required.
+                          </div>
+                        </div>
+  
+                      </div>
+                      <div class="col-6 mb-3">
+                        <label class="label-heading" for="email">Email</label>
+                        <input class="form-control" [(ngModel)]="user.email" id="email"
+                          type="text" name="email" placeholder="email" required #email="ngModel" />
+                        <div *ngIf="email.invalid && email.touched" class="text-danger">
+                          <div *ngIf="email.errors?.['required']">
+                            Email is required.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <label class="label-heading" for="height">Height</label>
+                        <input class="form-control" [(ngModel)]="user.height" id="height"
+                          type="text" name="height" placeholder="Height" #height="ngModel" required />
+                        <div *ngIf="height.invalid && height.touched" class="text-danger">
+                          <div *ngIf="height.errors?.['required']">
+                            Height is required.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <label class="label-heading" for="weight">Weight</label>
+                        <input class="form-control"  [(ngModel)]="user.weight" id="weight"
+                          type="text" name="weight" placeholder="Weight" required #weight="ngModel" /><br>
+  
+                        <div *ngIf="weight.invalid && weight.touched" class="text-danger">
+                          <div *ngIf="weight.errors?.['required']">
+                            Weight is required.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <label class="label-heading" for="gender">Gender: Male/Female/Other</label>
+                        <input class="form-control"  [(ngModel)]="user.gender" id="gender"
+                          type="text" name="gender" placeholder="Gender" /><br>
+  
+  
+                      </div>
+                      <div>
+                        <button class="btn" style="background-color: #ad3700;" type="submit" value="submit">Save
+                          Details</button>
+                      </div>
+                    </div>
+                    <!-- <button type="button" style="margin-bottom: 20px;height: 30px;font-size: small;background-color: #f26a36;
+                        border: 1px solid #f26a36;color: white;" data-bs-toggle="modal" data-bs-target="#create-list">
+                          Edit Profile
+                     </button> -->
+  
+  
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
-</form>
+      </div>
+  </form>
+  </section>

@@ -34,6 +34,7 @@ import { DashboardComponent } from './_components/admin/dashboard/dashboard.comp
 import { BMICalculatorComponent } from './_components/bmi-calculator/bmi-calculator.component';
 import { UserEditComponent } from './_components/admin/user-edit/user-edit.component';
 import { RecipeDetailsComponent } from './_components/recipe-details/recipe-details.component';
+import { CustomerUsereditComponent } from './_components/customer-useredit/customer-useredit.component';
 import { RecipeDataComponent } from './_components/recipe-data/recipe-data.component';
 import { AddRecipeComponent } from './_components/add-recipe/add-recipe.component';
 import { MyRecipeComponent } from './_components/my-recipe/my-recipe.component';
@@ -60,8 +61,12 @@ import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-d
     DashboardComponent,
     BMICalculatorComponent,
     UserEditComponent,  
-    RecipeDetailsComponent, RecipeDataComponent,
-    RecipeDetailsComponent, AddRecipeComponent, MyRecipeComponent, RecipeDataListComponent
+    RecipeDetailsComponent,
+    CustomerUsereditComponent,
+    RecipeDataComponent,
+    AddRecipeComponent,
+     MyRecipeComponent, 
+     RecipeDataListComponent
   ],
   imports: [
     BrowserModule,
@@ -127,7 +132,11 @@ import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-d
             component: RecipeDetailsComponent
           },
           {
-            path: 'recipe-list',
+            path: 'customer-useredit/:id',
+            component: CustomerUsereditComponent
+          },{
+
+             path: 'recipe-list',
             component: RecipeDataComponent
           },
           {

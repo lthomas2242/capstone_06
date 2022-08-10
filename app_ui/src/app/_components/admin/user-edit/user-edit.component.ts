@@ -4,6 +4,7 @@ import { UserService } from 'src/app/_services/user.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { switchMap } from 'rxjs';
 import {Router} from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-edit',
@@ -25,19 +26,25 @@ import {Router} from '@angular/router';
       BMI: ''
     }; 
     constructor(private UserService: UserService,
+      private fb: FormBuilder,
       private router: Router,
       private route: ActivatedRoute) {
      } 
     ngOnInit(): void { 
+      
       this.route.params.subscribe(paramMap=>{
           this.userId = paramMap['id'];  
           this.getSingleUser(this.userId );
           console.log(this.user);      
       });
+      
      
     } 
     public updateNewUser(user: User): void{ 
       this.UserService.editUser(user);
+      console.log(user);
+      window.location.href='/admin-layout/user-list';
+      //localStorage.setItem('first_name',first_name);
       
       // var input:string = user.user_role;
       // console.log(input);
@@ -68,4 +75,8 @@ import {Router} from '@angular/router';
     }
   
   }
+
+function first_name(arg0: string, first_name: any) {
+  throw new Error('Function not implemented.');
+}
   
