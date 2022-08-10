@@ -87,8 +87,8 @@
         <div class="card w-75 bmi-result" *ngIf="bmiData.is_calculated">
             <div class="card-body">
                 <div class="row">
-                    <h3 class="col-md-8">BMI = {{bmiData.bmi_value}} kg/m2 </h3>
-                    <h3 class="col-md-4 text-{{bmiData.bmi_status}} ">{{bmiData.bmi_category}}</h3>
+                    <h3 class="col-md-8">BMI = {{bmiData.bmiResult.bmi_value}} kg/m2 </h3>
+                    <h3 class="col-md-4 text-{{bmiData.bmiResult.bmi_status}} ">{{bmiData.bmiResult.bmi_category}}</h3>
                 </div>
                 <div class="instructions">
                     <h5>Instructions</h5>
