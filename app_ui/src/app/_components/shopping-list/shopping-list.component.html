@@ -43,7 +43,7 @@
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp"
                   alt="Check" width="60">
                 <h2 class="my-4">Shopping List</h2>
-                <button type="button" class="btn btn-danger" style="margin-bottom: 20px;" data-bs-toggle="modal" data-bs-target="#create-list">
+                <button type="button" class="btn btn-danger" style="margin-bottom: 20px;" data-toggle="modal" data-target="#create-list">
                   Add New
              </button>
               </div>
@@ -79,7 +79,7 @@
           <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2" *ngFor="let lt of list">
             <div class="d-flex align-items-center">
               <i class="fas fa-shopping-cart fa-lg  text-primary me-3"></i>
-              {{ lt.title}}
+              {{ lt.title[0]}}
             </div>
 
             <div class="d-flex align-items-center">
@@ -123,7 +123,7 @@
       <div class="modal-content">
       <div class="modal-header">
           <h3 class="modal-title">Create a List</h3>
-          <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
           
       </div>
       <form #listForm="ngForm" (ngSubmit)="saveList()">
@@ -176,7 +176,7 @@
       <div class="modal-footer">
           <!-- <button type="button" class="btn btn-default" (click)="saveList()">Submit</button> -->
           <button type="submit" class="btn btn-default" [disabled]="listForm.invalid" data-bs-dismiss="modal">Submit</button>
-          <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
   
   </form>
