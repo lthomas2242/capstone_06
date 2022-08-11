@@ -38,11 +38,11 @@
         <div  class="col-md-3" *ngFor="let recipe of recipes">
            
             <div class="card mb-4 p-0">
-                <a href="">
+                <a href="cust-layout/my-recipe-edit/{{recipe._id}}">
                     <img class="card-img-top" src="{{recipe.image_url}}" alt="Card image" style="width:100%; height:250px">
                 </a>
                 <div class="card-body">           
-                    <a class="text-dark" href="" style="text-decoration: none;"> 
+                    <a class="text-dark" href="cust-layout/my-recipe-edit/{{recipe._id}}" style="text-decoration: none;"> 
                         <h4 class="card-title">
                             {{recipe.title}}
                         </h4> </a>

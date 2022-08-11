@@ -43,6 +43,8 @@ import { AddNutritionistComponent } from './_components/admin/add-nutritionist/a
 import { NutritionistListComponent } from './_components/admin/nutritionist-list/nutritionist-list.component';
 import { MyRecipeEditComponent } from './_components/my-recipe-edit/my-recipe-edit.component';
 import { ListNutritionistComponent } from './_components/list-nutritionist/list-nutritionist.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -85,6 +87,8 @@ import { ListNutritionistComponent } from './_components/list-nutritionist/list-
     MaterialModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right',
@@ -159,6 +163,10 @@ import { ListNutritionistComponent } from './_components/list-nutritionist/list-
           {
             path: 'my-recipe-edit/:id',
             component: MyRecipeEditComponent
+          },
+          {
+            path: 'nutritionists',
+            component: ListNutritionistComponent
           }
         ]
       },
