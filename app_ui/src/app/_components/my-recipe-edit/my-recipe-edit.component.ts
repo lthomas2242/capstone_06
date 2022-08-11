@@ -1,24 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Ingredients, Nutritions, Recipe } from 'src/app/_models/recipe';
 import { RecipeService } from 'src/app/_services/recipe.service';
 import { ToastrService } from 'ngx-toastr';
 import { Categories } from 'src/app/_constants/categories';
 import { MealTypes } from 'src/app/_constants/meal_types';
+import { switchMap } from 'rxjs';
+
 
 @Component({
-  selector: 'app-add-recipe',
-  templateUrl: './add-recipe.component.html',
-  styleUrls: ['./add-recipe.component.css']
+  selector: 'app-my-recipe-edit',
+  templateUrl: './my-recipe-edit.component.html',
+  styleUrls: ['./my-recipe-edit.component.css']
 })
-export class AddRecipeComponent implements OnInit {
+export class MyRecipeEditComponent implements OnInit {
 
+  @Input() recipeId: any;
   public recipe = new Recipe();
   public categories : any =[];
   public mealTypes : any =[];
 
   constructor(private recipeService : RecipeService,
     public router: Router,
+    private route: ActivatedRoute,
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
@@ -27,61 +32,41 @@ export class AddRecipeComponent implements OnInit {
     this.recipe.directions=[];
     this.getCategories();
     this.getMealTypes();
+    this.getRecipeById();
+
+    this.recipeId = this.route.snapshot.params['id'];
   }
 
+  getRecipeById(){
+    this.route.params.pipe(
+      switchMap((params: Params)=>{
+        return this.recipeService.getRecipeById(params['id'])
+      })      
+    ).subscribe((recipe: Recipe)=>{
+      this.recipe = recipe;
+    })
+}
+
   saveRecipe(recipeToSave : Recipe){
-    // if(recipeToSave._id && recipeToSave._id!=undefined && recipeToSave._id !="0" && this.recipe_id != 0){
-    //   this.recipeService.updateRecipe(recipeToSave)
-    //     .subscribe({
-    //       next: (v) => {
-    //         this.toastr.success("Recipe Updated Successfully", 'Success', {
-    //           timeOut: 3000,
-    //           positionClass:'toast-bottom-right' 
-    //         });
-
-    //       },
-    //       error: (e) => {
-    //         this.toastr.error(e.error.message, 'Error', {
-    //           timeOut: 3000,
-    //           positionClass:'toast-bottom-right' 
-    //         });
-    //       }
-    //   });
-    // }else{
-
-      let isLoggedIn = localStorage.getItem("isLoggedIn");
    
-      if (isLoggedIn == "true") {
-       
-        recipeToSave.user_id = localStorage.getItem("id");
-        recipeToSave.approved = true;
-        this.recipeService.createRecipe(recipeToSave)
+      this.recipeService.updateRecipe(recipeToSave)
         .subscribe({
           next: (v) => {
-            this.toastr.success("Recipe Added Successfully", 'Success', {
+            this.toastr.success("Recipe Updated Successfully", 'Success', {
               timeOut: 3000,
-              positionClass:'toast-top-right' 
+              positionClass:'toast-bottom-right' 
             });
-           // this.router.navigate(['/cust-layout/my-recipes']);
+            this.router.navigate(['/cust-layout/my-recipes']);
           },
           error: (e) => {
             this.toastr.error(e.error.message, 'Error', {
               timeOut: 3000,
-              positionClass:'toast-top-right' 
+              positionClass:'toast-bottom-right' 
             });
           }
       });
+    }
 
-      } else {
-        this.toastr.error("User not logged in", 'Error', {
-          timeOut: 3000,
-          positionClass:'toast-top-right' 
-        });
-      } 
-
-
-    // }
-  }
 
   addIngredient(){
     this.recipe.ingredients.push(new Ingredients);
@@ -114,5 +99,3 @@ export class AddRecipeComponent implements OnInit {
   }
 
 }
-
-
