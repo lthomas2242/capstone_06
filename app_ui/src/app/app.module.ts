@@ -39,6 +39,7 @@ import { RecipeDataComponent } from './_components/recipe-data/recipe-data.compo
 import { AddRecipeComponent } from './_components/add-recipe/add-recipe.component';
 import { MyRecipeComponent } from './_components/my-recipe/my-recipe.component';
 import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-data-list.component';
+import { MyRecipeEditComponent } from './_components/my-recipe-edit/my-recipe-edit.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -66,7 +67,7 @@ import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-d
     RecipeDataComponent,
     AddRecipeComponent,
      MyRecipeComponent, 
-     RecipeDataListComponent
+     RecipeDataListComponent, MyRecipeEditComponent
   ],
   imports: [
     BrowserModule,
@@ -146,6 +147,10 @@ import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-d
           {
             path: 'my-recipes',
             component: MyRecipeComponent
+          },
+          {
+            path: 'my-recipe-edit/:id',
+            component: MyRecipeEditComponent
           }
         ]
       },

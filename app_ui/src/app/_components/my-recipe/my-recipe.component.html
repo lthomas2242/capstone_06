@@ -26,18 +26,23 @@
 </section>
 
     <div class="container list-display" style="margin-top: 100px ;">
-    
+    <div class="row mb-5 justify-content-center align-items-center">
+        <!-- <div class="col-md-6"> -->
+            <a class="btn btn-primary" routerLink="/cust-layout/recipe-add"> Add Recipe</a>
+        <!-- </div> -->
+    </div>
     <div class="row">
        
-        <div  class="col-md-3">
+        <div  class="col-md-3" *ngFor="let recipe of recipes">
+           
             <div class="card mb-4 p-0">
                 <a href="">
-                    <img class="card-img-top" src="" alt="Card image" style="width:100%; height:300px">
+                    <img class="card-img-top" src="{{recipe.image_url}}" alt="Card image" style="width:100%; height:250px">
                 </a>
                 <div class="card-body">           
                     <a class="text-dark" href="" style="text-decoration: none;"> 
                         <h4 class="card-title">
-                            recipe 1
+                            {{recipe.title}}
                         </h4> </a>
                     <span>
                         <h4 class="text-danger">  </h4> 
@@ -45,12 +50,8 @@
                     </span>
                     <p class="card-text"> 
                         desc
-                    </p>
-                   
-
-                 
-
-                        <a href="#" class="btn btn-danger" >Edit</a>                    
+                    </p>  
+                        <a href="cust-layout/my-recipe-edit/{{recipe._id}}" class="btn btn-danger" >Edit</a>                    
                 </div>             
             </div>
         </div>
