@@ -39,6 +39,8 @@ import { RecipeDataComponent } from './_components/recipe-data/recipe-data.compo
 import { AddRecipeComponent } from './_components/add-recipe/add-recipe.component';
 import { MyRecipeComponent } from './_components/my-recipe/my-recipe.component';
 import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-data-list.component';
+import { AddNutritionistComponent } from './_components/admin/add-nutritionist/add-nutritionist.component';
+import { NutritionistListComponent } from './_components/admin/nutritionist-list/nutritionist-list.component';
 import { MyRecipeEditComponent } from './_components/my-recipe-edit/my-recipe-edit.component';
 import { ListNutritionistComponent } from './_components/list-nutritionist/list-nutritionist.component';
 @NgModule({
@@ -68,7 +70,12 @@ import { ListNutritionistComponent } from './_components/list-nutritionist/list-
     RecipeDataComponent,
     AddRecipeComponent,
      MyRecipeComponent, 
-     RecipeDataListComponent, MyRecipeEditComponent, ListNutritionistComponent
+     RecipeDataListComponent,
+     AddNutritionistComponent,
+     NutritionistListComponent,
+      MyRecipeEditComponent,
+      ListNutritionistComponent
+
   ],
   imports: [
     BrowserModule,
@@ -178,6 +185,14 @@ import { ListNutritionistComponent } from './_components/list-nutritionist/list-
           {
             path: 'user-edit/:id',
             component: UserEditComponent
+          },
+          {
+            path: 'add-nutritionist',
+            component: AddNutritionistComponent
+          },
+          {
+            path: 'nutritionist-list',
+            component: NutritionistListComponent
           }
         ]
       }
