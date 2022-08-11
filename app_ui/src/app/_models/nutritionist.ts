@@ -5,5 +5,6 @@ export class Nutritionist {
     email!: string;
     address!: string;
     designation!: string;
-    pincode!: number;
+    city!: String;
+    pincode!: String;
 }
