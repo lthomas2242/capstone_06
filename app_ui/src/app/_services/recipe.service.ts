@@ -56,4 +56,8 @@ export class RecipeService {
   getRecipesByFilters() : Observable<any>{
     return this.http.get<Recipe>(this.recipeUrl+"/filters");
   }
+
+  getAllApprovedRecipes() : Observable<any>{
+    return this.http.get<Recipe>(this.recipeUrl+"/approved");
+  }
 }

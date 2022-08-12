@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BMI } from '../_models/bmi';
+import { BMI, BMIResult } from '../_models/bmi';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -138,6 +138,36 @@ export class BMIService {
       bmiData.bmiResult.bmi_status="warning";
     }
     bmiData.is_calculated = true;
+    return bmiData;
+  }
+
+  calculateBMR(bmiData : BMI): BMI{
+    if(bmiData.bmiResult == undefined){
+      bmiData.bmiResult = new BMIResult();
+    }
+    if(bmiData.gender == "male"){
+      bmiData.bmiResult.bmr_value = 66.5 + (13.75 * bmiData.weight ) + (5.003 * bmiData.height) - (6.75 * bmiData.age)
+    }else if(bmiData.gender == "female"){
+      bmiData.bmiResult.bmr_value = 655.1 + (9.563 * bmiData.weight) + (1.850 * bmiData.height) - (4.676 * bmiData.age)
+    }
+    return bmiData;
+  }
+
+  calculateCalories(bmiData : BMI): BMI{
+    if(bmiData.bmiResult == undefined){
+      bmiData.bmiResult = new BMIResult();
+    }
+    if(bmiData.activity === "sedentary"){
+      bmiData.bmiResult.calories = bmiData.bmiResult.bmr_value * 1.2;
+    }else if(bmiData.activity === "lightly"){
+      bmiData.bmiResult.calories = bmiData.bmiResult.bmr_value * 1.375;
+    }else if(bmiData.activity === "moderately"){
+      bmiData.bmiResult.calories = bmiData.bmiResult.bmr_value * 1.55;
+    }else if(bmiData.activity === "hard"){
+      bmiData.bmiResult.calories = bmiData.bmiResult.bmr_value * 1.725;
+    }else if(bmiData.activity === "extra"){
+      bmiData.bmiResult.calories = bmiData.bmiResult.bmr_value * 1.9;
+    }
     return bmiData;
   }
 }

@@ -41,7 +41,7 @@ const getRecipeById = function(req, res) {
 // add new recipe
 const createRecipe = function(req, res) {
     let isApproved = true;
-    if (req.body.user_id && req.body.user_id!= undefined) {
+    if (req.body.user_id && req.body.user_id != undefined) {
         isApproved = false;
     }
     Recipe.create({
@@ -182,29 +182,40 @@ const getApprovedRecipesCount = function(req, res) {
 
 const recipeByUser = function(req, res) {
 
-    let userid = req.params.userid;
+        let userid = req.params.userid;
 
-    if (userid) {
-        Recipe
-            .find({user_id: userid})
-            .exec(function(err, data){
-                console.log(data);
-                if (err){
-                    res 
-                        .status(404)
-                        .json(err)
-                return;
-                }
-                res 
-                    .status(200)
-                    .json(data)
-            }) 
-    } else{
-        res
-            .status(404)
-            .json({"message": "User id"})
+        if (userid) {
+            Recipe
+                .find({ user_id: userid })
+                .exec(function(err, data) {
+                    console.log(data);
+                    if (err) {
+                        res
+                            .status(404)
+                            .json(err)
+                        return;
+                    }
+                    res
+                        .status(200)
+                        .json(data)
+                })
+        } else {
+            res
+                .status(404)
+                .json({ "message": "User id" })
+        }
     }
-}
+    /* Count of approved Recipes*/
+const getAllApprovedRecipes = function(req, res) {
+    Recipe.find({ approved: true }).exec(function(err, data) {
+        console.log(err, data)
+        if (err) {
+            res.status(404).json(err);
+            return;
+        }
+        res.status(200).json(data);
+    });
+};
 
 
 /*Exporting modules */
@@ -218,5 +229,6 @@ module.exports = {
     getRecipeIds,
     getAllRecipesCount,
     getApprovedRecipesCount,
-    recipeByUser
+    recipeByUser,
+    getAllApprovedRecipes
 }

@@ -16,7 +16,7 @@ export class RecipeDataComponent implements OnInit {
   public mealTypes : any =[];
   public caloriesRange : any =[];
   public allRecipes : Recipe[] = [];
-  public recipes : Recipe[] = [];
+  public recipes: Recipe[] = [];
   filter = new Filter();
   
   constructor(public recipeService:RecipeService) { }
@@ -25,7 +25,7 @@ export class RecipeDataComponent implements OnInit {
     this.getCategories();
     this.getMealTypes();
     this.getCaloriesRange();
-    this.getRecipesByFilter();
+    this.getAllApprovedRecipes();
   }
 
 
@@ -41,11 +41,16 @@ export class RecipeDataComponent implements OnInit {
     this.searchForRecipes();
   }
 
-  getRecipesByFilter(){
+  getAllApprovedRecipes(){
     this.recipeService.getAllRecipes().subscribe({
       next: (v) => {
-        this.recipes = v;
-        this.allRecipes = v;
+        let approvedRecipes = v.filter((d:any)=>d.approved);
+        this.recipes = approvedRecipes;
+        this.allRecipes = approvedRecipes;
+        if (localStorage.getItem("bmi") != undefined && localStorage.getItem("bmi") != null) {
+          this.filterRecipieByBMICal(Number(localStorage.getItem("bmi")));
+          localStorage.removeItem("bmi");
+        }
       },
       error: (e) => {
         
@@ -149,5 +154,42 @@ export class RecipeDataComponent implements OnInit {
       end : 700,
       checked : false
     })
+  }
+
+  filterRecipieByBMICal(calorie : number){
+    let breakfastItems = this.allRecipes.filter((r:any)=>r.category === "Breakfast" && (r.nutritions != undefined || r.nutritions != null));
+    let lunchItems = this.allRecipes.filter((r:any)=>r.category === "Lunch" && (r.nutritions != undefined || r.nutritions != null));
+    let dinnerItems = this.allRecipes.filter((r:any)=>r.category === "Dinner" && (r.nutritions != undefined || r.nutritions != null));
+    let juiceItems = this.allRecipes.filter((r:any)=>r.category === "Juice" && (r.nutritions != undefined || r.nutritions != null));
+    let addedCalorie = 0;
+    let breakfastElement = new Recipe; let lunchElement = new Recipe ; let dinnerElement = new Recipe;let juiceElement = new Recipe;
+    let counter = 0;
+    while(true){
+      counter++;
+      if(breakfastItems!=null && breakfastItems.length > 0){
+        breakfastElement = breakfastItems[Math.floor(Math.random() * breakfastItems.length)]; 
+        addedCalorie += Number(breakfastElement.nutritions.calories);
+      }
+      if(lunchItems!=null && lunchItems.length > 0){
+        lunchElement = lunchItems[Math.floor(Math.random() * lunchItems.length)]; 
+        addedCalorie += Number(lunchElement.nutritions.calories);
+      }
+      if(dinnerItems!=null && dinnerItems.length > 0){
+        dinnerElement = dinnerItems[Math.floor(Math.random() * dinnerItems.length)]; 
+        addedCalorie += Number(dinnerElement.nutritions.calories);
+      }
+      if(juiceItems!=null && juiceItems.length > 0){
+        juiceElement = juiceItems[Math.floor(Math.random() * juiceItems.length)]; 
+        addedCalorie += Number(juiceElement.nutritions.calories);
+      }
+      if(addedCalorie != 0 && calorie == addedCalorie || ( calorie-200 <= addedCalorie && calorie >= addedCalorie)){
+        this.recipes = [];
+        this.recipes.push(breakfastElement,lunchElement,dinnerElement,juiceElement);
+        break;
+      }else if(counter == 10){
+        this.recipes = [];
+        break;
+      }
+     }
   }
 }

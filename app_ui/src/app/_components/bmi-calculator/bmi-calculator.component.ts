@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class BMICalculatorComponent implements OnInit {
 
     public bmiData = new BMI();
+    public activities : any =[];
+
     constructor(public bmiService : BMIService,public router: Router) {
     }
 
@@ -20,9 +22,13 @@ export class BMICalculatorComponent implements OnInit {
     calculateBMI(){
       let bmi = this.calcBMI(this.bmiData.height,this.bmiData.weight);
       if(this.bmiData.age >2 && this.bmiData.age < 20){
-        this.bmiData = this.bmiService.describeBMIChildren( this.bmiData)
+        this.bmiData = this.bmiService.describeBMIChildren( this.bmiData);
       }else{
-        this.bmiData = this.bmiService.describeBMIAdult( this.bmiData)
+        this.bmiData = this.bmiService.describeBMIAdult( this.bmiData);
+        if(this.bmiData.bmiResult != undefined){
+          this.bmiData = this.bmiService.calculateBMR( this.bmiData);
+          this.bmiData = this.bmiService.calculateCalories( this.bmiData);
+        }
       }
     }
 
@@ -31,8 +37,7 @@ export class BMICalculatorComponent implements OnInit {
     }
 
     getRecipesByBMI(){
-      localStorage.setItem("bmi",this.bmiData.bmiResult.bmi_value.toString());
-      this.router.navigate(['/cust-layout/bmi']);
+      localStorage.setItem("bmi",this.bmiData.bmiResult.calories.toString());
+      this.router.navigate(['/cust-layout/recipe-list']);
     }
-    
 }

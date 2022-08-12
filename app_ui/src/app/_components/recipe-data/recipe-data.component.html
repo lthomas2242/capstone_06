@@ -69,7 +69,10 @@
                         </div>
                     </div>
                     <div class="col-lg-9 col-xs-12">
-                        <app-recipe-data-list [recipes]="recipes"></app-recipe-data-list>
+                        <app-recipe-data-list *ngIf="recipes.length > 0; else elseBlock" [recipes]="recipes"></app-recipe-data-list>
+                        <ng-template #elseBlock>
+                            <h3>No data found</h3>
+                        </ng-template>
                     </div>
                 </div>
             </div>

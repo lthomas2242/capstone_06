@@ -3,6 +3,7 @@ export class BMI {
     gender!: string;
     height!: number;
     weight!: number;
+    activity!:string;
     is_calculated!:boolean;
     bmiResult:BMIResult = new BMIResult();
 }
@@ -14,4 +15,6 @@ export class BMIResult {
     bmi_status!:string;
     normal_min_weight!: number;
     normal_max_weight!: number;
+    bmr_value!:number;
+    calories!:number;
 }
