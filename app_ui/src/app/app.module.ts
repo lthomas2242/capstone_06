@@ -45,7 +45,7 @@ import { MyRecipeEditComponent } from './_components/my-recipe-edit/my-recipe-ed
 import { ListNutritionistComponent } from './_components/list-nutritionist/list-nutritionist.component';
 import { NutritionistEditComponent } from './_components/admin/nutritionist-edit/nutritionist-edit.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { Ng2SearchPipeModule } from 'ngx-search-filter';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -78,7 +78,7 @@ import { Ng2SearchPipeModule } from 'ngx-search-filter';
      NutritionistListComponent,
       MyRecipeEditComponent,
       ListNutritionistComponent,
-      NutritionistEditComponent,
+      NutritionistEditComponent
 
   ],
   imports: [
