@@ -16,6 +16,10 @@ export class NutritionistListComponent implements OnInit {
   ngOnInit(): void {
     this.getAllNutritionists();
   }
+  deleteNutritionist(nutritionistId:string){
+    this.NutritionistService.DeleteNutritionist(nutritionistId);  
+    this.getAllNutritionists();
+  }
   getAllNutritionists(){
     this.NutritionistService
     .getNutritionists()

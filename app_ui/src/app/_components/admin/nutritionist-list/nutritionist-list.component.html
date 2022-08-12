@@ -1,4 +1,8 @@
 <div class="container-xxl">
+    <div class="text-right">
+        <a class="btn" href="/admin-layout/add-nutritionist">Add New</a>
+    </div>
+    <br>
     <div style="overflow: auto;">
         <table class="table table-bordered">
             <thead>
@@ -21,8 +25,8 @@
                     <td>{{nutritionist.designation}}</td>
                     <td>{{nutritionist.city}}</td>
                     <td>{{nutritionist.pincode}}</td>
-                    <!-- <td><button class="btn" (click)="deleteUser(user._id)">Delete</button></td>
-                    <td><a class="btn" href="/admin-layout/user-edit/{{user._id}}">Edit User Details</a></td> -->
+                    <td><button class="btn" (click)="deleteNutritionist(nutritionist._id)">Delete</button></td>
+                    <td><a class="btn" href="/admin-layout/nutritionist-edit/{{nutritionist._id}}">Edit User Details</a></td>
                 </tr>
             </tbody>
         </table>

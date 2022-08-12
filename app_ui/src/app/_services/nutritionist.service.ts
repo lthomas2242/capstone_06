@@ -16,33 +16,33 @@ export class NutritionistService {
   getNutritionists() {
     return this.http.get<Nutritionist[]>(this.nutritionistUrl);
   }
-//   getSingleUser(userId: string) : Observable<any> {
-//     return this.http.get(this.userUrl + '/' + userId);
-//   }
+  getSingleNutritionist(nutritionistId: string) : Observable<any> {
+    return this.http.get(this.nutritionistUrl + '/' + nutritionistId);
+  }
 
 
   createUser(nutritionist: Nutritionist) {
     return this.http.post<Nutritionist>(this.nutritionistUrl+'/addNutritionist', nutritionist)
     .subscribe((nutritionist : Nutritionist)=>{
-      this.router.navigate(['/']);
+      this.router.navigate(['/admin-layout/nutritionist-list']);
     })
   }
-//   editUser(user: User): Promise<void | User> {
-//     console.log('Selected User', user);
-//     return this.http
-//       .put(this.userUrl + '/' + user._id, user)
-//       .toPromise()
-//       .then((response) => response as User)
-//       .catch(this.handleError);
-//   }
+  editNutritionist(nutritionist: Nutritionist): Promise<void | Nutritionist> {
+    console.log('Selected Nutritionist', nutritionist);
+    return this.http
+      .put(this.nutritionistUrl + '/' + nutritionist._id, nutritionist)
+      .toPromise()
+      .then((response) => response as Nutritionist)
+      .catch(this.handleError);
+  }
   
-//   DeleteUser(userId: string): Promise<void | User> {
-//     return this.http
-//       .delete(this.userUrl + '/' + userId)
-//       .toPromise()
-//       .then((response) => response as User)
-//       .catch(this.handleError);
-//   }
+  DeleteNutritionist(nutritionistId: string): Promise<void | Nutritionist> {
+    return this.http
+      .delete(this.nutritionistUrl + '/' + nutritionistId)
+      .toPromise()
+      .then((response) => response as Nutritionist)
+      .catch(this.handleError);
+  }
   private handleError(error: any) {
     console.log('error');
   }

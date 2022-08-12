@@ -36,7 +36,7 @@ export class AddNutritionistComponent implements OnInit {
         return;
     } else {
       this.nutritionistService.createUser(this.userForm.value);
-      this.toastr.success('User registered successfully !', 'Sucsess!');
+      this.toastr.success('User registered successfully !', 'Success!');
     }
     
   }

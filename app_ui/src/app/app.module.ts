@@ -43,6 +43,7 @@ import { AddNutritionistComponent } from './_components/admin/add-nutritionist/a
 import { NutritionistListComponent } from './_components/admin/nutritionist-list/nutritionist-list.component';
 import { MyRecipeEditComponent } from './_components/my-recipe-edit/my-recipe-edit.component';
 import { ListNutritionistComponent } from './_components/list-nutritionist/list-nutritionist.component';
+import { NutritionistEditComponent } from './_components/admin/nutritionist-edit/nutritionist-edit.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -74,7 +75,8 @@ import { ListNutritionistComponent } from './_components/list-nutritionist/list-
      AddNutritionistComponent,
      NutritionistListComponent,
       MyRecipeEditComponent,
-      ListNutritionistComponent
+      ListNutritionistComponent,
+      NutritionistEditComponent
 
   ],
   imports: [
@@ -193,6 +195,10 @@ import { ListNutritionistComponent } from './_components/list-nutritionist/list-
           {
             path: 'nutritionist-list',
             component: NutritionistListComponent
+          },
+          {
+            path: 'nutritionist-edit/:id',
+            component: NutritionistEditComponent
           }
         ]
       }

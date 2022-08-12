@@ -19,10 +19,12 @@ router.put('/list/:id', shoppingList.updateList);
 router.get('/user', userController.getUsers);
 router.get('/nutritionist', nutritionistController.getNutritionists);
 router.put('/user/:id', userController.editUser);
+router.put('/nutritionist/:id', nutritionistController.editNutritionist);
 router.delete('/user/:id', userController.deleteUser);
+router.delete('/nutritionist/:id', nutritionistController.deleteNutritionist);
 router.get('/user/count/all', userController.getAllUsersCount);
 router.get('/user/:id', userController.getSingleUser);
-
+router.get('/nutritionist/:id', nutritionistController.getSingleNutritionist);
 //recipe
 router.get('/recipe/byusers/:userid', recipeController.recipeByUser);
 router.get('/recipe', recipeController.getAllRecipe);
