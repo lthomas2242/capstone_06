@@ -182,7 +182,7 @@ export class RecipeDataComponent implements OnInit {
         juiceElement = juiceItems[Math.floor(Math.random() * juiceItems.length)]; 
         addedCalorie += Number(juiceElement.nutritions.calories);
       }
-      if(addedCalorie != 0 && calorie == addedCalorie || ( calorie-200 <= addedCalorie && calorie >= addedCalorie)){
+      if(addedCalorie != 0 && calorie == addedCalorie || calorie >= addedCalorie-100 ){
         this.recipes = [];
         this.recipes.push(breakfastElement,lunchElement,dinnerElement,juiceElement);
         break;
