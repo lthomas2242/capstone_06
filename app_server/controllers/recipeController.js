@@ -40,15 +40,20 @@ const getRecipeById = function(req, res) {
 
 // add new recipe
 const createRecipe = function(req, res) {
+    let isApproved = true;
+    if (req.body.user_id && req.body.user_id!= undefined) {
+        isApproved = false;
+    }
     Recipe.create({
         title: req.body.title,
         meal_type: req.body.meal_type,
         category: req.body.category,
         description: req.body.description,
         rating: req.body.rating,
+        user_id: req.body.user_id,
         preparation_time: req.body.preparation_time,
         image_url: req.body.image_url,
-        approved: req.body.approved,
+        approved: isApproved,
         ingredients: req.body.ingredients,
         directions: req.body.directions,
         nutritions: req.body.nutritions
@@ -88,6 +93,7 @@ const updateRecipe = function(req, res) {
                 data.meal_type = req.body.meal_type,
                 data.category = req.body.category,
                 data.description = req.body.description,
+                data.user_id = req.body.user_id,
                 data.rating = req.body.rating,
                 data.preparation_time = req.body.preparation_time,
                 data.image_url = req.body.image_url,
@@ -175,31 +181,28 @@ const getApprovedRecipesCount = function(req, res) {
 };
 
 const recipeByUser = function(req, res) {
-    console.log("apii");
-    let isLoggedIn = localStorage.getItem("isLoggedIn");
-    let userid = localStorage.getItem("id");
-console.log("dd",userid);
-    if (userid) {
-        Recipe.where("user_id", userid)
-            .exec((err, data) => {
-                if (!data) {
-                    res.status(404)
-                        .json({
-                            "message": "userid not found",
-                        });
-                    return;
-                } else if (err) {
-                    res.status(404).json(err);
-                    return;
-                }
-                res.status(200).json(data);
-            });
 
-    } else {
-        res.status(404)
-            .json({
-                "message": "No userid in request"
-            });
+    let userid = req.params.userid;
+
+    if (userid) {
+        Recipe
+            .find({user_id: userid})
+            .exec(function(err, data){
+                console.log(data);
+                if (err){
+                    res 
+                        .status(404)
+                        .json(err)
+                return;
+                }
+                res 
+                    .status(200)
+                    .json(data)
+            }) 
+    } else{
+        res
+            .status(404)
+            .json({"message": "User id"})
     }
 }
 

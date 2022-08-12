@@ -39,6 +39,13 @@ import { RecipeDataComponent } from './_components/recipe-data/recipe-data.compo
 import { AddRecipeComponent } from './_components/add-recipe/add-recipe.component';
 import { MyRecipeComponent } from './_components/my-recipe/my-recipe.component';
 import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-data-list.component';
+import { AddNutritionistComponent } from './_components/admin/add-nutritionist/add-nutritionist.component';
+import { NutritionistListComponent } from './_components/admin/nutritionist-list/nutritionist-list.component';
+import { MyRecipeEditComponent } from './_components/my-recipe-edit/my-recipe-edit.component';
+import { ListNutritionistComponent } from './_components/list-nutritionist/list-nutritionist.component';
+import { NutritionistEditComponent } from './_components/admin/nutritionist-edit/nutritionist-edit.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -66,7 +73,13 @@ import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-d
     RecipeDataComponent,
     AddRecipeComponent,
      MyRecipeComponent, 
-     RecipeDataListComponent
+     RecipeDataListComponent,
+     AddNutritionistComponent,
+     NutritionistListComponent,
+      MyRecipeEditComponent,
+      ListNutritionistComponent,
+      NutritionistEditComponent
+
   ],
   imports: [
     BrowserModule,
@@ -76,6 +89,8 @@ import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-d
     MaterialModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right',
@@ -146,6 +161,14 @@ import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-d
           {
             path: 'my-recipes',
             component: MyRecipeComponent
+          },
+          {
+            path: 'my-recipe-edit/:id',
+            component: MyRecipeEditComponent
+          },
+          {
+            path: 'nutritionists',
+            component: ListNutritionistComponent
           }
         ]
       },
@@ -172,6 +195,18 @@ import { RecipeDataListComponent } from './_components/recipe-data-list/recipe-d
           {
             path: 'user-edit/:id',
             component: UserEditComponent
+          },
+          {
+            path: 'add-nutritionist',
+            component: AddNutritionistComponent
+          },
+          {
+            path: 'nutritionist-list',
+            component: NutritionistListComponent
+          },
+          {
+            path: 'nutritionist-edit/:id',
+            component: NutritionistEditComponent
           }
         ]
       }

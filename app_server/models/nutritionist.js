@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var nutritionistsSchema = new mongoose.Schema({
+var nutritionistSchema = new mongoose.Schema({
     first_name: { type: String, required: true },
     last_name: { type: String },
     email: { type: String},
@@ -10,7 +10,7 @@ var nutritionistsSchema = new mongoose.Schema({
     pincode :{type: String, required: true}
 });
 
-var User = mongoose.model('Nutritionist', nutritionistsSchema, 'nutritionists');
+var Nutritionist = mongoose.model('Nutritionist', nutritionistSchema, 'nutritionists');
 
 module.exports = {
     Nutritionist

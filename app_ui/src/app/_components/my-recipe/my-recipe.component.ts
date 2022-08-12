@@ -16,7 +16,10 @@ export class MyRecipeComponent implements OnInit {
   }
 
   getAllRecipes(){
-    this.recipeService.getMyRecipes()
+    let isLoggedIn = localStorage.getItem("isLoggedIn");
+    let userid = localStorage.getItem("id");
+    
+    this.recipeService.getMyRecipes(userid)
       .subscribe({
         next: (v) => {
           this.recipes = v;

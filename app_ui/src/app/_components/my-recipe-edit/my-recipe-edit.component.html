@@ -1,0 +1,168 @@
+<div class="container" style="margin-top: 160px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card detail-card " style="margin-bottom: 40px;">
+                <div class="card-header" style="padding: 10px">
+                    <h3>EDIT RECIPE </h3>
+                </div>
+                <!-- <h3> </h3>
+                <hr style="background-color: #777"> -->
+                <div class="card-body" style=" padding: 40px">
+                    <form id="recipe-add-form" class="mt-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="title" #title="ngModel" [(ngModel)]="recipe.title" name="title" required>
+                                <div *ngIf="title.invalid && title.touched" class="alert">
+                                    <div *ngIf="title.errors?.['required']" style="color: #ad3700;">
+                                        Title is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rating" class="form-label">Rating</label>
+                                <input type="text" class="form-control" id="rating" name="rating" [(ngModel)]="recipe.rating">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <label for="meal_type" class="form-label">Meal Type</label>
+                                <!-- <input type="text" class="form-control" id="meal_type" #meal_type="ngModel" [(ngModel)]="recipe.meal_type" name="meal_type" required> -->
+                                
+                                <select class="form-control form-select form-select-lg mb-3" [(ngModel)]="recipe.meal_type" name="meal_type" id="meal_type" #meal_type="ngModel">
+                                    <option [value]="null" disabled>Select category</option>
+                                    <option *ngFor="let meal of mealTypes" [value]="meal.key" style="color:black;">{{meal.key}}</option>
+                                  </select>
+                                <div *ngIf="meal_type.invalid && meal_type.touched" class="alert">
+                                    <div *ngIf="meal_type.errors?.['required']" style="color: #ad3700;">
+                                        Meal Type is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="category" class="form-label">Category</label>
+                                <select class="form-control form-select form-select-lg mb-3" [(ngModel)]="recipe.category" name="category">
+                                    <option [value]="null" disabled>Select category</option>
+                                    <option *ngFor="let category of categories" [value]="category.key" style="color:black;">{{category.key}}</option>
+                                </select>
+                            </div>
+                        </div>
+            
+                        <div class="row mt-3">
+                            
+                            <div class="col-md-6">
+                                <label for="preparation_time" class="form-label">Preparation Time</label>
+                                <input type="text" class="form-control" id="preparation_time" [(ngModel)]="recipe.preparation_time" name="preparation_time">
+                            </div>
+                        </div>
+            
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea type="text" class="form-control" id="description" [(ngModel)]="recipe.description" name="description"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="image_url" class="form-label">Image</label>
+                                <textarea type="text" class="form-control" id="image_url" [(ngModel)]="recipe.image_url" name="image_url"> </textarea>
+                            </div>
+                        </div>
+                       
+                        <hr/>
+                        <div class="row">
+                            <div class="col-md-11">
+                                <h4><b>Ingredients</b></h4>
+                            </div>
+                            <div class="col-md-1">
+                                <i class="fa fa-plus-square fa-2xl" aria-hidden="true" (click)="addIngredient()"></i></div>
+                        </div>
+            
+                        <div class="row mt-3" *ngFor="let ingredient of recipe.ingredients; index as i;">
+                            <div class="col-md-6 ">
+                                <label for="ingredient_name " class="form-label ">Name</label>
+                                <input type="text " class="form-control " id="ingredient_name " [(ngModel)]="ingredient.ingredient_name" name="ingredient_name[{{i}}]">
+                            </div>
+                            <div class="col-md-6 ">
+                                <label for="quantity " class="form-label ">Quantity</label>
+                                <input type="text " class="form-control " id="quantity " [(ngModel)]="ingredient.quantity" name="quantity[{{i}}]">
+                            </div>
+                        </div>
+                        <hr/>
+                        <h4 class="mb-3"><b>Nutritions</b></h4>
+                        <div class="row mt-3">
+                            <div class="col-md-4 ">
+                                <label for="calories " class="form-label ">Calories</label>
+                                <input type="text " class="form-control " id="calories " [(ngModel)]="recipe.nutritions.calories" name="calories ">
+                            </div>
+                            <div class="col-md-4 ">
+                                <label for="fat " class="form-label ">Fat</label>
+                                <input type="text " class="form-control " id="fat " [(ngModel)]="recipe.nutritions.fat" name="fat ">
+                            </div>
+                            <div class="col-md-4 ">
+                                <label for="carbs " class="form-label ">Carbs</label>
+                                <input type="text " class="form-control " id="carbs " [(ngModel)]="recipe.nutritions.carbs" name="carbs ">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-4 ">
+                                <label for="protein " class="form-label "> Protein</label>
+                                <input type="text " class="form-control " id="protein " [(ngModel)]="recipe.nutritions.protein" name="protein ">
+                            </div>
+                            <div class="col-md-4 ">
+                                <label for="cholesterol " class="form-label ">Cholesterol</label>
+                                <input type="text " class="form-control " id="cholesterol " [(ngModel)]="recipe.nutritions.cholesterol" name="cholesterol ">
+                            </div>
+                            <div class="col-md-4 ">
+                                <label for="sodium " class="form-label ">Sodium</label>
+                                <input type="text " class="form-control " id="sodium " [(ngModel)]="recipe.nutritions.sodium" name="sodium ">
+                            </div>
+                        </div>
+            
+                        <hr/>
+                        <div class="row">
+                            <div class="col-md-11">
+                                <h4><b>Preparation Steps</b></h4>
+                            </div>
+                            <div class="col-md-1">
+                                <i class="fa fa-plus-square fa-2xl" aria-hidden="true" (click)="addDirection()"></i></div>
+                        </div>
+            
+                        <div class="row" *ngFor="let direction of recipe.directions; index as i;">
+                            <div class="col-md-12">
+                                <label for="step" class="form-label">Step</label>
+                                <input type="text" class="form-control" id="step" [(ngModel)]="recipe.directions[i]" name="step[{{i}}]">
+                            </div>
+                        </div>
+            
+                        <button type="button " class="btn btn-primary mt-5" (click)="saveRecipe(recipe)">Save changes</button>
+                    
+                    </form>
+                </div>
+    
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- <div class="modal-dialog modal-lg">
+<form id="recipe-add-form">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">New Recipe</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="bd-example-snippet bd-code-snippet">
+                <div class="bd-example">
+                   
+
+            </div>
+        </div>
+        <div class="modal-footer ">
+            <button type="button " class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         
+        </div>
+    </div>
+</form>
+</div> -->
+

@@ -1,0 +1,35 @@
+<div class="container-xxl">
+    <div class="text-right">
+        <a class="btn" href="/admin-layout/add-nutritionist">Add New</a>
+    </div>
+    <br>
+    <div style="overflow: auto;">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Zipcode</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let nutritionist of nutritionists">
+                    <td>{{nutritionist.first_name}}</td>
+                    <td>{{nutritionist.last_name}}</td>
+                    <td>{{nutritionist.email}}</td>
+                    <td>{{nutritionist.address}}</td>
+                    <td>{{nutritionist.designation}}</td>
+                    <td>{{nutritionist.city}}</td>
+                    <td>{{nutritionist.pincode}}</td>
+                    <td><button class="btn" (click)="deleteNutritionist(nutritionist._id)">Delete</button></td>
+                    <td><a class="btn" href="/admin-layout/nutritionist-edit/{{nutritionist._id}}">Edit User Details</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
