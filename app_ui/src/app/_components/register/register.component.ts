@@ -7,6 +7,7 @@ import { UserService } from 'src/app/_services/user.service';
 
 import { matchPassword  } from './validatePassword';
 import { ToastrService } from 'ngx-toastr';
+import { BMIService } from 'src/app/_services/bmi.service';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,8 @@ export class RegisterComponent implements OnInit {
 
   userForm!: FormGroup;
   submitted = false;
-  constructor(private userService : UserService,public router: Router, private fb: FormBuilder, private toastr: ToastrService) { }
+  constructor(private userService : UserService,public router: Router, private fb: FormBuilder, private toastr: ToastrService,
+    public bmiService : BMIService) { }
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
@@ -32,6 +34,7 @@ export class RegisterComponent implements OnInit {
       gender: ["", Validators.required],
       password: ["", Validators.required],
       c_password: ["", Validators.required],
+      bmi: [""]
     }, {
       validator: matchPassword('password', 'c_password')
     });
@@ -45,10 +48,16 @@ export class RegisterComponent implements OnInit {
      if (this.userForm.invalid) {
         return;
     } else {
+      this.calculateBMI();
       this.userService.createUser(this.userForm.value);
       this.toastr.success('User registered successfully !', 'Sucsess!');
     }
     
+  }
+
+  calculateBMI(){
+    var bmi=this.bmiService.calculateBMI(this.userForm.controls['height'].value,this.userForm.controls['weight'].value);
+    (<FormControl> this.userForm.controls['bmi']).setValue(bmi);
   }
 
 }
