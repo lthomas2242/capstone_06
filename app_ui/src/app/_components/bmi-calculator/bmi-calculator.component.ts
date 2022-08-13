@@ -38,6 +38,6 @@ export class BMICalculatorComponent implements OnInit {
 
     getRecipesByBMI(){
       localStorage.setItem("bmi",this.bmiData.bmiResult.calories.toString());
-      this.router.navigate(['/cust-layout/recipe-list']);
+      this.router.navigate(['/user/recipe-list']);
     }
 }

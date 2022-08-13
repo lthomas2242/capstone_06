@@ -43,17 +43,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     public updateNewUser(user: User): void{ 
       this.UserService.editUser(user);
       console.log(user);
-      window.location.href='/admin-layout/user-list';
+      window.location.href='/admin/user-list';
       //localStorage.setItem('first_name',first_name);
       
       // var input:string = user.user_role;
       // console.log(input);
         
       //   if(input=="user") {
-      //     this.router.navigate(['/cust-layout/user-details']);
+      //     this.router.navigate(['/user/user-details']);
       //   }
       //     else if(input=="admin") {
-      //     this.router.navigate(['/admin-layout/user-list']);
+      //     this.router.navigate(['/admin/user-list']);
       //   }
         }  
 

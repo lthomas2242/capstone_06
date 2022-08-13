@@ -111,7 +111,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
         component: RegisterComponent
       },
       {
-        path: 'cust-layout',
+        path: 'user',
         component: CustomerLayoutComponent,
         children:[
           {
@@ -173,7 +173,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
         ]
       },
       {
-        path: 'admin-layout',
+        path: 'admin',
         component: AdminLayoutComponent,
         children:[
           {

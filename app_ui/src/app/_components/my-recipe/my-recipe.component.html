@@ -14,7 +14,7 @@
                     <div class="banner-content-info">
                         <div class="banner-content">
                             <h1 style="padding-top: 40px;">
-                             My Recipes
+                                My Recipes
                             </h1>
                         </div>
                     </div>
@@ -25,27 +25,27 @@
     </div>
 </section>
 
-    <div class="container list-display" style="margin-top: 70px ;">
+<div class="container list-display" style="margin-top: 70px ;">
     <div class="row mb-5 justify-content-center align-items-center">
         <!-- <div class="col-md-6"> -->
-            <button class="btn btn-primary" routerLink="/cust-layout/recipe-add" 
-            style="background: #78051a"> 
+        <button class="btn btn-primary" routerLink="/user/recipe-add" style="background: #78051a"> 
                 Add Recipe</button>
         <!-- </div> -->
     </div>
     <div class="row">
-       
-        <div  class="col-md-3" *ngFor="let recipe of recipes">
-           
+
+        <div class="col-md-3" *ngFor="let recipe of recipes">
+
             <div class="card mb-4 p-0">
-                <a href="cust-layout/my-recipe-edit/{{recipe._id}}">
+                <a href="user/my-recipe-edit/{{recipe._id}}">
                     <img class="card-img-top" src="{{recipe.image_url}}" alt="Card image" style="width:100%; height:250px">
                 </a>
-                <div class="card-body">           
-                    <a class="text-dark" href="cust-layout/my-recipe-edit/{{recipe._id}}" style="text-decoration: none;"> 
+                <div class="card-body">
+                    <a class="text-dark" href="user/my-recipe-edit/{{recipe._id}}" style="text-decoration: none;">
                         <h4 class="card-title">
                             {{recipe.title}}
-                        </h4> </a>
+                        </h4>
+                    </a>
                     <span>
                         <h4 class="text-danger">  </h4> 
                         <!-- <h4> <?php echo $book['quantity'] ?> </h4> -->
@@ -54,15 +54,14 @@
                         <img class="mr-1 mt--3px" src="../../assets/images/star.svg" alt="Veg">
                         {{recipe?.rating}}
                     </span>
-                    <p class="card-text"> 
-                       
-                    </p>  
-                        <a href="cust-layout/my-recipe-edit/{{recipe._id}}" class="btn btn-danger" style="background: #343a40; border-color:#343a40">Edit</a>                    
-                </div>             
+                    <p class="card-text">
+
+                    </p>
+                    <a href="user/my-recipe-edit/{{recipe._id}}" class="btn btn-danger" style="background: #343a40; border-color:#343a40">Edit</a>
+                </div>
             </div>
         </div>
-       
+
     </div>
 
 </div>
-

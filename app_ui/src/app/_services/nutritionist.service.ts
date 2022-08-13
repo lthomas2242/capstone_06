@@ -24,7 +24,7 @@ export class NutritionistService {
   createUser(nutritionist: Nutritionist) {
     return this.http.post<Nutritionist>(this.nutritionistUrl+'/addNutritionist', nutritionist)
     .subscribe((nutritionist : Nutritionist)=>{
-      this.router.navigate(['/admin-layout/nutritionist-list']);
+      this.router.navigate(['/admin/nutritionist-list']);
     })
   }
   editNutritionist(nutritionist: Nutritionist): Promise<void | Nutritionist> {

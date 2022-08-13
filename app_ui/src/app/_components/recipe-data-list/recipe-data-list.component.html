@@ -2,12 +2,12 @@
     <div class="card mb-5 shadow">
         <div class="row g-0">
             <div class="col-md-4 col-xs-12" style="max-height: 20rem;">
-                <img src="{{recipe?.image_url}}" class="img-fluid rounded-start" alt="food" routerLink="/cust-layout/recipe/{{recipe?._id}}">
+                <img src="{{recipe?.image_url}}" class="img-fluid rounded-start" alt="food" routerLink="/user/recipe/{{recipe?._id}}">
             </div>
             <div class="col-md-8 col-xs-12 cardinner" style="max-height: 20rem;">
                 <div class="card-body">
                     <div class="row">
-                        <h4 class="card-title col-md-10 col-xs-12"><a routerLink="/cust-layout/recipe/{{recipe?._id}}" style="color: black;">{{recipe?.title | titlecase }}</a></h4>
+                        <h4 class="card-title col-md-10 col-xs-12"><a routerLink="/user/recipe/{{recipe?._id}}" style="color: black;">{{recipe?.title | titlecase }}</a></h4>
                         <p class="unhover-span col-md-2 col-xs-12">
                             <span class="rating orange">
                                 <img class="mr-1 mt--3px" src="../../assets/images/star.svg" alt="Veg">
@@ -19,7 +19,7 @@
                     <p class="subhead">{{recipe?.category | titlecase }}</p>
                     <p class="subhead">{{recipe?.nutritions?.calories}} cal</p>
                     <p class="subhead">{{recipe?.description}}</p>
-                    <button class="btn btn-outline-secondary searchbtn" type="button" routerLink="/cust-layout/recipe/{{recipe?._id}}">Read more</button>
+                    <button class="btn btn-outline-secondary searchbtn" type="button" routerLink="/user/recipe/{{recipe?._id}}">Read more</button>
                 </div>
             </div>
         </div>

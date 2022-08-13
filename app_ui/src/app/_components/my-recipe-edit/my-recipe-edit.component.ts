@@ -56,7 +56,7 @@ export class MyRecipeEditComponent implements OnInit {
               timeOut: 3000,
               positionClass:'toast-bottom-right' 
             });
-            this.router.navigate(['/cust-layout/my-recipes']);
+            this.router.navigate(['/user/my-recipes']);
           },
           error: (e) => {
             this.toastr.error(e.error.message, 'Error', {
