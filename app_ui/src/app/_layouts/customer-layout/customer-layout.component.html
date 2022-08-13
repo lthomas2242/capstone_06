@@ -21,13 +21,19 @@
                         <a class="nav-link" routerLink="/user/about" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
                             true}" style="font-size: 20px;">About</a>
                     </li>
-                    <!-- <li class="nav-item" style="padding: 0 15px;">
-                        <a class="nav-link" routerLink="/user/recipe-list" style="font-size: 20px;">Recipes</a>
-                    </li> -->
+                    <li class="nav-item" style="padding: 0 15px;">
+                        <a class="nav-link" routerLink="/user/contact" style="font-size: 20px;" routerLinkActive="active-link">Contact</a>
+                    </li>
                     <li class="nav-item" style="padding: 0 10px;">
                         <a class="nav-link" routerLink="/user/bmi" style="font-size: 20px;" routerLinkActive="active-link">BMI</a>
                     </li>
 
+                    <li class="nav-item" style="padding: 0 10px;">
+                        <a class="nav-link" routerLink="/user/shopping-list" style="font-size: 20px;" routerLinkActive="active-link">Shopping List</a>
+                    </li>
+                    <li class="nav-item" style="padding: 0 10px;">
+                        <a class="nav-link" routerLink="/user/nutritionists" style="font-size: 20px;" routerLinkActive="active-link">Nutritionists</a>
+                    </li>
                     <li class="nav-item dropdown" style="padding: 0 10px" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" style="font-size: 20px;" aria-haspopup="true" aria-expanded="false">
                           Recipe
@@ -38,23 +44,6 @@
                             <a class="dropdown-item" routerLink="/user/my-recipes" style="color: black;"> My Recipe</a>
                         </div>
                     </li>
-
-
-                    <!-- <li class="nav-item" style="padding: 0 15px;">
-                        <a class="nav-link" routerLink="/user/my-recipes" style="font-size: 20px;">My Recipes</a>
-                    </li> -->
-                    <li class="nav-item" style="padding: 0 10px;">
-                        <a class="nav-link" routerLink="/user/shopping-list" style="font-size: 20px;" routerLinkActive="active-link">Shopping List</a>
-                    </li>
-                    <li class="nav-item" style="padding: 0 10px;">
-                        <a class="nav-link" routerLink="/user/nutritionists" style="font-size: 20px;" routerLinkActive="active-link">Nutritionists</a>
-                    </li>
-                    <li class="nav-item" style="padding: 0 15px;">
-                        <a class="nav-link" routerLink="/user/contact" style="font-size: 20px;" routerLinkActive="active-link">Contact</a>
-                    </li>
-
-
-
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <button type="button" class="btn btn-nothing">
@@ -99,10 +88,16 @@
                     <li class="resp-li">
                         <a aria-current="page" class="active" href="/">Home</a>
                     </li>
-                    <li>
+                    <li class="resp-li">
+                        <a aria-current="page" class="active" href="/">About</a>
+                    </li>
+                    <li class="resp-li">
+                        <a class="nav-link" routerLink="/user/contact" style="font-size: 20px;" routerLinkActive="active-link">Contact</a>
+                    </li>
+                    <li class="resp-li">
                         <a class="nav-link" routerLink="/user/recipe-list" style="font-size: 20px;">Recipes</a>
                     </li>
-                    <li>
+                    <li class="resp-li">
                         <a class="nav-link" routerLink="/user/bmi" style="font-size: 20px;">BMI</a>
                     </li>
                     <li>
