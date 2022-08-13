@@ -192,4 +192,9 @@ export class RecipeDataComponent implements OnInit {
       }
      }
   }
+
+  clearAllFilters(){
+    this.filter = new Filter();
+    this.recipes = this.allRecipes;
+  }
 }
