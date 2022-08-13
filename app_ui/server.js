@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/dist/capstone_06'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname+'/dist/capstone_06/index.html'));
+res.sendFile(path.join(__dirname+'/dist/capstone_06/login'));
 });
 
 // Start the app by listening on the default Heroku port
