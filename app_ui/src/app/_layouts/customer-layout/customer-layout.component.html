@@ -15,24 +15,25 @@
             <div class="navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item" style="padding: 0 10px;">
-                        <a class="nav-link" routerLink="/cust-layout/home" style="font-size: 20px;">Home</a>
+                        <a class="nav-link" routerLink="/cust-layout/home" style="font-size: 20px;" routerLinkActive="active-link" >Home</a>
                     </li>
                     <li class="nav-item" style="padding: 0 10px;">
-                        <a class="nav-link" routerLink="/cust-layout/about" style="font-size: 20px;">About</a>
+                        <a class="nav-link" routerLink="/cust-layout/about" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+                            true}" style="font-size: 20px;">About</a>
                     </li>
                     <!-- <li class="nav-item" style="padding: 0 15px;">
                         <a class="nav-link" routerLink="/cust-layout/recipe-list" style="font-size: 20px;">Recipes</a>
                     </li> -->
                     <li class="nav-item" style="padding: 0 10px;">
-                        <a class="nav-link" routerLink="/cust-layout/bmi" style="font-size: 20px;">BMI</a>
+                        <a class="nav-link" routerLink="/cust-layout/bmi" style="font-size: 20px;" routerLinkActive="active-link" >BMI</a>
                     </li>
 
-                    <li class="nav-item dropdown" style="padding: 0 10px">
+                    <li class="nav-item dropdown" style="padding: 0 10px" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" style="font-size: 20px;" 
                         aria-haspopup="true" aria-expanded="false">
                           Recipe
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="padding: 15px; ">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="padding: 15px; " >
                           <a class="dropdown-item" routerLink="/cust-layout/recipe-list" style="color: black;">Search Recipe</a>
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" routerLink="/cust-layout/my-recipes" style="color: black;"> My Recipe</a>
@@ -44,13 +45,13 @@
                         <a class="nav-link" routerLink="/cust-layout/my-recipes" style="font-size: 20px;">My Recipes</a>
                     </li> -->
                     <li class="nav-item" style="padding: 0 10px;">
-                        <a class="nav-link" routerLink="/cust-layout/shopping-list" style="font-size: 20px;">Shopping List</a>
+                        <a class="nav-link" routerLink="/cust-layout/shopping-list" style="font-size: 20px;" routerLinkActive="active-link" >Shopping List</a>
                     </li>
                     <li class="nav-item" style="padding: 0 10px;">
-                        <a class="nav-link" routerLink="/cust-layout/nutritionists" style="font-size: 20px;">Nutritionists</a>
+                        <a class="nav-link" routerLink="/cust-layout/nutritionists" style="font-size: 20px;" routerLinkActive="active-link" >Nutritionists</a>
                     </li>
                     <li class="nav-item" style="padding: 0 15px;">
-                        <a class="nav-link" routerLink="/cust-layout/contact" style="font-size: 20px;">Contact</a>
+                        <a class="nav-link" routerLink="/cust-layout/contact" style="font-size: 20px;" routerLinkActive="active-link" >Contact</a>
                     </li>
 
                     

@@ -2772,3 +2772,13 @@ label {
 .dropdown-item {
     cursor: pointer;
 }
+
+.active-link {
+    color: #ffffff !important;
+    /* font-weight: bold; */
+}
+
+.active-link > a:first-child {
+    color: #ffffff !important;
+    /* font-weight: bold; */
+}
