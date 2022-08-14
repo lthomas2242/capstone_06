@@ -15,5 +15,9 @@
     "nodemon": "^2.0.19",
     "pug": "2.0.0-beta11",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@angular/cli": "^14.1.2",
+    "@angular/compiler-cli": "^14.1.2"
   }
 }

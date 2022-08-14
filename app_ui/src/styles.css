@@ -2780,5 +2780,15 @@ label {
 
 .active-link > a:first-child {
     color: #ffffff !important;
-    /* font-weight: bold; */
+    /* 
+    font-weight: bold; */
 }
+.carousel-control-prev-icon {
+    background-color:#343a40;
+}
+.carousel-control-next-icon {
+    background-color: #343a40;
+}
+/* .carousel {
+    background-color: #343a40;
+} */

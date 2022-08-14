@@ -16,11 +16,10 @@ button {
     border: none !important;
     background-color: none !important;
 }
-
 .btn {
     color: #fff !important;
-    background-color: #ad3700 !important;
-    border-color: #ad3700 !important;
+    background-color: #343a40 !important;
+    border-color: #343a40 !important;
 }
 
 #recipe_title a {

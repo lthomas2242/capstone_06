@@ -14,3 +14,8 @@
     min-height: 17rem;
     min-width: 17rem;
 }
+.btn {
+    color: #fff !important;
+    background-color: #343a40 !important;
+    border-color: #343a40 !important;
+}
