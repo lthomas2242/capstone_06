@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/_models/user';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-user-details',
@@ -7,15 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor() { }
+  public user = new User();
+  id =  localStorage.getItem('id');
+  constructor(public userService : UserService) { }
 
   ngOnInit(): void {
+    
+    if(this.id != null){
+      this.userService.getSingleUser(this.id).subscribe({
+        next: (v) => {
+          this.user = v;
+        },
+        error: (e) => {
+          
+        }
+      });
+    }
   }
-  id =  localStorage.getItem('id');
-  first_name =  localStorage.getItem('first_name');
-  last_name =  localStorage.getItem('last_name');
-  email =  localStorage.getItem('email');
-  height =  localStorage.getItem('height');
-  weight =  localStorage.getItem('weight');
-  gender =  localStorage.getItem('gender');
 }

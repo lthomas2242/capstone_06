@@ -8,8 +8,10 @@
                         <div class="col-md-6" style="max-height: 20rem;">
                             <div class="card-body d-flex align-items-center justify-content-center h-100 flex-column">
                                 <h3 class="card-title fw-bold text-uppercase mb-2">{{randomRecipe.title}}</h3>
+                                <p class="card-text fw-light mb-4">{{randomRecipe.meal_type}}</p>
                                 <p class="card-text fw-light mb-4">{{randomRecipe.category}}</p>
-                                <a class="btn btn-outline-dark fw-500" routerLink="/cust-layout/recipe/{{randomRecipe?._id}}">View More</a></div>
+                                <p class="card-text fw-light mb-4">{{randomRecipe.description}}</p>
+                                <a class="btn btn-outline-dark fw-500" routerLink="/user/recipe/{{randomRecipe?._id}}">View More</a></div>
                         </div>
                     </div>
                 </div>

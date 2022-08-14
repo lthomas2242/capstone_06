@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
       gender: ["", Validators.required],
       password: ["", Validators.required],
       c_password: ["", Validators.required],
-      bmi: [""]
+      BMI: [""]
     }, {
       validator: matchPassword('password', 'c_password')
     });
@@ -57,7 +57,7 @@ export class RegisterComponent implements OnInit {
 
   calculateBMI(){
     var bmi=this.bmiService.calculateBMI(this.userForm.controls['height'].value,this.userForm.controls['weight'].value);
-    (<FormControl> this.userForm.controls['bmi']).setValue(bmi);
+    (<FormControl> this.userForm.controls['BMI']).setValue(bmi.toFixed(3));
   }
 
 }

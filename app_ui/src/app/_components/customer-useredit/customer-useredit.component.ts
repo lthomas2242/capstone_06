@@ -50,7 +50,7 @@ export class CustomerUsereditComponent implements OnInit {
     localStorage.setItem('gender',user.gender);
     localStorage.setItem('height',user.height.toString());
     localStorage.setItem('weight',user.weight);
-    window.location.href='/cust-layout/user-details';
+    window.location.href='/user/user-details';
   }
   public getSingleUser(user_id : string){
     this.UserService.getSingleUser(user_id).subscribe((user: User) => {

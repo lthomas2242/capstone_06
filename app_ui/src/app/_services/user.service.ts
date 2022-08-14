@@ -16,7 +16,7 @@ export class UserService {
   getUsers() {
     return this.http.get<User[]>(this.userUrl);
   }
-  getSingleUser(userId: string) : Observable<any> {
+  getSingleUser(userId: String) : Observable<any> {
     return this.http.get(this.userUrl + '/' + userId);
   }
   //user login

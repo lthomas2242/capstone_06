@@ -56,7 +56,7 @@ export class NutritionistEditComponent implements OnInit {
   public updateNutritionist(nutritionist: Nutritionist): void{ 
     this.NutritionistService.editNutritionist(nutritionist);
     console.log(nutritionist);
-    window.location.href='/admin-layout/nutritionist-list';
+    window.location.href='/admin/nutritionist-list';
       }  
 
 }

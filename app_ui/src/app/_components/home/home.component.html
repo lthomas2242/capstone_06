@@ -4,9 +4,25 @@
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="banner-slider-image" style="background: url(../../assets/images/banner1.jpg) no-repeat;">
+                    <div class="banner-slider-image" style="background: url(../../assets/images/banner2.jpg) no-repeat;">
                     </div>
                 </div>
+                <div class="carousel-item ">
+                    <div class="banner-slider-image" style="background: url(../../assets/images/banner3.jpg) no-repeat;">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="banner-slider-image" style="background: url(../../assets/images/banner4.jpg) no-repeat;"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="banner-slider-image" style="background: url(../../assets/images/banner5.jpg) no-repeat;"></div>
+                </div>
+                <a class="carousel-control-prev" href="#banner-slider" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#banner-slider" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
             </div>
 
         </div>
@@ -30,21 +46,41 @@
 <section>
     <div class="container">
 
-        <!--Why choose us section starts-->
-        <div class="why-choose-section">
-            <h3 class="text-uppercase mt-5">Why Choose Us?</h3>
-            <p class="text-text fw-sbold">Let's try new healthy recipe's</p>
-            <div class="why-choose">
-                <div class="row">
-                    <div class="col-md-12 mb-12 mb-md-0">
-                        <p class="shape-name">
-                            This app helps health-conscious foodaholic to stay up to date on food trends, reminds, better dietary practices.This app also assists to search for gluten-free, vegan, and organic options when looking for healthy cooking items.Calorie count matters!!
-                            So we are here helping you to track your daily calorie count and turn you into a more conscious eater.
-                        </p>
+        <section>
+            <div class="container">
+                <!--Why choose us section starts-->
+                <div class="why-choose-section">
+                    <h3 class="text-uppercase mb-3 text-center">Why Choose Us?</h3>
+                    <p class="text-text fw-sbold  text-center"><span class="heading_span">Let's try new healthy recipe's</span></p>
+                    <div class="why-choose">
+                        <div class="row">
+                            <div class="col-md-12 mb-12 mb-md-0">
+                                <p class="shape-name">
+                                    This app helps health-conscious foodaholic to stay up to date on food trends, reminds, better dietary practices.This app also assists to search for gluten-free, vegan, and organic options when looking for healthy cooking items.Calorie count matters!!
+                                    So we are here helping you to track your daily calorie count and turn you into a more conscious eater.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section class="doodlebanner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-xs-12">
+                        <img src="../../../assets/images/recipeone.png" style="width: 350px;" />
+                    </div>
+                    <div class="col-lg-8 col-md-6 col-xs-12 verticalcenter">
+                        <h3 class="mb-3">A Healthy food is all we need</h3>
+                        <p>This app helps health-conscious foodaholic to stay up to date on food trends, reminds, better dietary practices.This app also assists to search for gluten-free, vegan, and organic options when looking for healthy cooking items.Calorie
+                            count matters!!
+                            <br> So we are here helping you to track your daily calorie count and turn you into a more conscious eater.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!--Why choose us section Ends-->
         <!---Hand Picked Categories Starts-->
@@ -74,7 +110,7 @@
             <div class="product-slider-block">
                 <div class="row">
                     <div class="col-md-3" *ngFor="let recipe of recipes | slice:8:12">
-                        <a routerLink="/cust-layout/recipe/{{recipe?._id}}">
+                        <a routerLink="/user/recipe/{{recipe?._id}}">
                             <div class="product-card">
                                 <div class="product-image" style="background-image: url({{recipe?.image_url}});">
                                     <button class="fav btn btn-nothing"><img src="../../assets/images/favourite.png"
@@ -108,6 +144,7 @@
         <hr class="mb-5 mt-0">
         <!--Trending Packages Starts-->
         <div>
+            <h3 class="text-uppercase">Recipe For the day</h3>
             <app-random-recipe></app-random-recipe>
         </div>
         <hr>
@@ -160,3 +197,9 @@
     </div>
     <br><br><br>
 </section>
+
+<script>
+    $('.carousel').carousel({
+        interval: 2000
+    })
+</script>

@@ -36,13 +36,15 @@ export class ShoppingListComponent implements OnInit {
   }
 
   getList() {
-    this.ShoppingListService
-    .getList()
-    .subscribe({
-      next: (v) => {
-        this.list = v;
-      },
-    })
+    let isLoggedIn = localStorage.getItem("isLoggedIn");
+    let userid = localStorage.getItem("id");
+
+    this.ShoppingListService.getList(userid)
+        .subscribe({
+          next: (v) => {
+            this.list = v;
+          },
+        })
   }
 
   showSuccess() {
@@ -50,15 +52,15 @@ export class ShoppingListComponent implements OnInit {
   }
 
 
-  getShoppingList(){
-    this.ShoppingListService
-    .getList()
-    .subscribe((list: ShoppingList[]) => {
-      this.list = list.map(list => {
-        return list;
-      })
-    })
-  }
+  // getShoppingList(){
+  //   this.ShoppingListService
+  //   .getList()
+  //   .subscribe((list: ShoppingList[]) => {
+  //     this.list = list.map(list => {
+  //       return list;
+  //     })
+  //   })
+  // }
 
   addList() {
     let newitem =  new item(); 

@@ -2,9 +2,10 @@
 <header class="header-fixed" style="background: #78051a;">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-md" style="padding: 2px 0">
-            <a style="color: black;" routerLink="/admin-layout/dashboard">
-                <!-- <i class="fa fa-cutlery fa-flip"style='font-size:24px'></i> -->
-                <img height="80px" width="100px" src="../../assets/images/logo-recipe.png" class="img-fluic" alt="logo" /></a>
+            <a style="color: black;" routerLink="/admin/dashboard">
+                <i class="fa fa-cutlery fa-flip" style='font-size:34px; color: #fff;'></i>
+                <img height="80px" width="100px" src="../../assets/images/logo-recipe.png" class="img-fluic" alt="logo" style="    margin-left: 10px;" />
+            </a>
             <button class="navbar-toggler" type="button" data-target="#collapsibleNavbar">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path d="M0 0h24v24H0z" fill="none"></path>
@@ -14,13 +15,13 @@
             <div class="navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item" style="padding: 0 15px;">
-                        <a class="nav-link" routerLink="/admin-layout/recipe" style="font-size: 20px;" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Recipes</a>
+                        <a class="nav-link" routerLink="/admin/recipe" style="font-size: 20px;" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Recipes</a>
                     </li>
                     <li class="nav-item" style="padding: 0 15px;">
-                        <a class="nav-link" routerLink="/admin-layout/user-list" style="font-size: 20px;" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Users</a>
+                        <a class="nav-link" routerLink="/admin/user-list" style="font-size: 20px;" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Users</a>
                     </li>
                     <li class="nav-item" style="padding: 0 15px;">
-                        <a class="nav-link" routerLink="/admin-layout/nutritionist-list" style="font-size: 20px;" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Nutritionists</a>
+                        <a class="nav-link" routerLink="/admin/nutritionist-list" style="font-size: 20px;" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Nutritionists</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -37,7 +38,7 @@
                             </button>
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li style=" float: left; padding-top: 10px;"><a class="dropdown-item" routerLink="/cust-layout/user-details">Profile</a></li>
+                            <li style=" float: left; padding-top: 10px;"><a class="dropdown-item" routerLink="/user/user-details">Profile</a></li>
                             <li style=" float: left; padding-top: 10px;"><a class="dropdown-item" (click)="logout()">Sign out</a></li>
                             <li></li>
                         </ul>
@@ -55,7 +56,7 @@
                         </svg>
                     </button>
                 </div>
-                <a style="color: black;" routerLink="/admin-layout/home">
+                <a style="color: black;" routerLink="/admin/home">
                     <!-- <i class="fa fa-cutlery fa-flip"  style='font-size:24px'></i> -->
                     <img height="80px" width="100px" src="../../assets/images/logo-recipe.png" class="img-fluic" alt="logo" /></a>
 
