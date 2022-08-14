@@ -10,6 +10,7 @@ import { Recipe } from 'src/app/_models/recipe';
 export class HomeComponent implements OnInit {
   
   public recipes : Recipe[] = [];
+ 
 
   constructor(private recipeService : RecipeService) { }
 
@@ -25,5 +26,4 @@ export class HomeComponent implements OnInit {
         },
     });
   }
-
 }

@@ -448,7 +448,8 @@ header.no-shadow .navbar {
 }
 
 .banner-content {
-    width: 60%;
+    width: 100%;
+    text-align: center;
 }
 
 .banner-content-info h1 {
@@ -2778,7 +2779,7 @@ label {
     /* font-weight: bold; */
 }
 
-.active-link > a:first-child {
+.active-link>a:first-child {
     color: #ffffff !important;
     /* font-weight: bold; */
 }
