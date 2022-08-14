@@ -22,8 +22,8 @@ export class ShoppingListService {
     return this.http.put<ShoppingList>(this.apiUrl+'/'+list._id, list)
   }
 
-  getList() {
-    return this.http.get<ShoppingList[]>(this.apiUrl);  
+  getList(userid: any) : Observable<any>{
+    return this.http.get<ShoppingList[]>(this.apiUrl+"/"+userid);  
   }
 
   deleteList(id: String) {

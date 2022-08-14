@@ -2,7 +2,8 @@
     var ShoppingList = mongoose.model('ShoppingList');
 
     const getList = function(req, res) {
-        ShoppingList.find().exec(function(err, data) {
+        let userid = req.params.userid;
+        ShoppingList.find({ user_id: userid}).exec(function(err, data) {
             if(err) {
                 res
                 .status(404)

@@ -49,8 +49,6 @@ export class RecipeService {
 
 
   getMyRecipes(userid: any) : Observable<any>{ 
-    console.log("service");
-
     return this.http.get<Recipe>(this.recipeUrl+"/byusers/"+userid);
   }
   getRecipesByFilters() : Observable<any>{
