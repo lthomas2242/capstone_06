@@ -27,11 +27,12 @@
 
     <div class="container list-display" style="margin-top: 70px ;">
     <div class="row mb-5 justify-content-center align-items-center">
-        <!-- <div class="col-md-6"> -->
-            <button class="btn btn-primary" routerLink="/cust-layout/recipe-add" 
+        <div class="col-md-6"></div>
+        <div class="col-md-6 " style="text-align:right ">
+            <button class="btn btn-primary btn-lg" routerLink="/cust-layout/recipe-add" 
             style="background: #78051a"> 
                 Add Recipe</button>
-        <!-- </div> -->
+        </div>
     </div>
     <div class="row">
        
@@ -47,17 +48,24 @@
                             {{recipe.title}}
                         </h4> </a>
                     <span>
-                        <h4 class="text-danger">  </h4> 
+                        <h6 class="text-danger"> {{recipe.category}} </h6> 
                         <!-- <h4> <?php echo $book['quantity'] ?> </h4> -->
                     </span>
                     <span class="rating orange">
                         <img class="mr-1 mt--3px" src="../../assets/images/star.svg" alt="Veg">
                         {{recipe?.rating}}
                     </span>
+                    <!-- <span class="float-right">
+                        <img class="ml-1" src="../../assets/images/veg.svg" alt="Veg" *ngIf="recipe.meal_type == '0'">
+                        <img class="ml-1" src="../../assets/images/non-veg.svg" alt="Non Veg" *ngIf="recipe.meal_type == '1'">
+                    </span> -->
+
                     <p class="card-text"> 
                        
                     </p>  
-                        <a href="cust-layout/my-recipe-edit/{{recipe._id}}" class="btn btn-danger" style="background: #343a40; border-color:#343a40">Edit</a>                    
+                    <span class="btn btn-danger" style="float: right; margin-left: 10px;" (click)="deleteRecipe(recipe._id)"><i class="fa fa-trash"> </i></span>     
+                        <a href="cust-layout/my-recipe-edit/{{recipe._id}}" class="btn btn-danger" style="float: right;background: #343a40; border-color:#343a40"><i class="fa fa-edit"> </i></a>
+                                      
                 </div>             
             </div>
         </div>
