@@ -2,7 +2,7 @@
 
 body {
     /* font-family: "proxima-nova" !important; */
-    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /* font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 14px;
     letter-spacing: 0;
     font-weight: 400;
@@ -10,7 +10,16 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff;
+    background-color: #fff; */
+    font-family: "proxima-nova" !important;
+    font-size: 14px;
+    letter-spacing: 0;
+    font-weight: 400;
+    vertical-align: middle;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background: #f6f6f6;
 }
 
 .container-fluid {
@@ -631,7 +640,7 @@ header.no-shadow .navbar {
 /*******Why choose********/
 
 .why-choose {
-    border: 1px solid rgba(188, 184, 184, 0.29);
+    /* border: 1px solid rgba(188, 184, 184, 0.29); */
     padding: 30px;
     margin: 20px 0 30px 0;
     border-radius: 4px;
