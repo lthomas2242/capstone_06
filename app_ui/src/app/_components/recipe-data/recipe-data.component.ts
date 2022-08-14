@@ -58,7 +58,6 @@ export class RecipeDataComponent implements OnInit {
   });
   }
   searchForRecipes(){
-    console.log(this.filter)
     if(this.filter != undefined && this.filter != null){
       this.recipes = this.allRecipes;
       //check title
@@ -83,7 +82,6 @@ export class RecipeDataComponent implements OnInit {
         });
       }
     }  
-    console.log(this.recipes);
     this.recipes =[...this.recipes] ;
   }
 
