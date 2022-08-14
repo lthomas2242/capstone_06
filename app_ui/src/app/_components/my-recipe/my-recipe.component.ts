@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from 'src/app/_models/recipe';
 import { RecipeService } from 'src/app/_services/recipe.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-my-recipe',
@@ -9,7 +10,7 @@ import { RecipeService } from 'src/app/_services/recipe.service';
 })
 export class MyRecipeComponent implements OnInit {
   public recipes : Recipe[] = [];
-  constructor(private recipeService : RecipeService) { }
+  constructor(private recipeService : RecipeService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getAllRecipes();
@@ -27,6 +28,20 @@ export class MyRecipeComponent implements OnInit {
           console.log(v);
         },
     });
+  }
+
+  deleteRecipe(recipeId: String) {
+    this.recipeService.deleteRecipe(recipeId)
+        .subscribe({
+          next: (v) => {
+            this.getAllRecipes();
+            this.toastr.success("Recipe Deleted Successfully", 'Success', {
+              timeOut: 3000,
+              positionClass:'toast-top-right' 
+            });
+          }
+        });
+  
   }
 
 
