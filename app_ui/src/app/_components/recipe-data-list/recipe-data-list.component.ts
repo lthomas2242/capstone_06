@@ -10,6 +10,8 @@ import { RecipeService } from 'src/app/_services/recipe.service';
 export class RecipeDataListComponent implements OnInit,OnChanges {
 
   @Input() recipes :any;
+  current_page: number = 1;
+  count: number = 5;
   
   constructor() { }
 
