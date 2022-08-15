@@ -62,7 +62,10 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="image_url" class="form-label">Image</label>
-                                <input type="text" class="form-control" id="image_url" [(ngModel)]="recipe.image_url" name="image_url">
+                                <div class="row">
+                                    <input type="text" class="col-md-7 form-control" id="image_url" [(ngModel)]="recipe.image_url" name="image_url" style="margin-left: 15px;">
+                                    <button type="button" class="col-md-4 btn btn-primary">choose file</button>
+                                </div>
                             </div>
                         </div>
                         <div class="row">

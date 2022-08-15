@@ -25,8 +25,8 @@
                     <td>{{nutritionist.designation}}</td>
                     <td>{{nutritionist.city}}</td>
                     <td>{{nutritionist.pincode}}</td>
-                    <td><button class="btn" (click)="deleteNutritionist(nutritionist._id)">Delete</button></td>
-                    <td><a class="btn" href="/admin/nutritionist-edit/{{nutritionist._id}}">Edit Nutritionist Details</a></td>
+                    <td><a href="/admin/nutritionist-edit/{{nutritionist._id}}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                    <td><button (click)="deleteNutritionist(nutritionist._id)" class="btn btn-primary"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
                 </tr>
             </tbody>
         </table>
