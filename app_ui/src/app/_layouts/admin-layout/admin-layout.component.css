@@ -1,3 +1,11 @@
-.btn {
-    color: #ad3700 !important;
+/* .btn {
+    color: #fff !important;
+    background-color: #343a40 !important;
+    border-color: #343a40 !important;
+} */
+
+.btn-nothing {
+    color: #fff !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
 }

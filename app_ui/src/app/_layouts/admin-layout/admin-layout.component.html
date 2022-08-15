@@ -1,3 +1,56 @@
+<header>
+    <nav class="navbar sticky-top navbar-expand-lg navbarinner" style="padding: 2px 0;background: #78051a;">
+        <div class="container">
+            <a class="navbar-brand" style="color: black;" routerLink="/admin/dashboard">
+                <i class="fa fa-cutlery fa-flip" style='font-size:34px; color: #fff;'></i>
+                <img height="80px" width="100px" src="../../assets/images/logo-recipe.png" class="img-fluic" alt="logo" style="    margin-left: 10px;" />
+            </a>
+            <button class="navbar-toggler text-white btn-nothing" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" style="fill: #fff;" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                </svg> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                    <li class="nav-item" style="padding: 0 15px;">
+                        <a class="nav-link" routerLink="/admin/recipe" style="font-size: 20px;" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Recipes</a>
+                    </li>
+                    <li class="nav-item" style="padding: 0 15px;">
+                        <a class="nav-link" routerLink="/admin/user-list" style="font-size: 20px;" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Users</a>
+                    </li>
+                    <li class="nav-item" style="padding: 0 15px;">
+                        <a class="nav-link" routerLink="/admin/nutritionist-list" style="font-size: 20px;" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Nutritionists</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <button type="button" class="btn btn-nothing">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16">
+                                    <g fill="none" fill-rule="evenodd" stroke="#868996" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="1.6" transform="translate(1 1)">
+                                        <path
+                                            d="M13 14v-1.556c0-1.718-1.455-3.11-3.25-3.11h-6.5c-1.795 0-3.25 1.392-3.25 3.11V14">
+                                        </path>
+                                        <ellipse cx="6.5" cy="3.111" rx="3.25" ry="3.111"></ellipse>
+                                    </g>
+                                </svg>
+                            </button>
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li style=" float: left; padding-top: 10px; ">
+                                <a class="dropdown-item" routerLink="/user/user-details" style="color: black;">Profile</a></li>
+                            <li style=" float: left;  padding-top: 10px;">
+                                <a class="dropdown-item" (click)="logout()" style="color: black;">Sign out</a></li>
+                            <li></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
 <!---header starts-->
 <header class="header-fixed" style="background: #78051a;">
     <div class="container-fluid">
