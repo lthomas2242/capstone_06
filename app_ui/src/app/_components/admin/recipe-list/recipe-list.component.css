@@ -2,7 +2,8 @@ table {
     margin-top: 30px;
 }
 
-i {
+
+/* i {
     color: #ad3700 !important;
     background-color: none !important;
 }
@@ -20,7 +21,7 @@ button {
     color: #fff !important;
     background-color: #343a40 !important;
     border-color: #343a40 !important;
-}
+} */
 
 #recipe_title a {
     text-decoration: none;

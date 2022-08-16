@@ -1,19 +1,19 @@
-<!---header starts-->
-<header class="header-fixed" style="background: #78051a;">
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-md" style="padding: 2px 0">
-            <button class="navbar-toggler" type="button" data-target="#collapsibleNavbar">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+<header>
+    <nav class="navbar sticky-top navbar-expand-lg navbarinner" style="padding: 2px 0;background: #78051a;">
+        <div class="container">
+            <a class="navbar-brand" style="color: black;" routerLink="/user/home">
+                <i class="fa fa-cutlery fa-flip" style='font-size:34px; color: #fff;'></i>
+                <img height="80px" width="100px" src="../../assets/images/logo-recipe.png" class="img-fluic" alt="logo" style="    margin-left: 10px;" />
+            </a>
+            <button class="navbar-toggler text-white btn-nothing" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" style="fill: #fff;" width="24" height="24" viewBox="0 0 24 24">
                     <path d="M0 0h24v24H0z" fill="none"></path>
                     <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
                 </svg> Menu
             </button>
-            <a style="color: black;" routerLink="/user/home">
-                <i class="fa fa-cutlery fa-flip" style='font-size:34px; color: #fff;'></i>
-                <img height="80px" width="100px" src="../../assets/images/logo-recipe.png" class="img-fluic" alt="logo" style="    margin-left: 10px;" />
-            </a>
-            <div class="navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav ml-auto">
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto w-100 justify-content-end">
                     <li class="nav-item" style="padding: 0 10px;">
                         <a class="nav-link" routerLink="/user/home" style="font-size: 20px;" routerLinkActive="active-link">Home</a>
                     </li>
@@ -69,67 +69,10 @@
                     </li>
                 </ul>
             </div>
-            <div class="resp-menu">
-                <div class="resp-close">
-                    <button type="button" class="btn btn-nothing">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path
-                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-                            </path>
-                            <path d="M0 0h24v24H0z" fill="none"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div class="resp-logo">
-                    <a aria-current="page" class="active" href="/">
-                        <h5 class="hedcls" style="color: #fff; font-size: 35px;">RecipeforYou.....!</h5>
-                    </a>
-                </div>
-                <ul>
-                    <li class="resp-li">
-                        <a aria-current="page" class="active" href="/">Home</a>
-                    </li>
-                    <li class="resp-li">
-                        <a aria-current="page" class="active" href="/">About</a>
-                    </li>
-
-                    <li class="resp-li">
-                        <a class="nav-link" routerLink="/user/recipe-list" style="font-size: 20px;">Recipes</a>
-                    </li>
-                    <li class="resp-li">
-                        <a class="nav-link" routerLink="/user/bmi" style="font-size: 20px;">BMI</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" routerLink="/user/shopping-list" style="font-size: 20px;">Shopping List</a>
-                    </li>
-                    <li class="resp-li">
-                        <a class="nav-link" routerLink="/user/contact" style="font-size: 20px;" routerLinkActive="active-link">Contact</a>
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-nothing">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16">
-                                <g fill="none" fill-rule="evenodd" stroke="#868996" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.6" transform="translate(1 1)">
-                                    <path
-                                        d="M13 14v-1.556c0-1.718-1.455-3.11-3.25-3.11h-6.5c-1.795 0-3.25 1.392-3.25 3.11V14">
-                                    </path>
-                                    <ellipse cx="6.5" cy="3.111" rx="3.25" ry="3.111"></ellipse>
-                                </g>
-                            </svg>
-                            Signup / Login
-                        </button>
-                    </li>
-                </ul>
-                <div class="resp-logo">
-                    <h5 class="text-uppercase text-grey">Contact us:</h5>
-                    <p><a class="text-primary" href="mailto:info@recipes.com">info@recipeforyou.com</a></p>
-                </div>
-            </div>
-
-        </nav>
-    </div>
+        </div>
+    </nav>
 </header>
-<!---header ends-->
+
 <router-outlet></router-outlet>
 
 

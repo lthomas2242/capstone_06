@@ -10,7 +10,9 @@
                 <tr>
                     <th rowspan="2">Id</th>
                     <th rowspan="4">Title</th>
-                    <th rowspan="2">Description</th>
+                    <!-- <th rowspan="2">Description</th> -->
+                    <th rowspan="4">Meal Type</th>
+                    <th rowspan="4">Category</th>
                     <th rowspan="2">Rating</th>
                     <th rowspan="2">Preparation Time</th>
                     <th rowspan="2">Status</th>
@@ -29,12 +31,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let recipe of recipes; index as i;">
+                <tr *ngFor="let recipe of recipes | paginate: { itemsPerPage: count, currentPage: current_page } ">
                     <td>
                         <img src={{recipe?.image_url}} class="img-fluid img-thumbnail" alt="recipe" width="50">
                     </td>
                     <td id="recipe_title"><a routerLink="/user/recipe/{{recipe?._id}}">{{recipe?.title}}</a></td>
-                    <td>{{recipe?.description}}</td>
+                    <!-- <td>{{recipe?.description}}</td> -->
+                    <td>{{recipe?.meal_type}}</td>
+                    <td>{{recipe?.category}}</td>
                     <td>{{recipe?.rating}}</td>
                     <td>{{recipe?.preparation_time}}</td>
                     <td>
@@ -58,11 +62,14 @@
                             <span>{{direction}}</span>
                         </li>
                     </td> -->
-                    <td><button (click)="editRecipeBtn(recipe._id)"><i class="fa fa-pencil" aria-hidden="true"></i></button></td>
-                    <td><button (click)="deleteRecipe(recipe._id)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                    <td><button (click)="editRecipeBtn(recipe._id)" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i></button></td>
+                    <td><button (click)="deleteRecipe(recipe._id)" class="btn btn-primary"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div class="text-right">
+        <pagination-controls (pageChange)="current_page = $event"></pagination-controls>
     </div>
 
     <div class="modal fade bd-example-modal-lg" id="add-recipe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

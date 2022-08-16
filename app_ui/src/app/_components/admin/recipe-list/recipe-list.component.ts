@@ -15,6 +15,8 @@ export class RecipeListComponent implements OnInit {
   public recipes : Recipe[] = [];
   saveModal:any;
   selected_recipe_id =0;
+  current_page: number = 1;
+  count: number = 10;
 
   constructor(private recipeService : RecipeService,
     private toastr: ToastrService) { }
